@@ -42,6 +42,9 @@ sequence:
   - variables:
       entity: !input blinds_entity
       threshold: !input threshold_position
+      target: !input target_position
+      wait: !input wait_time
+  - variables:
       current_position: "{{ state_attr(entity, 'current_position') | int }}"
       saved_position: "{{ current_position if current_position < threshold else 0 }}"
   
@@ -52,17 +55,17 @@ sequence:
   # Move blinds to target position
   - service: cover.set_cover_position
     target:
-      entity_id: !input blinds_entity
+      entity_id: "{{ entity }}"
     data:
-      position: !input target_position
+      position: "{{ target }}"
   
   # Wait specified time
   - delay:
-      minutes: !input wait_time
+      minutes: "{{ wait }}"
   
   # Move blinds back to the saved position
   - service: cover.set_cover_position
     target:
-      entity_id: !input blinds_entity
+      entity_id: "{{ entity }}"
     data:
       position: "{{ saved_position }}"
