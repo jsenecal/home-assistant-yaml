@@ -1,0 +1,66 @@
+blueprint:
+  name: Blinds Temporary Position
+  description: Temporarily move blinds to a specified position if below a threshold, wait, then restore to original position
+  domain: script
+  input:
+    blinds_entity:
+      name: Blinds Entity
+      description: The cover entity to control
+      selector:
+        entity:
+          domain: cover
+    threshold_position:
+      name: Threshold Position
+      description: Only execute if current position is below this value
+      default: 36
+      selector:
+        number:
+          min: 0
+          max: 100
+          unit_of_measurement: "%"
+    target_position:
+      name: Target Position
+      description: Position to temporarily move the blinds to
+      default: 36
+      selector:
+        number:
+          min: 0
+          max: 100
+          unit_of_measurement: "%"
+    wait_time:
+      name: Wait Time
+      description: How long to wait at the target position
+      default: 5
+      selector:
+        number:
+          min: 1
+          max: 60
+          unit_of_measurement: minutes
+
+sequence:
+  # Save current position if below threshold
+  - variables:
+      current_position: "{{ state_attr(blinds_entity, 'current_position') | int }}"
+      saved_position: "{{ current_position if current_position < threshold_position else 0 }}"
+  
+  # Only proceed if current position is below threshold
+  - condition: template
+    value_template: "{{ current_position < threshold_position }}"
+  
+  # Move blinds to target position
+  - service: cover.set_cover_position
+    target:
+      entity_id: !input blinds_entity
+    data:
+      position: !input target_position
+  
+  # Wait specified time
+  - delay:
+      minutes: !input wait_time
+  
+  # Move blinds back to the saved position
+  - service: cover.set_cover_position
+    target:
+      entity_id: !input blinds_entity
+    data:
+      position: "{{ saved_position }}"

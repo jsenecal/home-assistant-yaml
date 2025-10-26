@@ -1,0 +1,29 @@
+office_blinds_temporary_36:
+  alias: "Office Blinds Temporary 36%"
+  sequence:
+    # Save current position if below 36%
+    - variables:
+        current_position: "{{ state_attr('cover.office_blinds', 'current_position') | int }}"
+        saved_position: "{{ current_position if current_position < 36 else 0 }}"
+    
+    # Only proceed if current position is below 36%
+    - condition: template
+      value_template: "{{ current_position < 36 }}"
+    
+    # Move blinds to 36%
+    - service: cover.set_cover_position
+      target:
+        entity_id: cover.office_blinds
+      data:
+        position: 36
+    
+    # Wait 5 minutes
+    - delay:
+        minutes: 5
+    
+    # Move blinds back to the saved position
+    - service: cover.set_cover_position
+      target:
+        entity_id: cover.office_blinds
+      data:
+        position: "{{ saved_position }}"
