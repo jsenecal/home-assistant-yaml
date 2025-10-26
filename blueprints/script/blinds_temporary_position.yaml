@@ -40,12 +40,14 @@ blueprint:
 sequence:
   # Save current position if below threshold
   - variables:
-      current_position: "{{ state_attr(blinds_entity, 'current_position') | int }}"
-      saved_position: "{{ current_position if current_position < threshold_position else 0 }}"
+      entity: !input blinds_entity
+      threshold: !input threshold_position
+      current_position: "{{ state_attr(entity, 'current_position') | int }}"
+      saved_position: "{{ current_position if current_position < threshold else 0 }}"
   
   # Only proceed if current position is below threshold
   - condition: template
-    value_template: "{{ current_position < threshold_position }}"
+    value_template: "{{ current_position < threshold }}"
   
   # Move blinds to target position
   - service: cover.set_cover_position
