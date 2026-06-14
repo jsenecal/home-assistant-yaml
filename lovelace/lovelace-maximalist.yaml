@@ -1,0 +1,118 @@
+# Maximalist Dashboard
+# Template library ported from https://github.com/Madelena/hass-config-public
+# (Madelena Mak, 2022) and adapted for jsenecal/Metrology-for-Hass.
+
+title: Maximalist
+theme: Metro Slate
+
+button_card_templates: !include_dir_merge_named ui/templates/button-card
+decluttering_templates: !include ui/templates/decluttering-card.yaml
+apexcharts_card_templates: !include ui/templates/apexcharts-card.yaml
+
+views:
+  - title: Kitchen
+    path: kitchen
+    icon: mdi:fridge-outline
+    type: 'custom:grid-layout'
+    layout: !include ui/shared/snippets/layout-page-margin.yaml
+    cards:
+      - type: 'custom:layout-card'
+        layout_type: 'custom:grid-layout'
+        layout: !include ui/shared/snippets/layout-page-columns.yaml
+        view_layout:
+          grid-area: cc
+        cards:
+
+          # [Header] Page title
+
+          - type: 'custom:layout-card'
+            layout_type: 'custom:grid-layout'
+            layout: !include ui/shared/snippets/layout-page-title.yaml
+            view_layout:
+              grid-column: 1/-1
+            cards:
+              - type: markdown
+                style: !include ui/shared/snippets/style-markdown-page-title.yaml
+                content: >
+                  # Kitchen
+
+          # [Section] Live tiles (pilot)
+
+          - type: 'custom:layout-card'
+            layout_type: 'custom:grid-layout'
+            layout: !include ui/shared/snippets/layout-live-tile.yaml
+            view_layout:
+              grid-column: 1/-1
+            cards:
+
+              - type: 'custom:button-card'
+                template: header_card_no_link
+                variables:
+                  name: LIGHTS
+                view_layout:
+                  grid-column: 1/-1
+
+              - type: 'custom:button-card'
+                template: light_button_card
+                entity: light.kitchen_dimmer_2
+                name: Dimmer 2
+
+              - type: 'custom:button-card'
+                template: light_button_card
+                entity: light.kitchen_island_dimmer
+                name: Island
+
+              - type: 'custom:button-card'
+                template: light_button_card
+                entity: light.kitchen_countertop_dimmer
+                name: Countertop
+
+              - type: 'custom:button-card'
+                template: light_button_card_group
+                entity: light.kitchen_dimmers_grp
+                name: All Lights
+
+              - type: 'custom:button-card'
+                template: hue_scene_card
+                entity: scene.kitchen_energize
+                variables:
+                  name: Energize
+
+              - type: 'custom:button-card'
+                template: hue_scene_card
+                entity: scene.kitchen_concentrate
+                variables:
+                  name: Concentrate
+
+              - type: 'custom:button-card'
+                template: hue_scene_card
+                entity: scene.kitchen_nightlight
+                variables:
+                  name: Nightlight
+
+              - type: 'custom:button-card'
+                template: header_card_no_link
+                variables:
+                  name: SENSORS
+                view_layout:
+                  grid-column: 1/-1
+
+              - type: 'custom:button-card'
+                template: live_tile
+                entity: binary_sensor.kitchen_dimmer_2_occupancy
+                name: Occupancy
+
+              - type: 'custom:button-card'
+                template: live_tile
+                entity: binary_sensor.refrigerator_running
+                name: Fridge Running
+
+              - type: 'custom:button-card'
+                template: live_tile_with_unit
+                entity: sensor.aude_s_plant_sensor_temperature
+                name: Plant Temp
+
+              - type: 'custom:button-card'
+                template: live_tile_with_unit
+                entity: sensor.aude_s_plant_sensor_moisture
+                name: Plant Moisture
