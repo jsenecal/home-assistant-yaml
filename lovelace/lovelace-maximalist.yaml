@@ -128,3 +128,142 @@ views:
                 template: live_tile
                 entity: binary_sensor.kitchen_sink_water_leak_sensor_water_leak
                 name: Water Leak
+
+  - title: Living Room
+    path: living-room
+    icon: mdi:sofa
+    type: 'custom:grid-layout'
+    layout: !include ui/shared/snippets/layout-page-margin.yaml
+    cards:
+      - type: 'custom:layout-card'
+        layout_type: 'custom:grid-layout'
+        layout: !include ui/shared/snippets/layout-page-columns.yaml
+        view_layout:
+          grid-area: cc
+        cards:
+
+          # [Header] Page title
+
+          - type: 'custom:layout-card'
+            layout_type: 'custom:grid-layout'
+            layout: !include ui/shared/snippets/layout-page-title.yaml
+            view_layout:
+              grid-column: 1/-1
+            cards:
+              - type: markdown
+                style: !include ui/shared/snippets/style-markdown-page-title.yaml
+                content: >
+                  # Living Room
+
+          # [Section] Live tiles
+
+          - type: 'custom:layout-card'
+            layout_type: 'custom:grid-layout'
+            layout: !include ui/shared/snippets/layout-live-tile.yaml
+            view_layout:
+              grid-column: 1/-1
+            cards:
+
+              - type: 'custom:button-card'
+                template: header_card_no_link
+                variables:
+                  name: LIGHTS
+                view_layout:
+                  grid-column: 1/-1
+
+              - type: 'custom:button-card'
+                template: light_button_card
+                entity: light.living_room_1
+                name: Living Room 1
+
+              - type: 'custom:button-card'
+                template: light_button_card
+                entity: light.living_room_2
+                name: Living Room 2
+
+              - type: 'custom:button-card'
+                template: light_button_card_group
+                entity: light.living_room
+                name: Living Room
+
+              - type: 'custom:button-card'
+                template: header_card_no_link
+                variables:
+                  name: SCENES
+                view_layout:
+                  grid-column: 1/-1
+
+              - type: 'custom:button-card'
+                template: hue_scene_card
+                entity: scene.living_room_energize
+                variables:
+                  name: Energize
+
+              - type: 'custom:button-card'
+                template: hue_scene_card
+                entity: scene.living_room_concentrate
+                variables:
+                  name: Concentrate
+
+              - type: 'custom:button-card'
+                template: hue_scene_card
+                entity: scene.living_room_relax
+                variables:
+                  name: Relax
+
+              - type: 'custom:button-card'
+                template: hue_scene_card
+                entity: scene.living_room_read
+                variables:
+                  name: Read
+
+              - type: 'custom:button-card'
+                template: hue_scene_card
+                entity: scene.living_room_nightlight
+                variables:
+                  name: Nightlight
+
+              - type: 'custom:button-card'
+                template: hue_scene_card
+                entity: scene.living_room_rio
+                variables:
+                  name: Rio
+                  color: 'rgb(58, 166, 184)'
+
+              - type: 'custom:button-card'
+                template: hue_scene_card
+                entity: scene.living_room_rest
+                variables:
+                  name: Rest
+                  color: 'rgb(173, 86, 64)'
+
+              - type: 'custom:button-card'
+                template: hue_scene_card
+                entity: scene.living_room_natural_light
+                variables:
+                  name: Natural Light
+                  color: 'rgb(220, 223, 209)'
+
+              - type: 'custom:button-card'
+                template: hue_scene_card
+                entity: scene.living_room_city_of_love
+                variables:
+                  name: City of Love
+                  color: 'rgb(199, 91, 122)'
+
+              - type: 'custom:button-card'
+                template: header_card_no_link
+                variables:
+                  name: MEDIA
+                view_layout:
+                  grid-column: 1/-1
+
+              - type: 'custom:button-card'
+                template: live_tile_media_player
+                entity: media_player.living_room_tv
+                name: TV
+
+              - type: 'custom:button-card'
+                template: live_tile_media_player
+                entity: media_player.kitchen_speaker
+                name: Speaker
