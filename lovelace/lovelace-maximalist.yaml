@@ -271,3 +271,236 @@ views:
                 name: Speaker
                 view_layout:
                   grid-column: span 2
+
+  - title: Great Room
+    path: great-room
+    icon: mdi:sofa-single
+    type: 'custom:grid-layout'
+    layout: !include ui/shared/snippets/layout-page-margin.yaml
+    cards:
+      - type: 'custom:layout-card'
+        layout_type: 'custom:grid-layout'
+        layout: !include ui/shared/snippets/layout-page-columns.yaml
+        view_layout:
+          grid-area: cc
+        cards:
+
+          # [Header] Page title
+
+          - type: 'custom:layout-card'
+            layout_type: 'custom:grid-layout'
+            layout: !include ui/shared/snippets/layout-page-title.yaml
+            view_layout:
+              grid-column: 1/-1
+            cards:
+              - type: markdown
+                style: !include ui/shared/snippets/style-markdown-page-title.yaml
+                content: >
+                  # Great Room
+
+          # [Section] Live tiles
+
+          - type: 'custom:layout-card'
+            layout_type: 'custom:grid-layout'
+            layout: !include ui/shared/snippets/layout-live-tile.yaml
+            view_layout:
+              grid-column: 1/-1
+            cards:
+
+              - type: 'custom:button-card'
+                template: header_card_no_link
+                variables:
+                  name: LIGHTS
+                view_layout:
+                  grid-column: 1/-1
+
+              - type: 'custom:button-card'
+                template: light_button_card_group
+                entity: light.great_room
+                name: Great Room Zone
+
+              - type: 'custom:button-card'
+                template: header_card_no_link
+                variables:
+                  name: SCENES
+                view_layout:
+                  grid-column: 1/-1
+
+              - type: 'custom:button-card'
+                template: hue_scene_card
+                entity: scene.great_room_hal
+                variables:
+                  name: Hal
+                  color: 'rgb(255, 102, 0)'
+
+              - type: 'custom:button-card'
+                template: hue_scene_card
+                entity: scene.great_room_soho
+                variables:
+                  name: Soho
+
+              - type: 'custom:button-card'
+                template: hue_scene_card
+                entity: scene.great_room_memento
+                variables:
+                  name: Memento
+                  color: 'rgb(128, 64, 0)'
+
+              - type: 'custom:button-card'
+                template: hue_scene_card
+                entity: scene.great_room_nightlight
+                variables:
+                  name: Nightlight
+
+              - type: 'custom:button-card'
+                template: hue_scene_card
+                entity: scene.great_room_jolly
+                variables:
+                  name: Jolly
+                  color: 'rgb(255, 0, 127)'
+
+              - type: 'custom:button-card'
+                template: hue_scene_card
+                entity: scene.great_room_cool_bright
+                variables:
+                  name: Cool bright
+                  color: 'rgb(0, 200, 255)'
+
+              - type: 'custom:button-card'
+                template: hue_scene_card
+                entity: scene.great_room_blood_moon
+                variables:
+                  name: Blood moon
+                  color: 'rgb(128, 0, 0)'
+
+              - type: 'custom:button-card'
+                template: hue_scene_card
+                entity: scene.great_room_tokyo
+                variables:
+                  name: Tokyo
+                  color: 'rgb(255, 64, 0)'
+
+              - type: 'custom:button-card'
+                template: hue_scene_card
+                entity: scene.great_room_rest
+                variables:
+                  name: Rest
+                  color: 'rgb(173, 86, 64)'
+
+              - type: 'custom:button-card'
+                template: hue_scene_card
+                entity: scene.great_room_energize
+                variables:
+                  name: Energize
+
+              - type: 'custom:button-card'
+                template: hue_scene_card
+                entity: scene.great_room_osaka
+                variables:
+                  name: Osaka
+                  color: 'rgb(255, 192, 0)'
+
+              - type: 'custom:button-card'
+                template: hue_scene_card
+                entity: scene.great_room_spellbound
+                variables:
+                  name: Spellbound
+                  color: 'rgb(80, 0, 128)'
+
+              - type: 'custom:button-card'
+                template: hue_scene_card
+                entity: scene.great_room_pandemonium
+                variables:
+                  name: Pandemonium
+                  color: 'rgb(255, 0, 64)'
+
+              - type: 'custom:button-card'
+                template: hue_scene_card
+                entity: scene.great_room_natural_light
+                variables:
+                  name: Natural light
+                  color: 'rgb(220, 223, 209)'
+
+              - type: 'custom:button-card'
+                template: hue_scene_card
+                entity: scene.great_room_read
+                variables:
+                  name: Read
+
+              - type: 'custom:button-card'
+                template: hue_scene_card
+                entity: scene.great_room_ibiza
+                variables:
+                  name: Ibiza
+                  color: 'rgb(0, 128, 255)'
+
+              - type: 'custom:button-card'
+                template: hue_scene_card
+                entity: scene.great_room_concentrate
+                variables:
+                  name: Concentrate
+
+              - type: 'custom:button-card'
+                template: hue_scene_card
+                entity: scene.great_room_tyrell
+                variables:
+                  name: Tyrell
+                  color: 'rgb(192, 0, 192)'
+
+              - type: 'custom:button-card'
+                template: header_card_no_link
+                variables:
+                  name: CLIMATE
+                view_layout:
+                  grid-column: 1/-1
+
+              - type: 'custom:button-card'
+                template: live_tile
+                entity: climate.hydronics_great_room_climate_controller
+                name: Climate
+
+              - type: 'custom:button-card'
+                template: header_card_no_link
+                variables:
+                  name: SENSORS
+                view_layout:
+                  grid-column: 1/-1
+
+              - type: 'custom:button-card'
+                template: live_tile
+                entity: binary_sensor.great_room_motion
+                name: Motion
+
+              - type: 'custom:button-card'
+                template: live_tile
+                entity: binary_sensor.great_room_presence_sensor_occupancy
+                name: Occupancy
+
+              - type: 'custom:button-card'
+                template: live_tile
+                entity: binary_sensor.great_room_is_dark
+                name: Is dark
+
+              - type: 'custom:button-card'
+                template: live_tile
+                entity: binary_sensor.patio_door_contact
+                name: Patio Door
+
+              - type: 'custom:button-card'
+                template: live_tile
+                entity: binary_sensor.patio_door_contact_battery_low
+                name: Patio Door Battery
+
+              - type: 'custom:button-card'
+                template: header_card_no_link
+                variables:
+                  name: MEDIA
+                view_layout:
+                  grid-column: 1/-1
+
+              - type: 'custom:button-card'
+                template: live_tile_media_player
+                entity: media_player.great_room_speakers
+                name: Speakers
+                view_layout:
+                  grid-column: span 2
