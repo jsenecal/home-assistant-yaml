@@ -54,23 +54,18 @@ views:
 
               - type: 'custom:button-card'
                 template: light_button_card
-                entity: light.kitchen_dimmer_2
-                name: Dimmer 2
-
-              - type: 'custom:button-card'
-                template: light_button_card
-                entity: light.kitchen_island_dimmer
+                entity: light.kitchen_island
                 name: Island
 
               - type: 'custom:button-card'
                 template: light_button_card
-                entity: light.kitchen_countertop_dimmer
+                entity: light.wled_kitchen_counters
                 name: Countertop
 
               - type: 'custom:button-card'
                 template: light_button_card_group
-                entity: light.kitchen_dimmers_grp
-                name: All Lights
+                entity: light.kitchen
+                name: Kitchen
 
               - type: 'custom:button-card'
                 template: hue_scene_card

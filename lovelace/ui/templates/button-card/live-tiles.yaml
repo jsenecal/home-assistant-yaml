@@ -840,6 +840,13 @@ light_button_card:
       styles:
         card:
           - background: var(--ha-card-background)
+        state:
+          - color: var(--primary-text-color)
+        name:
+          - color: var(--primary-text-color)
+        label:
+          - color: var(--primary-text-color)
+          - opacity: 0.67
 
 
 # Light Group Button Card
@@ -851,7 +858,8 @@ light_button_card_group:
     - value: 'on'
       label: |
         [[[
-          var lightsOn = entity.attributes.entity_id.filter(e => states[e].state == "on").length
+          var members = entity.attributes.entity_id || entity.attributes.group_entities || []
+          var lightsOn = members.filter(e => states[e].state == "on").length
           if (lightsOn > 1) { return lightsOn + " lights are on" } else { return "1 light is on" }
         ]]]
   styles:
@@ -859,7 +867,8 @@ light_button_card_group:
       - background: |
           [[[
             if (entity.state == "on") {
-              var lights = entity.attributes.entity_id.filter(e => states[e].state != "off")
+              var members = entity.attributes.entity_id || entity.attributes.group_entities || []
+              var lights = members.filter(e => states[e].state != "off")
               if (lights.length > 0) {
                 var totalColor = [0,0,0]
                 var totalLights = 0
