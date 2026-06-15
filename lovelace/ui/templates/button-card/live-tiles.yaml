@@ -838,8 +838,6 @@ light_button_card:
   state:
     - value: 'on'
       styles:
-        card:
-          - background: var(--ha-card-background)
         state:
           - color: var(--primary-text-color)
         name:
@@ -847,6 +845,20 @@ light_button_card:
         label:
           - color: var(--primary-text-color)
           - opacity: 0.67
+  styles:
+    card:
+      - background: |
+          [[[
+            if (entity.state == "on" && Array.isArray(entity.attributes.rgb_color)) {
+              var color = entity.attributes.rgb_color.toString()
+              return 'linear-gradient( 0deg, rgb(' + color + ') 4px, rgba(' + color + ', .1) 4px )'
+            } else if (entity.state == "on") {
+              return 'var(--ha-card-background)'
+            } else {
+              return 'var(--slider-thumb-color)'
+            }
+          ]]]
+      - color: var(--primary-text-color)
 
 
 # Light Group Button Card

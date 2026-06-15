@@ -118,3 +118,13 @@ views:
                 template: live_tile_with_unit
                 entity: sensor.aude_s_plant_sensor_moisture
                 name: Plant Moisture
+
+              - type: 'custom:button-card'
+                template: live_tile_with_unit
+                entity: sensor.aude_s_plant_sensor_battery
+                name: Plant Battery
+
+              - type: 'custom:button-card'
+                template: live_tile
+                entity: binary_sensor.kitchen_sink_water_leak_sensor_water_leak
+                name: Water Leak
