@@ -504,3 +504,881 @@ views:
                 name: Speakers
                 view_layout:
                   grid-column: span 2
+
+  - title: Dining Area
+    path: dining-area
+    icon: mdi:silverware-fork-knife
+    type: 'custom:grid-layout'
+    layout: !include ui/shared/snippets/layout-page-margin.yaml
+    cards:
+      - type: 'custom:layout-card'
+        layout_type: 'custom:grid-layout'
+        layout: !include ui/shared/snippets/layout-page-columns.yaml
+        view_layout:
+          grid-area: cc
+        cards:
+
+          # [Header] Page title
+
+          - type: 'custom:layout-card'
+            layout_type: 'custom:grid-layout'
+            layout: !include ui/shared/snippets/layout-page-title.yaml
+            view_layout:
+              grid-column: 1/-1
+            cards:
+              - type: markdown
+                style: !include ui/shared/snippets/style-markdown-page-title.yaml
+                content: >
+                  # Dining Area
+
+          # [Section] Live tiles
+
+          - type: 'custom:layout-card'
+            layout_type: 'custom:grid-layout'
+            layout: !include ui/shared/snippets/layout-live-tile.yaml
+            view_layout:
+              grid-column: 1/-1
+            cards:
+
+              - type: 'custom:button-card'
+                template: header_card_no_link
+                variables:
+                  name: LIGHTS
+                view_layout:
+                  grid-column: 1/-1
+
+              - type: 'custom:button-card'
+                template: light_button_card_group
+                entity: light.dining
+                name: Dining
+
+              - type: 'custom:button-card'
+                template: header_card_no_link
+                variables:
+                  name: SCENES
+                view_layout:
+                  grid-column: 1/-1
+
+              - type: 'custom:button-card'
+                template: hue_scene_card
+                entity: scene.dining_arise
+                variables:
+                  name: Arise
+                  color: 'rgb(255, 128, 0)'
+
+              - type: 'custom:button-card'
+                template: hue_scene_card
+                entity: scene.dining_concentrate
+                variables:
+                  name: Concentrate
+
+              - type: 'custom:button-card'
+                template: hue_scene_card
+                entity: scene.dining_energize
+                variables:
+                  name: Energize
+
+              - type: 'custom:button-card'
+                template: hue_scene_card
+                entity: scene.dining_golden_hours
+                variables:
+                  name: Golden hours
+                  color: 'rgb(255, 160, 0)'
+
+              - type: 'custom:button-card'
+                template: hue_scene_card
+                entity: scene.dining_natural_light
+                variables:
+                  name: Natural light
+                  color: 'rgb(220, 223, 209)'
+
+              - type: 'custom:button-card'
+                template: hue_scene_card
+                entity: scene.dining_nightlight
+                variables:
+                  name: Nightlight
+
+              - type: 'custom:button-card'
+                template: hue_scene_card
+                entity: scene.dining_nighttime
+                variables:
+                  name: Nighttime
+                  color: 'rgb(16, 0, 64)'
+
+              - type: 'custom:button-card'
+                template: hue_scene_card
+                entity: scene.dining_precious
+                variables:
+                  name: Precious
+                  color: 'rgb(192, 64, 128)'
+
+              - type: 'custom:button-card'
+                template: hue_scene_card
+                entity: scene.dining_read
+                variables:
+                  name: Read
+
+              - type: 'custom:button-card'
+                template: hue_scene_card
+                entity: scene.dining_relax
+                variables:
+                  name: Relax
+
+              - type: 'custom:button-card'
+                template: hue_scene_card
+                entity: scene.dining_rest
+                variables:
+                  name: Rest
+                  color: 'rgb(173, 86, 64)'
+
+              - type: 'custom:button-card'
+                template: hue_scene_card
+                entity: scene.dining_shine
+                variables:
+                  name: Shine
+                  color: 'rgb(255, 224, 128)'
+
+              - type: 'custom:button-card'
+                template: hue_scene_card
+                entity: scene.dining_sleepy
+                variables:
+                  name: Sleepy
+                  color: 'rgb(32, 0, 96)'
+
+              - type: 'custom:button-card'
+                template: hue_scene_card
+                entity: scene.dining_storybook
+                variables:
+                  name: Storybook
+                  color: 'rgb(192, 128, 64)'
+
+              - type: 'custom:button-card'
+                template: hue_scene_card
+                entity: scene.dining_unwind
+                variables:
+                  name: Unwind
+                  color: 'rgb(128, 96, 160)'
+
+  - title: Kitchen Island
+    path: kitchen-island
+    icon: mdi:countertop
+    type: 'custom:grid-layout'
+    layout: !include ui/shared/snippets/layout-page-margin.yaml
+    cards:
+      - type: 'custom:layout-card'
+        layout_type: 'custom:grid-layout'
+        layout: !include ui/shared/snippets/layout-page-columns.yaml
+        view_layout:
+          grid-area: cc
+        cards:
+
+          # [Header] Page title
+
+          - type: 'custom:layout-card'
+            layout_type: 'custom:grid-layout'
+            layout: !include ui/shared/snippets/layout-page-title.yaml
+            view_layout:
+              grid-column: 1/-1
+            cards:
+              - type: markdown
+                style: !include ui/shared/snippets/style-markdown-page-title.yaml
+                content: >
+                  # Kitchen Island
+
+          # [Section] Live tiles
+
+          - type: 'custom:layout-card'
+            layout_type: 'custom:grid-layout'
+            layout: !include ui/shared/snippets/layout-live-tile.yaml
+            view_layout:
+              grid-column: 1/-1
+            cards:
+
+              - type: 'custom:button-card'
+                template: header_card_no_link
+                variables:
+                  name: LIGHTS
+                view_layout:
+                  grid-column: 1/-1
+
+              - type: 'custom:button-card'
+                template: light_button_card
+                entity: light.kitchen_island
+                name: Island 1
+
+              - type: 'custom:button-card'
+                template: light_button_card
+                entity: light.kitchen_island_2
+                name: Island 2
+
+              - type: 'custom:button-card'
+                template: header_card_no_link
+                variables:
+                  name: SCENES
+                view_layout:
+                  grid-column: 1/-1
+
+              - type: 'custom:button-card'
+                template: hue_scene_card
+                entity: scene.kitchen_island_concentrate
+                variables:
+                  name: Concentrate
+
+              - type: 'custom:button-card'
+                template: hue_scene_card
+                entity: scene.kitchen_island_energize
+                variables:
+                  name: Energize
+
+              - type: 'custom:button-card'
+                template: hue_scene_card
+                entity: scene.kitchen_island_natural_light_2
+                variables:
+                  name: Natural light
+                  color: 'rgb(220, 223, 209)'
+
+              - type: 'custom:button-card'
+                template: hue_scene_card
+                entity: scene.kitchen_island_nightlight
+                variables:
+                  name: Nightlight
+
+              - type: 'custom:button-card'
+                template: hue_scene_card
+                entity: scene.kitchen_island_pandemonium
+                variables:
+                  name: Pandemonium
+                  color: 'rgb(255, 0, 64)'
+
+              - type: 'custom:button-card'
+                template: hue_scene_card
+                entity: scene.kitchen_island_read
+                variables:
+                  name: Read
+
+              - type: 'custom:button-card'
+                template: hue_scene_card
+                entity: scene.kitchen_island_relax
+                variables:
+                  name: Relax
+
+              - type: 'custom:button-card'
+                template: hue_scene_card
+                entity: scene.kitchen_island_rest
+                variables:
+                  name: Rest
+                  color: 'rgb(173, 86, 64)'
+
+  - title: Office
+    path: office
+    icon: mdi:desk
+    type: 'custom:grid-layout'
+    layout: !include ui/shared/snippets/layout-page-margin.yaml
+    cards:
+      - type: 'custom:layout-card'
+        layout_type: 'custom:grid-layout'
+        layout: !include ui/shared/snippets/layout-page-columns.yaml
+        view_layout:
+          grid-area: cc
+        cards:
+
+          # [Header] Page title
+
+          - type: 'custom:layout-card'
+            layout_type: 'custom:grid-layout'
+            layout: !include ui/shared/snippets/layout-page-title.yaml
+            view_layout:
+              grid-column: 1/-1
+            cards:
+              - type: markdown
+                style: !include ui/shared/snippets/style-markdown-page-title.yaml
+                content: >
+                  # Office
+
+          # [Section] Live tiles
+
+          - type: 'custom:layout-card'
+            layout_type: 'custom:grid-layout'
+            layout: !include ui/shared/snippets/layout-live-tile.yaml
+            view_layout:
+              grid-column: 1/-1
+            cards:
+
+              - type: 'custom:button-card'
+                template: header_card_no_link
+                variables:
+                  name: LIGHTS
+                view_layout:
+                  grid-column: 1/-1
+
+              - type: 'custom:button-card'
+                template: light_button_card_group
+                entity: light.office
+                name: Office
+
+              - type: 'custom:button-card'
+                template: light_button_card
+                entity: light.office_desk_lamp
+                name: Desk Lamp
+
+              - type: 'custom:button-card'
+                template: header_card_no_link
+                variables:
+                  name: SCENES
+                view_layout:
+                  grid-column: 1/-1
+
+              - type: 'custom:button-card'
+                template: hue_scene_card
+                entity: scene.office_concentrate
+                variables:
+                  name: Concentrate
+
+              - type: 'custom:button-card'
+                template: hue_scene_card
+                entity: scene.office_energize
+                variables:
+                  name: Energize
+
+              - type: 'custom:button-card'
+                template: hue_scene_card
+                entity: scene.office_hal
+                variables:
+                  name: Hal
+                  color: 'rgb(255, 102, 0)'
+
+              - type: 'custom:button-card'
+                template: hue_scene_card
+                entity: scene.office_magneto
+                variables:
+                  name: Magneto
+                  color: 'rgb(128, 0, 128)'
+
+              - type: 'custom:button-card'
+                template: hue_scene_card
+                entity: scene.office_natural_light
+                variables:
+                  name: Natural light
+                  color: 'rgb(220, 223, 209)'
+
+              - type: 'custom:button-card'
+                template: hue_scene_card
+                entity: scene.office_nightlight
+                variables:
+                  name: Nightlight
+
+              - type: 'custom:button-card'
+                template: hue_scene_card
+                entity: scene.office_read
+                variables:
+                  name: Read
+
+              - type: 'custom:button-card'
+                template: hue_scene_card
+                entity: scene.office_relax
+                variables:
+                  name: Relax
+
+              - type: 'custom:button-card'
+                template: hue_scene_card
+                entity: scene.office_rest
+                variables:
+                  name: Rest
+                  color: 'rgb(173, 86, 64)'
+
+              - type: 'custom:button-card'
+                template: hue_scene_card
+                entity: scene.office_soho
+                variables:
+                  name: Soho
+
+              - type: 'custom:button-card'
+                template: hue_scene_card
+                entity: scene.office_tokyo
+                variables:
+                  name: Tokyo
+                  color: 'rgb(255, 64, 0)'
+
+  - title: Main Bathroom
+    path: main-bathroom
+    icon: mdi:bathroom
+    type: 'custom:grid-layout'
+    layout: !include ui/shared/snippets/layout-page-margin.yaml
+    cards:
+      - type: 'custom:layout-card'
+        layout_type: 'custom:grid-layout'
+        layout: !include ui/shared/snippets/layout-page-columns.yaml
+        view_layout:
+          grid-area: cc
+        cards:
+
+          # [Header] Page title
+
+          - type: 'custom:layout-card'
+            layout_type: 'custom:grid-layout'
+            layout: !include ui/shared/snippets/layout-page-title.yaml
+            view_layout:
+              grid-column: 1/-1
+            cards:
+              - type: markdown
+                style: !include ui/shared/snippets/style-markdown-page-title.yaml
+                content: >
+                  # Main Bathroom
+
+          # [Section] Live tiles
+
+          - type: 'custom:layout-card'
+            layout_type: 'custom:grid-layout'
+            layout: !include ui/shared/snippets/layout-live-tile.yaml
+            view_layout:
+              grid-column: 1/-1
+            cards:
+
+              - type: 'custom:button-card'
+                template: header_card_no_link
+                variables:
+                  name: LIGHTS
+                view_layout:
+                  grid-column: 1/-1
+
+              - type: 'custom:button-card'
+                template: light_button_card_group
+                entity: light.bathroom_dl_grp
+                name: Downlights
+
+              - type: 'custom:button-card'
+                template: light_button_card
+                entity: light.bathroom_night_light
+                name: Night Light
+
+  - title: Lobby
+    path: lobby
+    icon: mdi:door
+    type: 'custom:grid-layout'
+    layout: !include ui/shared/snippets/layout-page-margin.yaml
+    cards:
+      - type: 'custom:layout-card'
+        layout_type: 'custom:grid-layout'
+        layout: !include ui/shared/snippets/layout-page-columns.yaml
+        view_layout:
+          grid-area: cc
+        cards:
+
+          # [Header] Page title
+
+          - type: 'custom:layout-card'
+            layout_type: 'custom:grid-layout'
+            layout: !include ui/shared/snippets/layout-page-title.yaml
+            view_layout:
+              grid-column: 1/-1
+            cards:
+              - type: markdown
+                style: !include ui/shared/snippets/style-markdown-page-title.yaml
+                content: >
+                  # Lobby
+
+          # [Section] Live tiles
+
+          - type: 'custom:layout-card'
+            layout_type: 'custom:grid-layout'
+            layout: !include ui/shared/snippets/layout-live-tile.yaml
+            view_layout:
+              grid-column: 1/-1
+            cards:
+
+              - type: 'custom:button-card'
+                template: header_card_no_link
+                variables:
+                  name: LIGHTS
+                view_layout:
+                  grid-column: 1/-1
+
+              - type: 'custom:button-card'
+                template: light_button_card
+                entity: light.lobby_door_dl
+                name: Door Downlight
+
+              - type: 'custom:button-card'
+                template: light_button_card
+                entity: light.front_door_sconce_dimmer
+                name: Front Sconce
+
+  - title: Stairs
+    path: stairs
+    icon: mdi:stairs
+    type: 'custom:grid-layout'
+    layout: !include ui/shared/snippets/layout-page-margin.yaml
+    cards:
+      - type: 'custom:layout-card'
+        layout_type: 'custom:grid-layout'
+        layout: !include ui/shared/snippets/layout-page-columns.yaml
+        view_layout:
+          grid-area: cc
+        cards:
+
+          # [Header] Page title
+
+          - type: 'custom:layout-card'
+            layout_type: 'custom:grid-layout'
+            layout: !include ui/shared/snippets/layout-page-title.yaml
+            view_layout:
+              grid-column: 1/-1
+            cards:
+              - type: markdown
+                style: !include ui/shared/snippets/style-markdown-page-title.yaml
+                content: >
+                  # Stairs
+
+          # [Section] Live tiles
+
+          - type: 'custom:layout-card'
+            layout_type: 'custom:grid-layout'
+            layout: !include ui/shared/snippets/layout-live-tile.yaml
+            view_layout:
+              grid-column: 1/-1
+            cards:
+
+              - type: 'custom:button-card'
+                template: header_card_no_link
+                variables:
+                  name: LIGHTS
+                view_layout:
+                  grid-column: 1/-1
+
+              - type: 'custom:button-card'
+                template: light_button_card_group
+                entity: light.staircase
+                name: Staircase
+
+              - type: 'custom:button-card'
+                template: light_button_card
+                entity: light.hue_color_lamp_1
+                name: Stairs Orb
+
+              - type: 'custom:button-card'
+                template: light_button_card_group
+                entity: light.corridor_dl_grp
+                name: Corridor
+
+  - title: Basement Bedroom 1
+    path: basement-bedroom-1
+    icon: mdi:bed
+    type: 'custom:grid-layout'
+    layout: !include ui/shared/snippets/layout-page-margin.yaml
+    cards:
+      - type: 'custom:layout-card'
+        layout_type: 'custom:grid-layout'
+        layout: !include ui/shared/snippets/layout-page-columns.yaml
+        view_layout:
+          grid-area: cc
+        cards:
+
+          # [Header] Page title
+
+          - type: 'custom:layout-card'
+            layout_type: 'custom:grid-layout'
+            layout: !include ui/shared/snippets/layout-page-title.yaml
+            view_layout:
+              grid-column: 1/-1
+            cards:
+              - type: markdown
+                style: !include ui/shared/snippets/style-markdown-page-title.yaml
+                content: >
+                  # Albert's Bedroom
+
+          # [Section] Live tiles
+
+          - type: 'custom:layout-card'
+            layout_type: 'custom:grid-layout'
+            layout: !include ui/shared/snippets/layout-live-tile.yaml
+            view_layout:
+              grid-column: 1/-1
+            cards:
+
+              - type: 'custom:button-card'
+                template: header_card_no_link
+                variables:
+                  name: LIGHTS
+                view_layout:
+                  grid-column: 1/-1
+
+              - type: 'custom:button-card'
+                template: light_button_card_group
+                entity: light.3
+                name: Downlights
+
+              - type: 'custom:button-card'
+                template: light_button_card
+                entity: light.albert_s_bedroom_door_dl
+                name: Door Downlight
+
+  - title: Basement Bedroom 2
+    path: basement-bedroom-2
+    icon: mdi:bed
+    type: 'custom:grid-layout'
+    layout: !include ui/shared/snippets/layout-page-margin.yaml
+    cards:
+      - type: 'custom:layout-card'
+        layout_type: 'custom:grid-layout'
+        layout: !include ui/shared/snippets/layout-page-columns.yaml
+        view_layout:
+          grid-area: cc
+        cards:
+
+          # [Header] Page title
+
+          - type: 'custom:layout-card'
+            layout_type: 'custom:grid-layout'
+            layout: !include ui/shared/snippets/layout-page-title.yaml
+            view_layout:
+              grid-column: 1/-1
+            cards:
+              - type: markdown
+                style: !include ui/shared/snippets/style-markdown-page-title.yaml
+                content: >
+                  # Aude's Bedroom
+
+          # [Section] Live tiles
+
+          - type: 'custom:layout-card'
+            layout_type: 'custom:grid-layout'
+            layout: !include ui/shared/snippets/layout-live-tile.yaml
+            view_layout:
+              grid-column: 1/-1
+            cards:
+
+              - type: 'custom:button-card'
+                template: header_card_no_link
+                variables:
+                  name: LIGHTS
+                view_layout:
+                  grid-column: 1/-1
+
+              - type: 'custom:button-card'
+                template: light_button_card_group
+                entity: light.2
+                name: Downlights
+
+              - type: 'custom:button-card'
+                template: light_button_card
+                entity: light.aude_s_bedroom_door_dl
+                name: Door Downlight
+
+  - title: Family Room
+    path: family-room
+    icon: mdi:sofa
+    type: 'custom:grid-layout'
+    layout: !include ui/shared/snippets/layout-page-margin.yaml
+    cards:
+      - type: 'custom:layout-card'
+        layout_type: 'custom:grid-layout'
+        layout: !include ui/shared/snippets/layout-page-columns.yaml
+        view_layout:
+          grid-area: cc
+        cards:
+
+          # [Header] Page title
+
+          - type: 'custom:layout-card'
+            layout_type: 'custom:grid-layout'
+            layout: !include ui/shared/snippets/layout-page-title.yaml
+            view_layout:
+              grid-column: 1/-1
+            cards:
+              - type: markdown
+                style: !include ui/shared/snippets/style-markdown-page-title.yaml
+                content: >
+                  # Family Room
+
+          # [Section] Live tiles
+
+          - type: 'custom:layout-card'
+            layout_type: 'custom:grid-layout'
+            layout: !include ui/shared/snippets/layout-live-tile.yaml
+            view_layout:
+              grid-column: 1/-1
+            cards:
+
+              - type: 'custom:button-card'
+                template: header_card_no_link
+                variables:
+                  name: LIGHTS
+                view_layout:
+                  grid-column: 1/-1
+
+              - type: 'custom:button-card'
+                template: light_button_card_group
+                entity: light.4
+                name: Family Room DL
+
+              - type: 'custom:button-card'
+                template: light_button_card_group
+                entity: light.5
+                name: Basement Corridor DL
+
+  - title: Laundry Room
+    path: laundry-room
+    icon: mdi:washing-machine
+    type: 'custom:grid-layout'
+    layout: !include ui/shared/snippets/layout-page-margin.yaml
+    cards:
+      - type: 'custom:layout-card'
+        layout_type: 'custom:grid-layout'
+        layout: !include ui/shared/snippets/layout-page-columns.yaml
+        view_layout:
+          grid-area: cc
+        cards:
+
+          # [Header] Page title
+
+          - type: 'custom:layout-card'
+            layout_type: 'custom:grid-layout'
+            layout: !include ui/shared/snippets/layout-page-title.yaml
+            view_layout:
+              grid-column: 1/-1
+            cards:
+              - type: markdown
+                style: !include ui/shared/snippets/style-markdown-page-title.yaml
+                content: >
+                  # Laundry Room
+
+          # [Section] Live tiles
+
+          - type: 'custom:layout-card'
+            layout_type: 'custom:grid-layout'
+            layout: !include ui/shared/snippets/layout-live-tile.yaml
+            view_layout:
+              grid-column: 1/-1
+            cards:
+
+              - type: 'custom:button-card'
+                template: header_card_no_link
+                variables:
+                  name: LIGHTS
+                view_layout:
+                  grid-column: 1/-1
+
+              - type: 'custom:button-card'
+                template: light_button_card_group
+                entity: light.1
+                name: Downlights
+
+  - title: Server Room
+    path: server-room
+    icon: mdi:server
+    type: 'custom:grid-layout'
+    layout: !include ui/shared/snippets/layout-page-margin.yaml
+    cards:
+      - type: 'custom:layout-card'
+        layout_type: 'custom:grid-layout'
+        layout: !include ui/shared/snippets/layout-page-columns.yaml
+        view_layout:
+          grid-area: cc
+        cards:
+
+          # [Header] Page title
+
+          - type: 'custom:layout-card'
+            layout_type: 'custom:grid-layout'
+            layout: !include ui/shared/snippets/layout-page-title.yaml
+            view_layout:
+              grid-column: 1/-1
+            cards:
+              - type: markdown
+                style: !include ui/shared/snippets/style-markdown-page-title.yaml
+                content: >
+                  # Server Room
+
+          # [Section] Live tiles
+
+          - type: 'custom:layout-card'
+            layout_type: 'custom:grid-layout'
+            layout: !include ui/shared/snippets/layout-live-tile.yaml
+            view_layout:
+              grid-column: 1/-1
+            cards:
+
+              - type: 'custom:button-card'
+                template: header_card_no_link
+                variables:
+                  name: LIGHTS
+                view_layout:
+                  grid-column: 1/-1
+
+              - type: 'custom:button-card'
+                template: light_button_card
+                entity: light.0xa4c138d17963fec8
+                name: Rack LEDs
+
+              - type: 'custom:button-card'
+                template: light_button_card
+                entity: light.top_of_rack_switch_led
+                name: Top of Rack LED
+
+  - title: Basement Bathroom
+    path: basement-bathroom
+    icon: mdi:bathroom
+    type: 'custom:grid-layout'
+    layout: !include ui/shared/snippets/layout-page-margin.yaml
+    cards:
+      - type: 'custom:layout-card'
+        layout_type: 'custom:grid-layout'
+        layout: !include ui/shared/snippets/layout-page-columns.yaml
+        view_layout:
+          grid-area: cc
+        cards:
+
+          # [Header] Page title
+
+          - type: 'custom:layout-card'
+            layout_type: 'custom:grid-layout'
+            layout: !include ui/shared/snippets/layout-page-title.yaml
+            view_layout:
+              grid-column: 1/-1
+            cards:
+              - type: markdown
+                style: !include ui/shared/snippets/style-markdown-page-title.yaml
+                content: >
+                  # Basement Bathroom
+
+          # [Section] Live tiles
+
+          - type: 'custom:layout-card'
+            layout_type: 'custom:grid-layout'
+            layout: !include ui/shared/snippets/layout-live-tile.yaml
+            view_layout:
+              grid-column: 1/-1
+            cards:
+
+              - type: 'custom:button-card'
+                template: header_card_no_link
+                variables:
+                  name: LIGHTS
+                view_layout:
+                  grid-column: 1/-1
+
+              - type: 'custom:button-card'
+                template: light_button_card_group
+                entity: light.basement_bathroom_downlights
+                name: Downlights
+
+              - type: 'custom:button-card'
+                template: header_card_no_link
+                variables:
+                  name: SCENES
+                view_layout:
+                  grid-column: 1/-1
+
+              - type: 'custom:button-card'
+                template: hue_scene_card
+                entity: scene.basement_bathroom_downlights_0_cold_white
+                variables:
+                  name: Cold white
+                  color: 'rgb(200, 220, 255)'
+
+              - type: 'custom:button-card'
+                template: hue_scene_card
+                entity: scene.basement_bathroom_downlights_1_off
+                variables:
+                  name: Off
+                  color: 'rgb(64, 64, 64)'
