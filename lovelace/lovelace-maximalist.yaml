@@ -12,7 +12,6 @@ apexcharts_card_templates: !include ui/templates/apexcharts-card.yaml
 views:
   - title: Kitchen
     path: kitchen
-    icon: mdi:fridge-outline
     type: 'custom:grid-layout'
     layout: !include ui/shared/snippets/layout-page-margin.yaml
     cards:
@@ -131,7 +130,6 @@ views:
 
   - title: Living Room
     path: living-room
-    icon: mdi:sofa
     type: 'custom:grid-layout'
     layout: !include ui/shared/snippets/layout-page-margin.yaml
     cards:
@@ -274,7 +272,6 @@ views:
 
   - title: Great Room
     path: great-room
-    icon: mdi:sofa-single
     type: 'custom:grid-layout'
     layout: !include ui/shared/snippets/layout-page-margin.yaml
     cards:
@@ -508,7 +505,6 @@ views:
 
   - title: Dining Area
     path: dining-area
-    icon: mdi:silverware-fork-knife
     type: 'custom:grid-layout'
     layout: !include ui/shared/snippets/layout-page-margin.yaml
     cards:
@@ -662,7 +658,6 @@ views:
 
   - title: Kitchen Island
     path: kitchen-island
-    icon: mdi:countertop
     type: 'custom:grid-layout'
     layout: !include ui/shared/snippets/layout-page-margin.yaml
     cards:
@@ -789,7 +784,6 @@ views:
 
   - title: Office
     path: office
-    icon: mdi:desk
     type: 'custom:grid-layout'
     layout: !include ui/shared/snippets/layout-page-margin.yaml
     cards:
@@ -953,7 +947,6 @@ views:
 
   - title: Main Bathroom
     path: main-bathroom
-    icon: mdi:bathroom
     type: 'custom:grid-layout'
     layout: !include ui/shared/snippets/layout-page-margin.yaml
     cards:
@@ -1029,7 +1022,6 @@ views:
 
   - title: Lobby
     path: lobby
-    icon: mdi:door
     type: 'custom:grid-layout'
     layout: !include ui/shared/snippets/layout-page-margin.yaml
     cards:
@@ -1105,7 +1097,6 @@ views:
 
   - title: Stairs
     path: stairs
-    icon: mdi:stairs
     type: 'custom:grid-layout'
     layout: !include ui/shared/snippets/layout-page-margin.yaml
     cards:
@@ -1174,7 +1165,6 @@ views:
 
   - title: Basement Bedroom 1
     path: basement-bedroom-1
-    icon: mdi:bed
     type: 'custom:grid-layout'
     layout: !include ui/shared/snippets/layout-page-margin.yaml
     cards:
@@ -1255,7 +1245,6 @@ views:
 
   - title: Basement Bedroom 2
     path: basement-bedroom-2
-    icon: mdi:bed
     type: 'custom:grid-layout'
     layout: !include ui/shared/snippets/layout-page-margin.yaml
     cards:
@@ -1336,7 +1325,6 @@ views:
 
   - title: Family Room
     path: family-room
-    icon: mdi:sofa
     type: 'custom:grid-layout'
     layout: !include ui/shared/snippets/layout-page-margin.yaml
     cards:
@@ -1417,7 +1405,6 @@ views:
 
   - title: Laundry Room
     path: laundry-room
-    icon: mdi:washing-machine
     type: 'custom:grid-layout'
     layout: !include ui/shared/snippets/layout-page-margin.yaml
     cards:
@@ -1498,7 +1485,6 @@ views:
 
   - title: Server Room
     path: server-room
-    icon: mdi:server
     type: 'custom:grid-layout'
     layout: !include ui/shared/snippets/layout-page-margin.yaml
     cards:
@@ -1577,7 +1563,6 @@ views:
 
   - title: Basement Bathroom
     path: basement-bathroom
-    icon: mdi:bathroom
     type: 'custom:grid-layout'
     layout: !include ui/shared/snippets/layout-page-margin.yaml
     cards:
