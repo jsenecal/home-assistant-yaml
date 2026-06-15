@@ -262,8 +262,12 @@ views:
                 template: live_tile_media_player
                 entity: media_player.living_room_tv
                 name: TV
+                view_layout:
+                  grid-column: span 2
 
               - type: 'custom:button-card'
                 template: live_tile_media_player
                 entity: media_player.kitchen_speaker
                 name: Speaker
+                view_layout:
+                  grid-column: span 2
