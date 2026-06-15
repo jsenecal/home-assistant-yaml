@@ -519,15 +519,18 @@ views:
           grid-area: cc
         cards:
 
-          # [Header] Icon + Title
+          # [Header] Page title
 
-          - type: 'custom:button-card'
-            template: header_card_no_link
-            variables:
-              name: DINING AREA
+          - type: 'custom:layout-card'
+            layout_type: 'custom:grid-layout'
+            layout: !include ui/shared/snippets/layout-page-title.yaml
             view_layout:
               grid-column: 1/-1
-            icon: mdi:silverware-fork-knife
+            cards:
+              - type: markdown
+                style: !include ui/shared/snippets/style-markdown-page-title.yaml
+                content: >
+                  # Dining Area
 
           # [Section] Live tiles
 
@@ -670,15 +673,18 @@ views:
           grid-area: cc
         cards:
 
-          # [Header] Icon + Title
+          # [Header] Page title
 
-          - type: 'custom:button-card'
-            template: header_card_no_link
-            variables:
-              name: KITCHEN ISLAND
+          - type: 'custom:layout-card'
+            layout_type: 'custom:grid-layout'
+            layout: !include ui/shared/snippets/layout-page-title.yaml
             view_layout:
               grid-column: 1/-1
-            icon: mdi:countertop
+            cards:
+              - type: markdown
+                style: !include ui/shared/snippets/style-markdown-page-title.yaml
+                content: >
+                  # Kitchen Island
 
           # [Section] Live tiles
 
@@ -794,15 +800,18 @@ views:
           grid-area: cc
         cards:
 
-          # [Header] Icon + Title
+          # [Header] Page title
 
-          - type: 'custom:button-card'
-            template: header_card_no_link
-            variables:
-              name: OFFICE
+          - type: 'custom:layout-card'
+            layout_type: 'custom:grid-layout'
+            layout: !include ui/shared/snippets/layout-page-title.yaml
             view_layout:
               grid-column: 1/-1
-            icon: mdi:desk
+            cards:
+              - type: markdown
+                style: !include ui/shared/snippets/style-markdown-page-title.yaml
+                content: >
+                  # Office
 
           # [Section] Live tiles
 
@@ -955,15 +964,18 @@ views:
           grid-area: cc
         cards:
 
-          # [Header] Icon + Title
+          # [Header] Page title
 
-          - type: 'custom:button-card'
-            template: header_card_no_link
-            variables:
-              name: MAIN BATHROOM
+          - type: 'custom:layout-card'
+            layout_type: 'custom:grid-layout'
+            layout: !include ui/shared/snippets/layout-page-title.yaml
             view_layout:
               grid-column: 1/-1
-            icon: mdi:bathroom
+            cards:
+              - type: markdown
+                style: !include ui/shared/snippets/style-markdown-page-title.yaml
+                content: >
+                  # Main Bathroom
 
           # [Section] Live tiles
 
@@ -1028,15 +1040,18 @@ views:
           grid-area: cc
         cards:
 
-          # [Header] Icon + Title
+          # [Header] Page title
 
-          - type: 'custom:button-card'
-            template: header_card_no_link
-            variables:
-              name: LOBBY
+          - type: 'custom:layout-card'
+            layout_type: 'custom:grid-layout'
+            layout: !include ui/shared/snippets/layout-page-title.yaml
             view_layout:
               grid-column: 1/-1
-            icon: mdi:door
+            cards:
+              - type: markdown
+                style: !include ui/shared/snippets/style-markdown-page-title.yaml
+                content: >
+                  # Lobby
 
           # [Section] Live tiles
 
@@ -1101,15 +1116,18 @@ views:
           grid-area: cc
         cards:
 
-          # [Header] Icon + Title
+          # [Header] Page title
 
-          - type: 'custom:button-card'
-            template: header_card_no_link
-            variables:
-              name: STAIRS
+          - type: 'custom:layout-card'
+            layout_type: 'custom:grid-layout'
+            layout: !include ui/shared/snippets/layout-page-title.yaml
             view_layout:
               grid-column: 1/-1
-            icon: mdi:stairs
+            cards:
+              - type: markdown
+                style: !include ui/shared/snippets/style-markdown-page-title.yaml
+                content: >
+                  # Stairs
 
           # [Section] Live tiles
 
@@ -1167,15 +1185,18 @@ views:
           grid-area: cc
         cards:
 
-          # [Header] Icon + Title
+          # [Header] Page title
 
-          - type: 'custom:button-card'
-            template: header_card_no_link
-            variables:
-              name: ALBERT'S BEDROOM
+          - type: 'custom:layout-card'
+            layout_type: 'custom:grid-layout'
+            layout: !include ui/shared/snippets/layout-page-title.yaml
             view_layout:
               grid-column: 1/-1
-            icon: mdi:bed
+            cards:
+              - type: markdown
+                style: !include ui/shared/snippets/style-markdown-page-title.yaml
+                content: >
+                  # Albert's Bedroom
 
           # [Section] Live tiles
 
@@ -1245,15 +1266,18 @@ views:
           grid-area: cc
         cards:
 
-          # [Header] Icon + Title
+          # [Header] Page title
 
-          - type: 'custom:button-card'
-            template: header_card_no_link
-            variables:
-              name: AUDE'S BEDROOM
+          - type: 'custom:layout-card'
+            layout_type: 'custom:grid-layout'
+            layout: !include ui/shared/snippets/layout-page-title.yaml
             view_layout:
               grid-column: 1/-1
-            icon: mdi:bed
+            cards:
+              - type: markdown
+                style: !include ui/shared/snippets/style-markdown-page-title.yaml
+                content: >
+                  # Aude's Bedroom
 
           # [Section] Live tiles
 
@@ -1323,15 +1347,18 @@ views:
           grid-area: cc
         cards:
 
-          # [Header] Icon + Title
+          # [Header] Page title
 
-          - type: 'custom:button-card'
-            template: header_card_no_link
-            variables:
-              name: FAMILY ROOM
+          - type: 'custom:layout-card'
+            layout_type: 'custom:grid-layout'
+            layout: !include ui/shared/snippets/layout-page-title.yaml
             view_layout:
               grid-column: 1/-1
-            icon: mdi:sofa
+            cards:
+              - type: markdown
+                style: !include ui/shared/snippets/style-markdown-page-title.yaml
+                content: >
+                  # Family Room
 
           # [Section] Live tiles
 
@@ -1401,15 +1428,18 @@ views:
           grid-area: cc
         cards:
 
-          # [Header] Icon + Title
+          # [Header] Page title
 
-          - type: 'custom:button-card'
-            template: header_card_no_link
-            variables:
-              name: LAUNDRY ROOM
+          - type: 'custom:layout-card'
+            layout_type: 'custom:grid-layout'
+            layout: !include ui/shared/snippets/layout-page-title.yaml
             view_layout:
               grid-column: 1/-1
-            icon: mdi:washing-machine
+            cards:
+              - type: markdown
+                style: !include ui/shared/snippets/style-markdown-page-title.yaml
+                content: >
+                  # Laundry Room
 
           # [Section] Live tiles
 
@@ -1479,15 +1509,18 @@ views:
           grid-area: cc
         cards:
 
-          # [Header] Icon + Title
+          # [Header] Page title
 
-          - type: 'custom:button-card'
-            template: header_card_no_link
-            variables:
-              name: SERVER ROOM
+          - type: 'custom:layout-card'
+            layout_type: 'custom:grid-layout'
+            layout: !include ui/shared/snippets/layout-page-title.yaml
             view_layout:
               grid-column: 1/-1
-            icon: mdi:server
+            cards:
+              - type: markdown
+                style: !include ui/shared/snippets/style-markdown-page-title.yaml
+                content: >
+                  # Server Room
 
           # [Section] Live tiles
 
@@ -1555,15 +1588,18 @@ views:
           grid-area: cc
         cards:
 
-          # [Header] Icon + Title
+          # [Header] Page title
 
-          - type: 'custom:button-card'
-            template: header_card_no_link
-            variables:
-              name: BASEMENT BATHROOM
+          - type: 'custom:layout-card'
+            layout_type: 'custom:grid-layout'
+            layout: !include ui/shared/snippets/layout-page-title.yaml
             view_layout:
               grid-column: 1/-1
-            icon: mdi:bathroom
+            cards:
+              - type: markdown
+                style: !include ui/shared/snippets/style-markdown-page-title.yaml
+                content: >
+                  # Basement Bathroom
 
           # [Section] Live tiles
 
