@@ -20,3 +20,78 @@ cards:
             style: !include ui/shared/snippets/style-markdown-page-title.yaml
             content: >
               # Environment
+
+      # [Section] Psychrometry chart
+
+      - type: 'custom:floorplan-card'
+        view_layout:
+          grid-column: 1/-1
+        config:
+          image:
+            location: /local/psychrometry-chart.svg
+            cache: false
+          stylesheet: /local/psychrometry-chart.css
+          defaults:
+            hover_action: hover-info
+            tap_action: more-info
+          rules:
+            - entity: sensor.outdoor_temperature
+              state_action:
+                action: call-service
+                service: floorplan.style_set
+                service_data:
+                  element: indicator-outdoor
+                  style: |
+                    >
+                    var x = (parseFloat(entity.state) + 20) / 65 * 1007 - 229;
+                    var y = 665 - (parseFloat(states['sensor.thermal_comfort_outdoor_absolute_humidity'].state) / 35 * 665) - 155;
+                    return `transform: translate(${x}px, ${y}px);`;
+
+            - entity: sensor.office_ths_temperature
+              state_action:
+                action: call-service
+                service: floorplan.style_set
+                service_data:
+                  element: indicator-workspace
+                  style: |
+                    >
+                    var x = (parseFloat(entity.state) + 20) / 65 * 1007 - 256;
+                    var y = 665 - (parseFloat(states['sensor.thermal_comfort_office_absolute_humidity'].state) / 35 * 665) - 10;
+                    return `transform: translate(${x}px, ${y}px);`;
+
+            - entity: sensor.living_room_ths_temperature
+              state_action:
+                action: call-service
+                service: floorplan.style_set
+                service_data:
+                  element: indicator-livingroom
+                  style: |
+                    >
+                    var x = (parseFloat(entity.state) + 20) / 65 * 1007 - 11;
+                    var y = 665 - (parseFloat(states['sensor.thermal_comfort_living_room_absolute_humidity'].state) / 35 * 665) - 10;
+                    return `transform: translate(${x}px, ${y}px);`;
+
+            - entity: sensor.aude_s_bedroom_ths_temperature
+              state_action:
+                action: call-service
+                service: floorplan.style_set
+                service_data:
+                  element: indicator-bedroom
+                  style: |
+                    >
+                    var x = (parseFloat(entity.state) + 20) / 65 * 1007 - 237;
+                    var y = 665 - (parseFloat(states['sensor.thermal_comfort_bedroom_absolute_humidity'].state) / 35 * 665) - 155;
+                    return `transform: translate(${x}px, ${y}px);`;
+
+      # [Section] Zone perception summary
+
+      - type: markdown
+        view_layout:
+          grid-column: 1/-1
+        content: |
+          | Zone | Comfort |
+          |---|---|
+          | Outdoor | {{ states('sensor.thermal_comfort_outdoor_humidex_perception') | regex_replace(find='_', replace=' ') | title }} |
+          | Office | {{ states('sensor.thermal_comfort_office_humidex_perception') | regex_replace(find='_', replace=' ') | title }} |
+          | Living Room | {{ states('sensor.thermal_comfort_living_room_humidex_perception') | regex_replace(find='_', replace=' ') | title }} |
+          | Bedroom | {{ states('sensor.thermal_comfort_bedroom_humidex_perception') | regex_replace(find='_', replace=' ') | title }} |
