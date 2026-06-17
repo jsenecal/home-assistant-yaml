@@ -250,6 +250,12 @@ cards:
 
           - type: 'custom:button-card'
             template: live_tile
+            entity: switch.main_valve_shutoff_valve
+            name: Shutoff Valve
+            icon: mdi:valve
+
+          - type: 'custom:button-card'
+            template: live_tile
             entity: binary_sensor.main_valve_pending_system_alerts
             name: Main Valve
             icon: mdi:pipe-valve

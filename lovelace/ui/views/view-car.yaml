@@ -58,6 +58,12 @@ cards:
 
           - type: 'custom:button-card'
             template: live_tile
+            entity: switch.ioniq_5_ev_charging
+            name: EV Charging
+            icon: mdi:ev-plug-type2
+
+          - type: 'custom:button-card'
+            template: live_tile
             entity: binary_sensor.ioniq_5_ev_battery_plug
             name: Plugged In
             icon: mdi:power-plug
@@ -88,6 +94,12 @@ cards:
             entity: binary_sensor.ioniq_5_engine
             name: Engine
             icon: mdi:engine
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: switch.ioniq_5_climate
+            name: Climate
+            icon: mdi:air-conditioner
 
           - type: 'custom:button-card'
             template: live_tile_with_unit
@@ -178,3 +190,28 @@ cards:
             entity: sensor.ioniq_5_dtc_count
             name: DTC Count
             icon: mdi:engine-off
+
+          # [Maintenance]
+
+          - type: 'custom:button-card'
+            template: header_card_no_link
+            variables:
+              name: MAINTENANCE
+            view_layout:
+              grid-column: 1/-1
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: sensor.ioniq_5_last_service
+            name: Last Service
+            icon: mdi:tools
+            view_layout:
+              grid-column: span 2
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: sensor.ioniq_5_next_service
+            name: Next Service
+            icon: mdi:calendar-clock
+            view_layout:
+              grid-column: span 2
