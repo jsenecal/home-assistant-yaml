@@ -254,6 +254,12 @@ cards:
             icon: mdi:radiator
 
           - type: 'custom:button-card'
+            template: live_tile_with_unit
+            entity: sensor.hydronics_controller_outdoor_load_factor
+            name: Outdoor Load
+            icon: mdi:thermometer-lines
+
+          - type: 'custom:button-card'
             template:
               - live_tile_with_graph
               - live_tile_with_state_unit
