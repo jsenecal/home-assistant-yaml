@@ -311,3 +311,19 @@ cards:
         config_templates: sun_elevation
         view_layout:
           grid-column: 1/-1
+
+      # [Section] Air Quality
+
+      - type: markdown
+        content: |
+          ## Air Quality
+
+          **AQI** {{ states('sensor.montreal_air_quality_air_quality_index') }} — {{ states('sensor.montreal_air_quality_dominant_pollutant') | upper }}
+
+          | Pollutant | Value |
+          |---|---|
+          | PM2.5 | {{ states('sensor.montreal_air_quality_pm2_5') }} µg/m³ |
+          | Ozone | {{ states('sensor.montreal_air_quality_ozone') }} µg/m³ |
+          | NO₂ | {{ states('sensor.montreal_air_quality_nitrogen_dioxide') }} µg/m³ |
+          | CO | {{ states('sensor.montreal_air_quality_carbon_monoxide') }} µg/m³ |
+          | SO₂ | {{ states('sensor.montreal_air_quality_sulphur_dioxide') }} µg/m³ |

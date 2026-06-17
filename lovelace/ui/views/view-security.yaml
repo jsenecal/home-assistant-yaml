@@ -29,6 +29,33 @@ cards:
           grid-column: 1/-1
         cards:
 
+          # [Safety]
+
+          - type: 'custom:button-card'
+            template: header_card_no_link
+            variables:
+              name: SAFETY
+            view_layout:
+              grid-column: 1/-1
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.smoke_co_detector_carbon_monoxide_detected
+            name: CO Detected
+            icon: mdi:molecule-co
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.smoke_co_detector_smoke_alarm_test
+            name: Smoke Test
+            icon: mdi:smoke-detector
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.smoke_co_detector_alarm_silenced
+            name: Alarm Silenced
+            icon: mdi:bell-off
+
           # [Who's Home]
 
           - type: 'custom:button-card'
