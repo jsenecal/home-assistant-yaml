@@ -1,0 +1,232 @@
+title: Network
+path: network
+icon: 'mdi:lan'
+type: 'custom:grid-layout'
+layout: !include ../shared/snippets/layout-page-margin.yaml
+cards:
+  - type: 'custom:layout-card'
+    layout_type: 'custom:grid-layout'
+    layout: !include ../shared/snippets/layout-page-columns.yaml
+    view_layout:
+      grid-area: cc
+    cards:
+
+      - type: 'custom:layout-card'
+        layout_type: 'custom:grid-layout'
+        layout: !include ../shared/snippets/layout-page-title.yaml
+        view_layout:
+          grid-column: 1/-1
+        cards:
+          - type: markdown
+            style: !include ../shared/snippets/style-markdown-page-title.yaml
+            content: >
+              # Network
+
+      - type: 'custom:layout-card'
+        layout_type: 'custom:grid-layout'
+        layout: !include ../shared/snippets/layout-live-tile.yaml
+        view_layout:
+          grid-column: 1/-1
+        cards:
+
+          # [UniFi]
+
+          - type: 'custom:button-card'
+            template: header_card_no_link
+            variables:
+              name: UNIFI
+            view_layout:
+              grid-column: 1/-1
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: sensor.udmpro_state
+            name: UDM Pro
+            icon: mdi:router-network
+
+          - type: 'custom:button-card'
+            template:
+              - live_tile_with_graph
+              - live_tile_with_state_unit
+            entity: sensor.udmpro_cpu_utilization
+            name: UDM CPU
+            icon: mdi:cpu-64-bit
+            variables:
+              aspect_ratio: 2
+              line_width: 2
+              graph_height: 80
+              lower_bound: ~0
+              upper_bound: ~100
+            view_layout:
+              grid-column: span 2
+
+          - type: 'custom:button-card'
+            template:
+              - live_tile_with_graph
+              - live_tile_with_state_unit
+            entity: sensor.udmpro_memory_utilization
+            name: UDM Memory
+            icon: mdi:memory
+            variables:
+              aspect_ratio: 2
+              line_width: 2
+              graph_height: 80
+              lower_bound: ~0
+              upper_bound: ~100
+            view_layout:
+              grid-column: span 2
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: sensor.u6_pro_state
+            name: U6 Pro
+            icon: mdi:wifi
+
+          - type: 'custom:button-card'
+            template:
+              - live_tile_with_graph
+              - live_tile_with_state_unit
+            entity: sensor.u6_pro_cpu_utilization
+            name: U6 Pro CPU
+            icon: mdi:cpu-64-bit
+            variables:
+              aspect_ratio: 2
+              line_width: 2
+              graph_height: 80
+              lower_bound: ~0
+              upper_bound: ~100
+            view_layout:
+              grid-column: span 2
+
+          - type: 'custom:button-card'
+            template:
+              - live_tile_with_graph
+              - live_tile_with_state_unit
+            entity: sensor.u6_pro_memory_utilization
+            name: U6 Pro Mem
+            icon: mdi:memory
+            variables:
+              aspect_ratio: 2
+              line_width: 2
+              graph_height: 80
+              lower_bound: ~0
+              upper_bound: ~100
+            view_layout:
+              grid-column: span 2
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: sensor.u6_iw_state
+            name: U6-IW
+            icon: mdi:wifi
+
+          - type: 'custom:button-card'
+            template:
+              - live_tile_with_graph
+              - live_tile_with_state_unit
+            entity: sensor.u6_iw_cpu_utilization
+            name: U6-IW CPU
+            icon: mdi:cpu-64-bit
+            variables:
+              aspect_ratio: 2
+              line_width: 2
+              graph_height: 80
+              lower_bound: ~0
+              upper_bound: ~100
+            view_layout:
+              grid-column: span 2
+
+          - type: 'custom:button-card'
+            template:
+              - live_tile_with_graph
+              - live_tile_with_state_unit
+            entity: sensor.u6_iw_memory_utilization
+            name: U6-IW Mem
+            icon: mdi:memory
+            variables:
+              aspect_ratio: 2
+              line_width: 2
+              graph_height: 80
+              lower_bound: ~0
+              upper_bound: ~100
+            view_layout:
+              grid-column: span 2
+
+          # [Zigbee]
+
+          - type: 'custom:button-card'
+            template: header_card_no_link
+            variables:
+              name: ZIGBEE
+            view_layout:
+              grid-column: 1/-1
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.zigbee2mqtt_bridge_connection_state
+            name: Z2M Bridge
+            icon: mdi:zigbee
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.slzb_06_a_ethernet
+            name: SLZB-A Eth
+            icon: mdi:ethernet
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.slzb_06_a_internet
+            name: SLZB-A Net
+            icon: mdi:cloud-check
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.slzb_06_b_ethernet
+            name: SLZB-B Eth
+            icon: mdi:ethernet
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.slzb_06_b_internet
+            name: SLZB-B Net
+            icon: mdi:cloud-check
+
+          # [Security]
+
+          - type: 'custom:button-card'
+            template: header_card_no_link
+            variables:
+              name: SECURITY
+            view_layout:
+              grid-column: 1/-1
+
+          - type: 'custom:button-card'
+            template:
+              - live_tile_with_graph
+              - live_tile_with_state_unit
+            entity: sensor.network_video_recorder_storage_utilization
+            name: NVR Storage
+            icon: mdi:harddisk
+            variables:
+              aspect_ratio: 2
+              line_width: 2
+              graph_height: 80
+              lower_bound: ~0
+              upper_bound: ~100
+            view_layout:
+              grid-column: span 2
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: sensor.network_video_recorder_uptime
+            name: NVR Uptime
+            icon: mdi:camera
+            state_display: >-
+              [[[
+                if (!entity || !entity.state || entity.state === 'unknown') return '—';
+                const d = new Date(entity.state);
+                const now = new Date();
+                const diffH = Math.round((now - d) / 3600000);
+                if (diffH < 24) return diffH + 'h';
+                return Math.floor(diffH / 24) + 'd';
+              ]]]

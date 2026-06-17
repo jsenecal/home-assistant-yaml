@@ -1912,3 +1912,5 @@ views:
   - !include ui/views/view-weather.yaml
 
   - !include ui/views/view-environment.yaml
+
+  - !include ui/views/view-network.yaml
