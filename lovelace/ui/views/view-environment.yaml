@@ -88,6 +88,30 @@ cards:
                         var y = 665 - (parseFloat(states['sensor.thermal_comfort_bedroom_absolute_humidity'].state) / 35 * 665) - 155;
                         return `transform: translate(${x}px, ${y}px);`;
 
+                - entity: sensor.bathroom_ths_temperature
+                  state_action:
+                    action: call-service
+                    service: floorplan.style_set
+                    service_data:
+                      element: indicator-bathroom
+                      style: |
+                        >
+                        var x = (parseFloat(entity.state) + 20) / 65 * 1007 - 11;
+                        var y = 665 - (parseFloat(states['sensor.thermal_comfort_bathroom_absolute_humidity'].state) / 35 * 665) - 155;
+                        return `transform: translate(${x}px, ${y}px);`;
+
+                - entity: sensor.average_indoor_temperature
+                  state_action:
+                    action: call-service
+                    service: floorplan.style_set
+                    service_data:
+                      element: indicator-indoor
+                      style: |
+                        >
+                        var x = (parseFloat(entity.state) + 20) / 65 * 1007 - 343;
+                        var y = 665 - (parseFloat(states['sensor.thermal_comfort_indoor_average_absolute_humidity'].state) / 35 * 665) - 241;
+                        return `transform: translate(${x}px, ${y}px);`;
+
           - type: markdown
             content: |
               | Zone | Comfort |
@@ -96,3 +120,5 @@ cards:
               | Office | {{ states('sensor.thermal_comfort_office_humidex_perception') | regex_replace(find='_', replace=' ') | title }} |
               | Living Room | {{ states('sensor.thermal_comfort_living_room_humidex_perception') | regex_replace(find='_', replace=' ') | title }} |
               | Bedroom | {{ states('sensor.thermal_comfort_bedroom_humidex_perception') | regex_replace(find='_', replace=' ') | title }} |
+              | Bathroom | {{ states('sensor.thermal_comfort_bathroom_humidex_perception') | regex_replace(find='_', replace=' ') | title }} |
+              | Indoor Avg | {{ states('sensor.thermal_comfort_indoor_average_humidex_perception') | regex_replace(find='_', replace=' ') | title }} |
