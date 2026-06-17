@@ -1989,14 +1989,6 @@ views:
                 name: Speaker
                 view_layout:
                   grid-column: span 2
-                icon: mdi:washing-machine
-                variables:
-                  aspect_ratio: 2
-                  line_width: 2
-                  graph_height: 80
-                  lower_bound: ~0
-                view_layout:
-                  grid-column: span 2
 
   - title: Server Room
     path: server-room
