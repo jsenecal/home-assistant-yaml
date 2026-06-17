@@ -98,6 +98,20 @@ views:
               - type: 'custom:button-card'
                 template: header_card_no_link
                 variables:
+                  name: MEDIA
+                view_layout:
+                  grid-column: 1/-1
+
+              - type: 'custom:button-card'
+                template: live_tile_media_player
+                entity: media_player.living_room_display
+                name: Display
+                view_layout:
+                  grid-column: span 2
+
+              - type: 'custom:button-card'
+                template: header_card_no_link
+                variables:
                   name: SENSORS
                 view_layout:
                   grid-column: 1/-1
@@ -1310,6 +1324,20 @@ views:
               - type: 'custom:button-card'
                 template: header_card_no_link
                 variables:
+                  name: MEDIA
+                view_layout:
+                  grid-column: 1/-1
+
+              - type: 'custom:button-card'
+                template: live_tile_media_player
+                entity: media_player.front_door_speaker
+                name: Speaker
+                view_layout:
+                  grid-column: span 2
+
+              - type: 'custom:button-card'
+                template: header_card_no_link
+                variables:
                   name: ENVIRONMENT
                 view_layout:
                   grid-column: 1/-1
@@ -1824,6 +1852,21 @@ views:
                 template: live_tile
                 entity: binary_sensor.washing_machine_s31_washing_machine_running
                 name: Washing Machine
+
+              - type: 'custom:button-card'
+                template:
+                  - live_tile_with_graph
+                  - live_tile_with_state_unit
+                entity: sensor.washing_machine_s31_washing_machine_power
+                name: Washer Power
+                icon: mdi:washing-machine
+                variables:
+                  aspect_ratio: 2
+                  line_width: 2
+                  graph_height: 80
+                  lower_bound: ~0
+                view_layout:
+                  grid-column: span 2
 
   - title: Server Room
     path: server-room
