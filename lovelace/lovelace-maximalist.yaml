@@ -571,6 +571,11 @@ views:
 
               - type: 'custom:button-card'
                 template: live_tile
+                entity: binary_sensor.patio_screen_door_contact
+                name: Screen Door
+
+              - type: 'custom:button-card'
+                template: live_tile
                 entity: binary_sensor.patio_door_contact_battery_low
                 name: Patio Door Battery
 
