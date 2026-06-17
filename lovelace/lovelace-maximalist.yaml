@@ -270,6 +270,19 @@ views:
               - type: 'custom:button-card'
                 template: header_card_no_link
                 variables:
+                  name: BLINDS
+                view_layout:
+                  grid-column: 1/-1
+
+              - type: 'custom:button-card'
+                template: live_tile
+                entity: cover.living_room_shade
+                name: Shade
+                icon: mdi:blinds
+
+              - type: 'custom:button-card'
+                template: header_card_no_link
+                variables:
                   name: MEDIA
                 view_layout:
                   grid-column: 1/-1
@@ -717,6 +730,19 @@ views:
               - type: 'custom:button-card'
                 template: header_card_no_link
                 variables:
+                  name: BLINDS
+                view_layout:
+                  grid-column: 1/-1
+
+              - type: 'custom:button-card'
+                template: live_tile
+                entity: cover.dining_room_shade
+                name: Shade
+                icon: mdi:blinds
+
+              - type: 'custom:button-card'
+                template: header_card_no_link
+                variables:
                   name: MEDIA
                 view_layout:
                   grid-column: 1/-1
@@ -1016,6 +1042,19 @@ views:
               - type: 'custom:button-card'
                 template: header_card_no_link
                 variables:
+                  name: BLINDS
+                view_layout:
+                  grid-column: 1/-1
+
+              - type: 'custom:button-card'
+                template: live_tile
+                entity: cover.office_blinds
+                name: Blinds
+                icon: mdi:blinds
+
+              - type: 'custom:button-card'
+                template: header_card_no_link
+                variables:
                   name: MEDIA
                 view_layout:
                   grid-column: 1/-1
@@ -1296,6 +1335,19 @@ views:
                 template: light_button_card
                 entity: light.front_door_sconce_dimmer
                 name: Front Sconce
+
+              - type: 'custom:button-card'
+                template: header_card_no_link
+                variables:
+                  name: BLINDS
+                view_layout:
+                  grid-column: 1/-1
+
+              - type: 'custom:button-card'
+                template: live_tile
+                entity: cover.lobby_blinds
+                name: Blinds
+                icon: mdi:blinds
 
               - type: 'custom:button-card'
                 template: header_card_no_link
