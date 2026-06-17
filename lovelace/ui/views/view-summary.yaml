@@ -1,0 +1,234 @@
+title: Home
+path: home
+icon: 'mdi:home'
+type: 'custom:grid-layout'
+layout: !include ../shared/snippets/layout-page-margin.yaml
+cards:
+  - type: 'custom:layout-card'
+    layout_type: 'custom:grid-layout'
+    layout: !include ../shared/snippets/layout-page-columns.yaml
+    view_layout:
+      grid-area: cc
+    cards:
+
+      # [Header] Greeting
+
+      - type: 'custom:layout-card'
+        layout_type: 'custom:grid-layout'
+        layout: !include ../shared/snippets/layout-page-title.yaml
+        view_layout:
+          grid-column: 1/-1
+        cards:
+          - type: markdown
+            style: !include ../shared/snippets/style-markdown-page-title.yaml
+            content: >
+              # {% if now() > today_at('18:00') %}Good evening{% elif
+              now() > today_at('12:00') %}Good afternoon{% elif now() >
+              today_at('5:00') %}Good morning{% else %}Good night{% endif %}.
+
+      # [Section] Live tiles
+
+      - type: 'custom:layout-card'
+        layout_type: 'custom:grid-layout'
+        layout: !include ../shared/snippets/layout-live-tile.yaml
+        view_layout:
+          grid-column: 1/-1
+        cards:
+
+          # [Outdoors]
+
+          - type: 'custom:button-card'
+            template: header_card_no_link
+            variables:
+              name: OUTDOORS
+            view_layout:
+              grid-column: 1/-1
+
+          - type: 'custom:button-card'
+            template:
+              - live_tile_with_graph
+              - live_tile_with_state_unit
+            entity: sensor.outdoor_temperature
+            name: Outdoor
+            icon: mdi:thermometer
+            variables:
+              aspect_ratio: 2
+              line_width: 2
+              graph_height: 80
+            view_layout:
+              grid-column: span 2
+
+          - type: 'custom:button-card'
+            template:
+              - live_tile_card
+              - live_tile_with_long_state
+            entity: weather.weather
+            name: Weather
+            icon: mdi:weather-partly-cloudy
+            state_display: '[[[ return entity.state.replace(/_/g, " ") ]]]'
+            label: >-
+              [[[
+                return Math.round(entity.attributes.temperature) + " °C · " +
+                  Math.round(entity.attributes.wind_speed) + " km/h"
+              ]]]
+
+          - type: 'custom:button-card'
+            template:
+              - live_tile_card
+              - live_tile_with_long_state
+            entity: sensor.thermal_comfort_outdoor_humidex_perception
+            name: Feels Like
+            icon: mdi:thermometer-lines
+            state_display: '[[[ return entity.state.replace(/_/g, " ") ]]]'
+
+          # [Indoors]
+
+          - type: 'custom:button-card'
+            template: header_card_no_link
+            variables:
+              name: INDOORS
+            view_layout:
+              grid-column: 1/-1
+
+          - type: 'custom:button-card'
+            template:
+              - live_tile_with_graph
+              - live_tile_with_state_unit
+            entity: sensor.living_room_ths_temperature
+            name: Living Room
+            icon: mdi:sofa
+            variables:
+              aspect_ratio: 2
+              line_width: 2
+              graph_height: 80
+            view_layout:
+              grid-column: span 2
+
+          - type: 'custom:button-card'
+            template:
+              - live_tile_with_graph
+              - live_tile_with_state_unit
+            entity: sensor.office_ths_temperature
+            name: Office
+            icon: mdi:desk-lamp
+            variables:
+              aspect_ratio: 2
+              line_width: 2
+              graph_height: 80
+            view_layout:
+              grid-column: span 2
+
+          - type: 'custom:button-card'
+            template:
+              - live_tile_with_graph
+              - live_tile_with_state_unit
+            entity: sensor.dining_room_ths_temperature
+            name: Dining Area
+            icon: mdi:silverware-fork-knife
+            variables:
+              aspect_ratio: 2
+              line_width: 2
+              graph_height: 80
+            view_layout:
+              grid-column: span 2
+
+          - type: 'custom:button-card'
+            template:
+              - live_tile_with_graph
+              - live_tile_with_state_unit
+            entity: sensor.bathroom_ths_temperature
+            name: Bathroom
+            icon: mdi:bathtub
+            variables:
+              aspect_ratio: 2
+              line_width: 2
+              graph_height: 80
+            view_layout:
+              grid-column: span 2
+
+          - type: 'custom:button-card'
+            template:
+              - live_tile_with_graph
+              - live_tile_with_state_unit
+            entity: sensor.lobby_ths_temperature
+            name: Lobby
+            icon: mdi:hanger
+            variables:
+              aspect_ratio: 2
+              line_width: 2
+              graph_height: 80
+            view_layout:
+              grid-column: span 2
+
+          - type: 'custom:button-card'
+            template:
+              - live_tile_with_graph
+              - live_tile_with_state_unit
+            entity: sensor.aude_s_bedroom_ths_temperature
+            name: Bedroom
+            icon: mdi:bed
+            variables:
+              aspect_ratio: 2
+              line_width: 2
+              graph_height: 80
+            view_layout:
+              grid-column: span 2
+
+          - type: 'custom:button-card'
+            template:
+              - live_tile_with_graph
+              - live_tile_with_state_unit
+            entity: sensor.server_rack_ths_temperature
+            name: Server Room
+            icon: mdi:server
+            variables:
+              aspect_ratio: 2
+              line_width: 2
+              graph_height: 80
+            view_layout:
+              grid-column: span 2
+
+          - type: 'custom:button-card'
+            template:
+              - live_tile_card
+              - live_tile_with_long_state
+            entity: sensor.thermal_comfort_indoor_average_humidex_perception
+            name: Avg Comfort
+            icon: mdi:home-thermometer
+            state_display: '[[[ return entity.state.replace(/_/g, " ") ]]]'
+            view_layout:
+              grid-column: span 2
+
+          # [Lights]
+
+          - type: 'custom:button-card'
+            template: header_card_no_link
+            variables:
+              name: LIGHTS
+            view_layout:
+              grid-column: 1/-1
+
+          - type: 'custom:button-card'
+            template: live_tile_card
+            name: Lights On
+            icon: mdi:lightbulb-group
+            triggers_update: all
+            state_display: >-
+              [[[
+                return Object.keys(states).filter(e => e.startsWith('light.') && states[e].state == 'on').length;
+              ]]]
+            label: >-
+              [[[
+                return 'of ' + Object.keys(states).filter(e => e.startsWith('light.')).length + ' lights';
+              ]]]
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: sun.sun
+            name: Sun
+            icon: mdi:white-balance-sunny
+            state_display: >-
+              [[[
+                return Math.round(entity.attributes.elevation) + '°'
+              ]]]
+            label: '[[[ return entity.state ]]]'

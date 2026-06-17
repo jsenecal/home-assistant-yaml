@@ -10,6 +10,8 @@ decluttering_templates: !include ui/templates/decluttering-card.yaml
 apexcharts_card_templates: !include ui/templates/apexcharts-card.yaml
 
 views:
+  - !include ui/views/view-summary.yaml
+
   - title: Kitchen
     path: kitchen
     type: 'custom:grid-layout'
