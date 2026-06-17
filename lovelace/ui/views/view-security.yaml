@@ -29,6 +29,23 @@ cards:
           grid-column: 1/-1
         cards:
 
+          # [Alarm]
+
+          - type: 'custom:button-card'
+            template: header_card_no_link
+            variables:
+              name: ALARM
+            view_layout:
+              grid-column: 1/-1
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: alarm_control_panel.home
+            name: Alarm
+            icon: mdi:shield-home
+            view_layout:
+              grid-column: span 2
+
           # [Safety]
 
           - type: 'custom:button-card'
