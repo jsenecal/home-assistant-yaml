@@ -292,3 +292,27 @@ cards:
             entity: binary_sensor.network_video_recorder_hdd_4
             name: NVR HDD 4
             icon: mdi:harddisk
+
+          # [Internet]
+
+          - type: 'custom:button-card'
+            template: header_card_no_link
+            variables:
+              name: INTERNET
+            view_layout:
+              grid-column: 1/-1
+
+          - type: 'custom:button-card'
+            template:
+              - live_tile_with_graph
+              - live_tile_with_state_unit
+            entity: sensor.1_1_1_1_round_trip_time_average
+            name: DNS Latency
+            icon: mdi:speedometer
+            variables:
+              aspect_ratio: 2
+              line_width: 2
+              graph_height: 80
+              lower_bound: ~0
+            view_layout:
+              grid-column: span 2

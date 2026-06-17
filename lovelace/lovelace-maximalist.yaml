@@ -2142,6 +2142,12 @@ views:
                 icon: mdi:air-filter
 
               - type: 'custom:button-card'
+                template: live_tile_with_unit
+                entity: sensor.laundry_room_water_level
+                name: Water Level
+                icon: mdi:cup-water
+
+              - type: 'custom:button-card'
                 template: live_tile
                 entity: binary_sensor.laundry_room_tank_full
                 name: Tank Full
@@ -2274,6 +2280,148 @@ views:
                 variables:
                   lower_bound: ~0
                   upper_bound: ~100
+
+              - type: 'custom:button-card'
+                template: header_card_no_link
+                variables:
+                  name: UPS
+                view_layout:
+                  grid-column: 1/-1
+
+              - type: 'custom:button-card'
+                template: live_tile
+                entity: sensor.ups_status
+                name: UPS Status
+                icon: mdi:battery-charging
+
+              - type: 'custom:button-card'
+                template:
+                  - live_tile_with_graph
+                  - live_tile_with_state_unit
+                entity: sensor.ups_battery_charge
+                name: Battery
+                icon: mdi:battery
+                variables:
+                  lower_bound: ~0
+                  upper_bound: ~100
+                  aspect_ratio: 2
+                  line_width: 2
+                  graph_height: 80
+                view_layout:
+                  grid-column: span 2
+
+              - type: 'custom:button-card'
+                template: live_tile_with_unit
+                entity: sensor.ups_load
+                name: Load
+                icon: mdi:gauge
+
+              - type: 'custom:button-card'
+                template: live_tile_with_unit
+                entity: sensor.ups_battery_runtime_2
+                name: Runtime
+                icon: mdi:timer
+
+              - type: 'custom:button-card'
+                template: live_tile_with_unit
+                entity: sensor.ups_ups_temperature_2
+                name: UPS Temp
+                icon: mdi:thermometer
+
+              - type: 'custom:button-card'
+                template: header_card_no_link
+                variables:
+                  name: SWITCHES
+                view_layout:
+                  grid-column: 1/-1
+
+              - type: 'custom:button-card'
+                template: live_tile
+                entity: sensor.top_of_rack_switch_state
+                name: ToR Switch
+                icon: mdi:switch
+
+              - type: 'custom:button-card'
+                template:
+                  - live_tile_with_graph
+                  - live_tile_with_state_unit
+                entity: sensor.top_of_rack_switch_cpu_utilization
+                name: ToR CPU
+                icon: mdi:cpu-64-bit
+                variables:
+                  aspect_ratio: 2
+                  line_width: 2
+                  graph_height: 80
+                  lower_bound: ~0
+                  upper_bound: ~100
+                view_layout:
+                  grid-column: span 2
+
+              - type: 'custom:button-card'
+                template:
+                  - live_tile_with_graph
+                  - live_tile_with_state_unit
+                entity: sensor.top_of_rack_switch_memory_utilization
+                name: ToR Memory
+                icon: mdi:memory
+                variables:
+                  aspect_ratio: 2
+                  line_width: 2
+                  graph_height: 80
+                  lower_bound: ~0
+                  upper_bound: ~100
+                view_layout:
+                  grid-column: span 2
+
+              - type: 'custom:button-card'
+                template: live_tile_with_unit
+                entity: sensor.top_of_rack_switch_temperature
+                name: ToR Temp
+                icon: mdi:thermometer
+
+              - type: 'custom:button-card'
+                template: live_tile
+                entity: sensor.usw_enterprise_24_poe_state
+                name: Enterprise SW
+                icon: mdi:switch
+
+              - type: 'custom:button-card'
+                template:
+                  - live_tile_with_graph
+                  - live_tile_with_state_unit
+                entity: sensor.usw_enterprise_24_poe_cpu_utilization
+                name: Ent SW CPU
+                icon: mdi:cpu-64-bit
+                variables:
+                  aspect_ratio: 2
+                  line_width: 2
+                  graph_height: 80
+                  lower_bound: ~0
+                  upper_bound: ~100
+                view_layout:
+                  grid-column: span 2
+
+              - type: 'custom:button-card'
+                template:
+                  - live_tile_with_graph
+                  - live_tile_with_state_unit
+                entity: sensor.usw_enterprise_24_poe_memory_utilization
+                name: Ent SW Mem
+                icon: mdi:memory
+                variables:
+                  aspect_ratio: 2
+                  line_width: 2
+                  graph_height: 80
+                  lower_bound: ~0
+                  upper_bound: ~100
+                view_layout:
+                  grid-column: span 2
+
+              - type: 'custom:button-card'
+                template: live_tile_with_unit
+                entity: sensor.usw_enterprise_24_poe_temperature
+                name: Ent SW Temp
+                icon: mdi:thermometer
 
   - title: Basement Bathroom
     path: basement-bathroom
