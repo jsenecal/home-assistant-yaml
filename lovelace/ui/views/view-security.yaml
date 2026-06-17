@@ -254,6 +254,26 @@ cards:
             name: Main Valve
             icon: mdi:pipe-valve
 
+          - type: 'custom:button-card'
+            template: live_tile_with_unit
+            entity: sensor.main_valve_water_flow_rate
+            name: Flow Rate
+            icon: mdi:water-pump
+
+          - type: 'custom:button-card'
+            template: live_tile_with_unit
+            entity: sensor.main_valve_water_pressure
+            name: Pressure
+            icon: mdi:gauge
+
+          - type: 'custom:button-card'
+            template: live_tile_with_unit
+            entity: sensor.main_valve_today_s_water_usage
+            name: Today Usage
+            icon: mdi:water
+            view_layout:
+              grid-column: span 2
+
           # [Occupancy]
 
           - type: 'custom:button-card'

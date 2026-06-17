@@ -1200,6 +1200,18 @@ views:
                 view_layout:
                   grid-column: span 2
 
+              - type: 'custom:button-card'
+                template: live_tile_with_unit
+                entity: sensor.office_aqs_pm25
+                name: PM2.5
+                icon: mdi:air-filter
+
+              - type: 'custom:button-card'
+                template: live_tile_with_unit
+                entity: sensor.office_aqs_voc_index
+                name: VOC
+                icon: mdi:molecule
+
   - title: Main Bathroom
     path: main-bathroom
     type: 'custom:grid-layout'
@@ -1424,9 +1436,15 @@ views:
                 name: Lock Jammed
 
               - type: 'custom:button-card'
+                template: live_tile_with_unit
+                entity: sensor.front_door_lock_battery_level
+                name: Lock Battery
+                icon: mdi:battery
+
+              - type: 'custom:button-card'
                 template: live_tile
                 entity: binary_sensor.front_door_lock_replace_battery_soon
-                name: Lock Battery
+                name: Lock Low Bat
                 icon: mdi:battery-low
 
               - type: 'custom:button-card'

@@ -60,6 +60,17 @@ cards:
 
           - type: 'custom:button-card'
             template:
+              - live_tile_with_graph
+              - live_tile_with_state_unit
+            entity: sensor.outdoor_humidity
+            name: Humidity
+            icon: mdi:water-percent
+            variables:
+              lower_bound: ~0
+              upper_bound: ~100
+
+          - type: 'custom:button-card'
+            template:
               - live_tile_card
               - live_tile_with_long_state
             entity: weather.weather
