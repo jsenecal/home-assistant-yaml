@@ -146,6 +146,11 @@ cards:
             entity: light.bathroom_night_light
             name: Night Light
 
+          - type: 'custom:button-card'
+            template: light_button_card
+            entity: light.bathroom_vanity_dimmer
+            name: Vanity
+
           # [Lobby]
 
           - type: 'custom:button-card'
@@ -164,6 +169,11 @@ cards:
             template: light_button_card
             entity: light.front_door_sconce_dimmer
             name: Sconce
+
+          - type: 'custom:button-card'
+            template: light_button_card
+            entity: light.lobby_night_light
+            name: Night Light
 
           # [Stairs]
 
@@ -208,6 +218,11 @@ cards:
             entity: light.albert_s_bedroom_door_dl
             name: Door DL
 
+          - type: 'custom:button-card'
+            template: light_button_card
+            entity: light.albert_s_bedroom_wall_dl
+            name: Wall DL
+
           # [Basement Bedroom 2 — Aude's]
 
           - type: 'custom:button-card'
@@ -226,6 +241,11 @@ cards:
             template: light_button_card
             entity: light.aude_s_bedroom_door_dl
             name: Door DL
+
+          - type: 'custom:button-card'
+            template: light_button_card
+            entity: light.aude_s_bedroom_window_dl
+            name: Window DL
 
           # [Family Room]
 
@@ -297,3 +317,32 @@ cards:
             template: light_button_card
             entity: light.top_of_rack_switch_led
             name: Rack LED
+
+          # [Outdoor]
+
+          - type: 'custom:button-card'
+            template: header_card_no_link
+            variables:
+              name: OUTDOOR
+            view_layout:
+              grid-column: 1/-1
+
+          - type: 'custom:button-card'
+            template: light_button_card
+            entity: light.front_yard_downlights
+            name: Front Yard
+
+          - type: 'custom:button-card'
+            template: light_button_card
+            entity: light.front_door_sconce_dimmer
+            name: Front Sconce
+
+          - type: 'custom:button-card'
+            template: light_button_card
+            entity: light.back_yard_downlights
+            name: Back Yard
+
+          - type: 'custom:button-card'
+            template: light_button_card
+            entity: light.backyard_sconces_dimmer
+            name: Back Sconces

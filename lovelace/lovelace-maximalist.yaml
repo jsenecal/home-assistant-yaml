@@ -393,6 +393,16 @@ views:
                 name: Great Room Zone
 
               - type: 'custom:button-card'
+                template: light_button_card
+                entity: light.back_yard_downlights
+                name: Back Yard
+
+              - type: 'custom:button-card'
+                template: light_button_card
+                entity: light.backyard_sconces_dimmer
+                name: Back Sconces
+
+              - type: 'custom:button-card'
                 template: header_card_no_link
                 variables:
                   name: SCENES
@@ -1284,6 +1294,11 @@ views:
                 name: Night Light
 
               - type: 'custom:button-card'
+                template: light_button_card
+                entity: light.bathroom_vanity_dimmer
+                name: Vanity
+
+              - type: 'custom:button-card'
                 template: header_card_no_link
                 variables:
                   name: CLIMATE
@@ -1417,6 +1432,16 @@ views:
                 template: light_button_card
                 entity: light.front_door_sconce_dimmer
                 name: Front Sconce
+
+              - type: 'custom:button-card'
+                template: light_button_card
+                entity: light.lobby_night_light
+                name: Night Light
+
+              - type: 'custom:button-card'
+                template: light_button_card
+                entity: light.front_yard_downlights
+                name: Front Yard
 
               - type: 'custom:button-card'
                 template: header_card_no_link
@@ -1670,6 +1695,11 @@ views:
                 name: Door Downlight
 
               - type: 'custom:button-card'
+                template: light_button_card
+                entity: light.albert_s_bedroom_wall_dl
+                name: Wall Downlight
+
+              - type: 'custom:button-card'
                 template: header_card_no_link
                 variables:
                   name: CLIMATE
@@ -1783,6 +1813,11 @@ views:
                 template: light_button_card
                 entity: light.aude_s_bedroom_door_dl
                 name: Door Downlight
+
+              - type: 'custom:button-card'
+                template: light_button_card
+                entity: light.aude_s_bedroom_window_dl
+                name: Window Downlight
 
               - type: 'custom:button-card'
                 template: header_card_no_link
