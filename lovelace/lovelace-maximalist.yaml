@@ -1627,3 +1627,5 @@ views:
                 variables:
                   name: Off
                   color: 'rgb(64, 64, 64)'
+
+  - !include ui/views/view-weather.yaml
