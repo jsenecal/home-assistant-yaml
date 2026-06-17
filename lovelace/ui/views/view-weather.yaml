@@ -20,3 +20,29 @@ cards:
             style: !include ui/shared/snippets/style-markdown-page-title.yaml
             content: >
               # Weather
+
+      # [Section] Current conditions
+
+      - type: weather-forecast
+        entity: weather.weather
+        forecast_type: hourly
+        show_forecast: true
+
+      - type: markdown
+        content: >
+          **Feels like** {{ state_attr('weather.weather', 'apparent_temperature') | round(1) }} °C
+
+          **Wind** {{ state_attr('weather.weather', 'wind_speed') | round(0) }} km/h
+          *(gusts {{ state_attr('weather.weather', 'wind_gust_speed') | round(0) }} km/h)*
+
+          **UV Index** {{ state_attr('weather.weather', 'uv_index') }}
+
+          **Dew point** {{ states('sensor.thermal_comfort_outdoor_dew_point') | round(1) }} °C
+
+          **Ozone** {{ state_attr('weather.weather', 'ozone') }}
+
+      - type: markdown
+        content: >
+          ## {{ states('sensor.thermal_comfort_outdoor_humidex_perception') | title }}
+
+          Feels like **{{ states('sensor.thermal_comfort_outdoor_heat_index') | round(1) }} °C**
