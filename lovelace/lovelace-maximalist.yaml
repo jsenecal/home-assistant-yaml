@@ -2203,6 +2203,12 @@ views:
                 name: Humidity
 
               - type: 'custom:button-card'
+                template: live_tile_with_unit
+                entity: input_number.laundry_room_target_humidity
+                name: Target RH
+                icon: mdi:target
+
+              - type: 'custom:button-card'
                 template: live_tile
                 entity: binary_sensor.laundry_room_replace_filter
                 name: Replace Filter
