@@ -85,20 +85,32 @@ cards:
           - entity: weather.weather
             name: Temperature
             yaxis_id: temp
-            forecast:
-              type: hourly
-              attribute: temperature
             unit: '°C'
+            data_generator: |
+              const f = await new Promise((resolve) => {
+                let u;
+                hass.connection.subscribeMessage(
+                  (msg) => { if (u) u(); resolve(msg.forecast || []); },
+                  { type: 'weather/subscribe_forecast', entity_id: 'weather.weather', forecast_type: 'hourly' }
+                ).then(fn => { u = fn; });
+              });
+              return f.map(d => [new Date(d.datetime).getTime(), d.temperature]);
           - entity: weather.weather
             name: Rain %
             yaxis_id: precip
             type: column
             opacity: 0.3
             stroke_width: 0
-            forecast:
-              type: hourly
-              attribute: precipitation_probability
             unit: '%'
+            data_generator: |
+              const f = await new Promise((resolve) => {
+                let u;
+                hass.connection.subscribeMessage(
+                  (msg) => { if (u) u(); resolve(msg.forecast || []); },
+                  { type: 'weather/subscribe_forecast', entity_id: 'weather.weather', forecast_type: 'hourly' }
+                ).then(fn => { u = fn; });
+              });
+              return f.map(d => [new Date(d.datetime).getTime(), d.precipitation_probability]);
         apex_config:
           chart:
             height: 160px
@@ -209,28 +221,46 @@ cards:
             name: High
             type: column
             yaxis_id: temp
-            forecast:
-              type: daily
-              attribute: temperature
             unit: '°C'
+            data_generator: |
+              const f = await new Promise((resolve) => {
+                let u;
+                hass.connection.subscribeMessage(
+                  (msg) => { if (u) u(); resolve(msg.forecast || []); },
+                  { type: 'weather/subscribe_forecast', entity_id: 'weather.weather', forecast_type: 'daily' }
+                ).then(fn => { u = fn; });
+              });
+              return f.map(d => [new Date(d.datetime).getTime(), d.temperature]);
           - entity: weather.weather
             name: Low
             type: column
             yaxis_id: temp
-            forecast:
-              type: daily
-              attribute: templow
             unit: '°C'
+            data_generator: |
+              const f = await new Promise((resolve) => {
+                let u;
+                hass.connection.subscribeMessage(
+                  (msg) => { if (u) u(); resolve(msg.forecast || []); },
+                  { type: 'weather/subscribe_forecast', entity_id: 'weather.weather', forecast_type: 'daily' }
+                ).then(fn => { u = fn; });
+              });
+              return f.map(d => [new Date(d.datetime).getTime(), d.templow]);
           - entity: weather.weather
             name: Rain %
             type: column
             yaxis_id: precip
             opacity: 0.3
             stroke_width: 0
-            forecast:
-              type: daily
-              attribute: precipitation_probability
             unit: '%'
+            data_generator: |
+              const f = await new Promise((resolve) => {
+                let u;
+                hass.connection.subscribeMessage(
+                  (msg) => { if (u) u(); resolve(msg.forecast || []); },
+                  { type: 'weather/subscribe_forecast', entity_id: 'weather.weather', forecast_type: 'daily' }
+                ).then(fn => { u = fn; });
+              });
+              return f.map(d => [new Date(d.datetime).getTime(), d.precipitation_probability]);
         apex_config:
           chart:
             height: 160px
