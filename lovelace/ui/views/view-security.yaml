@@ -68,6 +68,24 @@ cards:
             name: Keypad SW Fault
             icon: mdi:alert-circle
 
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.smoke_co_detector_smoke_detected
+            name: Smoke Detected
+            icon: mdi:smoke-detector-alert
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.smoke_co_detector_replacement_required_end_of_life
+            name: Detector EOL
+            icon: mdi:smoke-detector-off
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.siren_security_active
+            name: Security Active
+            icon: mdi:alarm-light
+
           # [Who's Home]
 
           - type: 'custom:button-card'
@@ -102,6 +120,12 @@ cards:
             template: live_tile
             entity: binary_sensor.back_yard_motion
             name: Back Yard
+            icon: mdi:motion-sensor
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.side_yard_motion
+            name: Side Yard
             icon: mdi:motion-sensor
 
           - type: 'custom:button-card'
@@ -223,6 +247,12 @@ cards:
             entity: binary_sensor.filter_leak_sensor_water_leak
             name: Filter
             icon: mdi:water-alert
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.main_valve_pending_system_alerts
+            name: Main Valve
+            icon: mdi:pipe-valve
 
           # [Occupancy]
 

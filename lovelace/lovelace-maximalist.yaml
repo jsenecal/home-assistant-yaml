@@ -2130,6 +2130,12 @@ views:
                 icon: mdi:cup-water
 
               - type: 'custom:button-card'
+                template: live_tile
+                entity: binary_sensor.laundry_room_tank_removed
+                name: Tank Removed
+                icon: mdi:cup-off
+
+              - type: 'custom:button-card'
                 template: header_card_no_link
                 variables:
                   name: MEDIA
