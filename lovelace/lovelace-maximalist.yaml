@@ -573,6 +573,12 @@ views:
                 view_layout:
                   grid-column: span 2
 
+              - type: 'custom:button-card'
+                template: live_tile_media_player
+                entity: media_player.great_room_speakers_2
+                name: Speakers 2
+                view_layout:
+                  grid-column: span 2
 
   - title: Dining Area
     path: dining-area
@@ -1074,6 +1080,13 @@ views:
                   grid-column: span 2
 
               - type: 'custom:button-card'
+                template: live_tile_media_player
+                entity: media_player.office_display
+                name: Display
+                view_layout:
+                  grid-column: span 2
+
+              - type: 'custom:button-card'
                 template: header_card_no_link
                 variables:
                   name: CLIMATE
@@ -1232,6 +1245,20 @@ views:
                 template: live_tile
                 entity: climate.hydronics_bathroom_climate_controller
                 name: Climate
+
+              - type: 'custom:button-card'
+                template: header_card_no_link
+                variables:
+                  name: MEDIA
+                view_layout:
+                  grid-column: 1/-1
+
+              - type: 'custom:button-card'
+                template: live_tile_media_player
+                entity: media_player.bathroom_speaker
+                name: Speaker
+                view_layout:
+                  grid-column: span 2
 
               - type: 'custom:button-card'
                 template: header_card_no_link
@@ -1484,6 +1511,22 @@ views:
                 template: live_tile
                 entity: binary_sensor.corridor_night_light_occupancy
                 name: Occupancy
+
+              # [Media]
+
+              - type: 'custom:button-card'
+                template: header_card_no_link
+                variables:
+                  name: MEDIA
+                view_layout:
+                  grid-column: 1/-1
+
+              - type: 'custom:button-card'
+                template: live_tile_media_player
+                entity: media_player.upstairs_speakers
+                name: Upstairs
+                view_layout:
+                  grid-column: span 2
 
   - title: Basement Bedroom 1
     path: basement-bedroom-1
@@ -1851,6 +1894,13 @@ views:
                   grid-column: span 2
 
               - type: 'custom:button-card'
+                template: live_tile_media_player
+                entity: media_player.googlehome4193
+                name: Basement
+                view_layout:
+                  grid-column: span 2
+
+              - type: 'custom:button-card'
                 template: header_card_no_link
                 variables:
                   name: SENSORS
@@ -2143,6 +2193,11 @@ views:
                 template: light_button_card_group
                 entity: light.basement_bathroom_downlights
                 name: Downlights
+
+              - type: 'custom:button-card'
+                template: light_button_card
+                entity: light.basement_bathroom_wall_dl
+                name: Wall
 
               - type: 'custom:button-card'
                 template: header_card_no_link
