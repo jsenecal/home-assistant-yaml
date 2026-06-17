@@ -29,7 +29,7 @@ cards:
         show_forecast: true
 
       - type: markdown
-        content: >
+        content: |
           **Feels like** {{ state_attr('weather.weather', 'apparent_temperature') | round(1) }} °C
 
           **Wind** {{ state_attr('weather.weather', 'wind_speed') | round(0) }} km/h
@@ -37,12 +37,12 @@ cards:
 
           **UV Index** {{ state_attr('weather.weather', 'uv_index') }}
 
-          **Dew point** {{ states('sensor.thermal_comfort_outdoor_dew_point') | round(1) }} °C
+          **Dew point** {{ states('sensor.thermal_comfort_outdoor_dew_point') | float | round(1) }} °C
 
           **Ozone** {{ state_attr('weather.weather', 'ozone') }}
 
       - type: markdown
-        content: >
+        content: |
           ## {{ states('sensor.thermal_comfort_outdoor_humidex_perception') | title }}
 
-          Feels like **{{ states('sensor.thermal_comfort_outdoor_heat_index') | round(1) }} °C**
+          Feels like **{{ states('sensor.thermal_comfort_outdoor_heat_index') | float | round(1) }} °C**
