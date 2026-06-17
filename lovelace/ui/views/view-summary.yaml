@@ -232,3 +232,36 @@ cards:
                 return Math.round(entity.attributes.elevation) + '°'
               ]]]
             label: '[[[ return entity.state ]]]'
+
+          # [Status]
+
+          - type: 'custom:button-card'
+            template: header_card_no_link
+            variables:
+              name: STATUS
+            view_layout:
+              grid-column: 1/-1
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: person.jonathan_senecal
+            name: Jonathan
+            icon: mdi:account
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.hydronics_controller_boiler_enable
+            name: Boiler
+            icon: mdi:fire
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.washing_machine_s31_washing_machine_running
+            name: Washer
+            icon: mdi:washing-machine
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.refrigerator_running
+            name: Fridge
+            icon: mdi:fridge

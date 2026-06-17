@@ -274,6 +274,11 @@ cards:
             entity: light.basement_bathroom_downlights
             name: Downlights
 
+          - type: 'custom:button-card'
+            template: light_button_card
+            entity: light.basement_bathroom_wall_dl
+            name: Wall
+
           # [Server Room]
 
           - type: 'custom:button-card'
