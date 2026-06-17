@@ -92,6 +92,71 @@ cards:
             entity: climate.hydronics_aude_s_bedroom_climate_controller
             name: Aude's Rm
 
+          # [Floor Temperatures]
+
+          - type: 'custom:button-card'
+            template: header_card_no_link
+            variables:
+              name: FLOOR TEMPS
+            view_layout:
+              grid-column: 1/-1
+
+          - type: 'custom:button-card'
+            template:
+              - live_tile_with_graph
+              - live_tile_with_state_unit
+            entity: sensor.hydronics_controller_bedroom_1_floor_temperature
+            name: Albert's Rm
+            icon: mdi:floor-plan
+            variables:
+              aspect_ratio: 2
+              line_width: 2
+              graph_height: 80
+            view_layout:
+              grid-column: span 2
+
+          - type: 'custom:button-card'
+            template:
+              - live_tile_with_graph
+              - live_tile_with_state_unit
+            entity: sensor.hydronics_controller_bedroom_2_floor_temperature
+            name: Aude's Rm
+            icon: mdi:floor-plan
+            variables:
+              aspect_ratio: 2
+              line_width: 2
+              graph_height: 80
+            view_layout:
+              grid-column: span 2
+
+          - type: 'custom:button-card'
+            template:
+              - live_tile_with_graph
+              - live_tile_with_state_unit
+            entity: sensor.hydronics_controller_family_room_floor_temperature
+            name: Family Room
+            icon: mdi:floor-plan
+            variables:
+              aspect_ratio: 2
+              line_width: 2
+              graph_height: 80
+            view_layout:
+              grid-column: span 2
+
+          - type: 'custom:button-card'
+            template:
+              - live_tile_with_graph
+              - live_tile_with_state_unit
+            entity: sensor.hydronics_controller_laundry_room_floor_temperature
+            name: Laundry Room
+            icon: mdi:floor-plan
+            variables:
+              aspect_ratio: 2
+              line_width: 2
+              graph_height: 80
+            view_layout:
+              grid-column: span 2
+
           # [Main Circuit]
 
           - type: 'custom:button-card'

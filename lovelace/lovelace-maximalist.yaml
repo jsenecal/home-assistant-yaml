@@ -1549,6 +1549,20 @@ views:
                 name: Climate
 
               - type: 'custom:button-card'
+                template:
+                  - live_tile_with_graph
+                  - live_tile_with_state_unit
+                entity: sensor.hydronics_controller_bedroom_1_floor_temperature
+                name: Floor Temp
+                icon: mdi:thermometer
+                variables:
+                  aspect_ratio: 2
+                  line_width: 2
+                  graph_height: 80
+                view_layout:
+                  grid-column: span 2
+
+              - type: 'custom:button-card'
                 template: header_card_no_link
                 variables:
                   name: MEDIA
@@ -1648,6 +1662,20 @@ views:
                 template: live_tile
                 entity: climate.hydronics_aude_s_bedroom_climate_controller
                 name: Climate
+
+              - type: 'custom:button-card'
+                template:
+                  - live_tile_with_graph
+                  - live_tile_with_state_unit
+                entity: sensor.hydronics_controller_bedroom_2_floor_temperature
+                name: Floor Temp
+                icon: mdi:thermometer
+                variables:
+                  aspect_ratio: 2
+                  line_width: 2
+                  graph_height: 80
+                view_layout:
+                  grid-column: span 2
 
               - type: 'custom:button-card'
                 template: header_card_no_link
@@ -1788,6 +1816,20 @@ views:
                 name: Climate
 
               - type: 'custom:button-card'
+                template:
+                  - live_tile_with_graph
+                  - live_tile_with_state_unit
+                entity: sensor.hydronics_controller_family_room_floor_temperature
+                name: Floor Temp
+                icon: mdi:thermometer
+                variables:
+                  aspect_ratio: 2
+                  line_width: 2
+                  graph_height: 80
+                view_layout:
+                  grid-column: span 2
+
+              - type: 'custom:button-card'
                 template: header_card_no_link
                 variables:
                   name: MEDIA
@@ -1882,6 +1924,20 @@ views:
                 template: live_tile
                 entity: climate.hydronics_laundry_room_climate_controller
                 name: Climate
+
+              - type: 'custom:button-card'
+                template:
+                  - live_tile_with_graph
+                  - live_tile_with_state_unit
+                entity: sensor.hydronics_controller_laundry_room_floor_temperature
+                name: Floor Temp
+                icon: mdi:thermometer
+                variables:
+                  aspect_ratio: 2
+                  line_width: 2
+                  graph_height: 80
+                view_layout:
+                  grid-column: span 2
 
               - type: 'custom:button-card'
                 template: header_card_no_link
