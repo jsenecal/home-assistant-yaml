@@ -1,0 +1,241 @@
+title: Climate
+path: climate
+icon: 'mdi:thermostat'
+type: 'custom:grid-layout'
+layout: !include ../shared/snippets/layout-page-margin.yaml
+cards:
+  - type: 'custom:layout-card'
+    layout_type: 'custom:grid-layout'
+    layout: !include ../shared/snippets/layout-page-columns.yaml
+    view_layout:
+      grid-area: cc
+    cards:
+
+      - type: 'custom:layout-card'
+        layout_type: 'custom:grid-layout'
+        layout: !include ../shared/snippets/layout-page-title.yaml
+        view_layout:
+          grid-column: 1/-1
+        cards:
+          - type: markdown
+            style: !include ../shared/snippets/style-markdown-page-title.yaml
+            content: >
+              # Climate
+
+              {% set zones = [
+                'climate.hydronics_albert_s_bedroom_climate_controller',
+                'climate.hydronics_aude_s_bedroom_climate_controller',
+                'climate.hydronics_bathroom_climate_controller',
+                'climate.hydronics_family_room_climate_controller',
+                'climate.hydronics_great_room_climate_controller',
+                'climate.hydronics_laundry_room_climate_controller',
+                'climate.hydronics_lobby_climate_controller',
+                'climate.hydronics_office_climate_controller'
+              ] %}
+              {{ zones | selectattr('state', 'ne', 'off') | list | length }}
+              of {{ zones | length }} zones active.
+              Boiler {{ states('binary_sensor.hydronics_controller_boiler_enable') }}.
+
+      - type: 'custom:layout-card'
+        layout_type: 'custom:grid-layout'
+        layout: !include ../shared/snippets/layout-live-tile.yaml
+        view_layout:
+          grid-column: 1/-1
+        cards:
+
+          # [Zones]
+
+          - type: 'custom:button-card'
+            template: header_card_no_link
+            variables:
+              name: ZONES
+            view_layout:
+              grid-column: 1/-1
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: climate.hydronics_lobby_climate_controller
+            name: Lobby
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: climate.hydronics_office_climate_controller
+            name: Office
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: climate.hydronics_bathroom_climate_controller
+            name: Bathroom
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: climate.hydronics_great_room_climate_controller
+            name: Great Room
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: climate.hydronics_family_room_climate_controller
+            name: Family Room
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: climate.hydronics_laundry_room_climate_controller
+            name: Laundry
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: climate.hydronics_albert_s_bedroom_climate_controller
+            name: Albert's Rm
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: climate.hydronics_aude_s_bedroom_climate_controller
+            name: Aude's Rm
+
+          # [Main Circuit]
+
+          - type: 'custom:button-card'
+            template: header_card_no_link
+            variables:
+              name: MAIN CIRCUIT
+            view_layout:
+              grid-column: 1/-1
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.hydronics_main_circulator
+            name: Circulator
+            icon: mdi:pump
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.hydronics_controller_boiler_enable
+            name: Boiler
+            icon: mdi:fire
+
+          - type: 'custom:button-card'
+            template:
+              - live_tile_with_graph
+              - live_tile_with_state_unit
+            entity: sensor.hydronics_main_circulator_liquid_temperature
+            name: Supply Temp
+            icon: mdi:thermometer-chevron-up
+            variables:
+              aspect_ratio: 2
+              line_width: 2
+              graph_height: 80
+            view_layout:
+              grid-column: span 2
+
+          - type: 'custom:button-card'
+            template:
+              - live_tile_with_graph
+              - live_tile_with_state_unit
+            entity: sensor.hydronics_controller_main_circulator_return_temperature
+            name: Return Temp
+            icon: mdi:thermometer-chevron-down
+            variables:
+              aspect_ratio: 2
+              line_width: 2
+              graph_height: 80
+            view_layout:
+              grid-column: span 2
+
+          - type: 'custom:button-card'
+            template:
+              - live_tile_with_graph
+              - live_tile_with_state_unit
+            entity: sensor.hydronics_main_circulator_flow
+            name: Flow
+            icon: mdi:waves-arrow-right
+            variables:
+              aspect_ratio: 2
+              line_width: 2
+              graph_height: 80
+            view_layout:
+              grid-column: span 2
+
+          - type: 'custom:button-card'
+            template:
+              - live_tile_with_graph
+              - live_tile_with_state_unit
+            entity: sensor.hydronics_main_circulator_power
+            name: Power
+            icon: mdi:lightning-bolt
+            variables:
+              aspect_ratio: 2
+              line_width: 2
+              graph_height: 80
+            view_layout:
+              grid-column: span 2
+
+          # [Basement Circuit]
+
+          - type: 'custom:button-card'
+            template: header_card_no_link
+            variables:
+              name: BASEMENT CIRCUIT
+            view_layout:
+              grid-column: 1/-1
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.hydronics_basement_circulator
+            name: Circulator
+            icon: mdi:pump
+
+          - type: 'custom:button-card'
+            template:
+              - live_tile_with_graph
+              - live_tile_with_state_unit
+            entity: sensor.hydronics_basement_circulator_liquid_temperature
+            name: Supply Temp
+            icon: mdi:thermometer-chevron-up
+            variables:
+              aspect_ratio: 2
+              line_width: 2
+              graph_height: 80
+            view_layout:
+              grid-column: span 2
+
+          - type: 'custom:button-card'
+            template:
+              - live_tile_with_graph
+              - live_tile_with_state_unit
+            entity: sensor.hydronics_controller_basement_circulator_return_temperature
+            name: Return Temp
+            icon: mdi:thermometer-chevron-down
+            variables:
+              aspect_ratio: 2
+              line_width: 2
+              graph_height: 80
+            view_layout:
+              grid-column: span 2
+
+          - type: 'custom:button-card'
+            template:
+              - live_tile_with_graph
+              - live_tile_with_state_unit
+            entity: sensor.hydronics_basement_circulator_flow
+            name: Flow
+            icon: mdi:waves-arrow-right
+            variables:
+              aspect_ratio: 2
+              line_width: 2
+              graph_height: 80
+            view_layout:
+              grid-column: span 2
+
+          - type: 'custom:button-card'
+            template:
+              - live_tile_with_graph
+              - live_tile_with_state_unit
+            entity: sensor.hydronics_basement_circulator_power
+            name: Power
+            icon: mdi:lightning-bolt
+            variables:
+              aspect_ratio: 2
+              line_width: 2
+              graph_height: 80
+            view_layout:
+              grid-column: span 2

@@ -2005,3 +2005,5 @@ views:
   - !include ui/views/view-environment.yaml
 
   - !include ui/views/view-network.yaml
+
+  - !include ui/views/view-climate.yaml
