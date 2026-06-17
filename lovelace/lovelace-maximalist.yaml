@@ -279,19 +279,26 @@ views:
 
               - type: 'custom:button-card'
                 template:
-                  - live_tile
+                  - live_tile_with_graph
                   - live_tile_with_state_unit
                 entity: sensor.living_room_ths_temperature
                 name: Temperature
+                variables:
+                  aspect_ratio: 2
+                  line_width: 2
+                  graph_height: 80
                 view_layout:
                   grid-column: span 2
 
               - type: 'custom:button-card'
                 template:
-                  - live_tile
+                  - live_tile_with_graph
                   - live_tile_with_state_unit
                 entity: sensor.living_room_ths_humidity
                 name: Humidity
+                variables:
+                  lower_bound: ~0
+                  upper_bound: ~100
 
               - type: 'custom:button-card'
                 template:
@@ -698,19 +705,26 @@ views:
 
               - type: 'custom:button-card'
                 template:
-                  - live_tile
+                  - live_tile_with_graph
                   - live_tile_with_state_unit
                 entity: sensor.dining_room_ths_temperature
                 name: Temperature
+                variables:
+                  aspect_ratio: 2
+                  line_width: 2
+                  graph_height: 80
                 view_layout:
                   grid-column: span 2
 
               - type: 'custom:button-card'
                 template:
-                  - live_tile
+                  - live_tile_with_graph
                   - live_tile_with_state_unit
                 entity: sensor.dining_room_ths_humidity
                 name: Humidity
+                variables:
+                  lower_bound: ~0
+                  upper_bound: ~100
 
   - title: Kitchen Island
     path: kitchen-island
@@ -1010,35 +1024,49 @@ views:
 
               - type: 'custom:button-card'
                 template:
-                  - live_tile
+                  - live_tile_with_graph
                   - live_tile_with_state_unit
                 entity: sensor.office_ths_temperature
                 name: Temperature
+                variables:
+                  aspect_ratio: 2
+                  line_width: 2
+                  graph_height: 80
                 view_layout:
                   grid-column: span 2
 
               - type: 'custom:button-card'
                 template:
-                  - live_tile
+                  - live_tile_with_graph
                   - live_tile_with_state_unit
                 entity: sensor.office_ths_humidity
                 name: Humidity
+                variables:
+                  lower_bound: ~0
+                  upper_bound: ~100
 
               - type: 'custom:button-card'
                 template:
-                  - live_tile
+                  - live_tile_with_graph
                   - live_tile_with_state_unit
                 entity: sensor.office_desk_ths_temperature
                 name: Desk Temp
+                variables:
+                  aspect_ratio: 2
+                  line_width: 2
+                  graph_height: 80
                 view_layout:
                   grid-column: span 2
 
               - type: 'custom:button-card'
                 template:
-                  - live_tile
+                  - live_tile_with_graph
                   - live_tile_with_state_unit
                 entity: sensor.office_desk_ths_humidity
                 name: Desk Humidity
+                variables:
+                  lower_bound: ~0
+                  upper_bound: ~100
 
               - type: 'custom:button-card'
                 template:
@@ -1134,19 +1162,26 @@ views:
 
               - type: 'custom:button-card'
                 template:
-                  - live_tile
+                  - live_tile_with_graph
                   - live_tile_with_state_unit
                 entity: sensor.bathroom_ths_temperature
                 name: Temperature
+                variables:
+                  aspect_ratio: 2
+                  line_width: 2
+                  graph_height: 80
                 view_layout:
                   grid-column: span 2
 
               - type: 'custom:button-card'
                 template:
-                  - live_tile
+                  - live_tile_with_graph
                   - live_tile_with_state_unit
                 entity: sensor.bathroom_ths_humidity
                 name: Humidity
+                variables:
+                  lower_bound: ~0
+                  upper_bound: ~100
 
               - type: 'custom:button-card'
                 template:
@@ -1242,19 +1277,26 @@ views:
 
               - type: 'custom:button-card'
                 template:
-                  - live_tile
+                  - live_tile_with_graph
                   - live_tile_with_state_unit
                 entity: sensor.lobby_ths_temperature
                 name: Temperature
+                variables:
+                  aspect_ratio: 2
+                  line_width: 2
+                  graph_height: 80
                 view_layout:
                   grid-column: span 2
 
               - type: 'custom:button-card'
                 template:
-                  - live_tile
+                  - live_tile_with_graph
                   - live_tile_with_state_unit
                 entity: sensor.lobby_ths_humidity
                 name: Humidity
+                variables:
+                  lower_bound: ~0
+                  upper_bound: ~100
 
   - title: Stairs
     path: stairs
@@ -1731,19 +1773,26 @@ views:
 
               - type: 'custom:button-card'
                 template:
-                  - live_tile
+                  - live_tile_with_graph
                   - live_tile_with_state_unit
                 entity: sensor.server_rack_ths_temperature
                 name: Rack Temp
+                variables:
+                  aspect_ratio: 2
+                  line_width: 2
+                  graph_height: 80
                 view_layout:
                   grid-column: span 2
 
               - type: 'custom:button-card'
                 template:
-                  - live_tile
+                  - live_tile_with_graph
                   - live_tile_with_state_unit
                 entity: sensor.server_rack_ths_humidity
                 name: Rack Humidity
+                variables:
+                  lower_bound: ~0
+                  upper_bound: ~100
 
   - title: Basement Bathroom
     path: basement-bathroom
