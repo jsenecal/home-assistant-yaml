@@ -116,6 +116,12 @@ cards:
             name: Side Yard Dark
             icon: mdi:weather-night
 
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.front_door_is_dark
+            name: Front Door Dark
+            icon: mdi:weather-night
+
           # [Doors & Windows]
 
           - type: 'custom:button-card'

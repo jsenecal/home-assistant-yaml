@@ -138,6 +138,11 @@ views:
 
               - type: 'custom:button-card'
                 template: live_tile_with_unit
+                entity: sensor.aude_s_plant_sensor_conductivity
+                name: Plant Soil
+
+              - type: 'custom:button-card'
+                template: live_tile_with_unit
                 entity: sensor.aude_s_plant_sensor_battery
                 name: Plant Battery
 
@@ -1108,7 +1113,13 @@ views:
               - type: 'custom:button-card'
                 template: live_tile
                 entity: binary_sensor.office_motion_occupancy
-                name: Occupancy
+                name: Motion
+
+              - type: 'custom:button-card'
+                template: live_tile
+                entity: binary_sensor.office_presence_sensor_occupancy
+                name: Presence
+                icon: mdi:radar
 
               - type: 'custom:button-card'
                 template: live_tile
@@ -1399,6 +1410,11 @@ views:
                 template: live_tile
                 entity: binary_sensor.front_door_lock_lock_jammed
                 name: Door Lock Jammed
+
+              - type: 'custom:button-card'
+                template: live_tile
+                entity: binary_sensor.lobby_is_dark
+                name: Is dark
 
               - type: 'custom:button-card'
                 template: header_card_no_link
