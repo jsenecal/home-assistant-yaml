@@ -1132,6 +1132,12 @@ views:
                 name: Window
 
               - type: 'custom:button-card'
+                template: live_tile
+                entity: binary_sensor.office_air_filter_s31_status
+                name: Air Filter
+                icon: mdi:air-filter
+
+              - type: 'custom:button-card'
                 template: header_card_no_link
                 variables:
                   name: ENVIRONMENT
@@ -1405,6 +1411,12 @@ views:
                   name: SENSORS
                 view_layout:
                   grid-column: 1/-1
+
+              - type: 'custom:button-card'
+                template: live_tile
+                entity: binary_sensor.lobby_motion
+                name: Motion
+                icon: mdi:motion-sensor
 
               - type: 'custom:button-card'
                 template: live_tile
@@ -2084,6 +2096,38 @@ views:
                   graph_height: 80
                 view_layout:
                   grid-column: span 2
+
+              # [Dehumidifier]
+
+              - type: 'custom:button-card'
+                template: header_card_no_link
+                variables:
+                  name: DEHUMIDIFIER
+                view_layout:
+                  grid-column: 1/-1
+
+              - type: 'custom:button-card'
+                template: live_tile
+                entity: humidifier.laundry_room
+                name: Dehumidifier
+                icon: mdi:air-humidifier
+
+              - type: 'custom:button-card'
+                template: live_tile_with_unit
+                entity: sensor.laundry_room_humidity
+                name: Humidity
+
+              - type: 'custom:button-card'
+                template: live_tile
+                entity: binary_sensor.laundry_room_replace_filter
+                name: Replace Filter
+                icon: mdi:air-filter
+
+              - type: 'custom:button-card'
+                template: live_tile
+                entity: binary_sensor.laundry_room_tank_full
+                name: Tank Full
+                icon: mdi:cup-water
 
               - type: 'custom:button-card'
                 template: header_card_no_link

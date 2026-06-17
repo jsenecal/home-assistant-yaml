@@ -230,3 +230,27 @@ cards:
                 if (diffH < 24) return diffH + 'h';
                 return Math.floor(diffH / 24) + 'd';
               ]]]
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.network_video_recorder_hdd_1
+            name: NVR HDD 1
+            icon: mdi:harddisk
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.network_video_recorder_hdd_2
+            name: NVR HDD 2
+            icon: mdi:harddisk
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.network_video_recorder_hdd_3
+            name: NVR HDD 3
+            icon: mdi:harddisk
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.network_video_recorder_hdd_4
+            name: NVR HDD 4
+            icon: mdi:harddisk
