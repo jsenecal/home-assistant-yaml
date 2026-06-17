@@ -122,6 +122,18 @@ cards:
             name: Front Door Dark
             icon: mdi:weather-night
 
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.front_door_doorbell
+            name: Doorbell
+            icon: mdi:doorbell
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.front_door_motion
+            name: Front Door Motion
+            icon: mdi:motion-sensor
+
           # [Doors & Windows]
 
           - type: 'custom:button-card'
@@ -136,6 +148,18 @@ cards:
             entity: binary_sensor.front_door_lock_lock_jammed
             name: Front Lock
             icon: mdi:door-closed-lock
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.front_door_lock_replace_battery_soon
+            name: Lock Battery
+            icon: mdi:battery-low
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.front_door_lock_system_hardware_failure
+            name: Lock HW Fault
+            icon: mdi:lock-alert
 
           - type: 'custom:button-card'
             template: live_tile

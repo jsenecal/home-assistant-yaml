@@ -1409,7 +1409,19 @@ views:
               - type: 'custom:button-card'
                 template: live_tile
                 entity: binary_sensor.front_door_lock_lock_jammed
-                name: Door Lock Jammed
+                name: Lock Jammed
+
+              - type: 'custom:button-card'
+                template: live_tile
+                entity: binary_sensor.front_door_lock_replace_battery_soon
+                name: Lock Battery
+                icon: mdi:battery-low
+
+              - type: 'custom:button-card'
+                template: live_tile
+                entity: binary_sensor.front_door_lock_system_hardware_failure
+                name: Lock HW Fault
+                icon: mdi:lock-alert
 
               - type: 'custom:button-card'
                 template: live_tile
@@ -1932,6 +1944,37 @@ views:
                 template: live_tile
                 entity: binary_sensor.family_room_is_dark
                 name: Is dark
+
+              # [Air Purifier]
+
+              - type: 'custom:button-card'
+                template: header_card_no_link
+                variables:
+                  name: AIR PURIFIER
+                view_layout:
+                  grid-column: 1/-1
+
+              - type: 'custom:button-card'
+                template: live_tile
+                entity: fan.0xdc8e95fffee3e494
+                name: Purifier
+                icon: mdi:air-purifier
+
+              - type: 'custom:button-card'
+                template: live_tile_with_unit
+                entity: sensor.0xdc8e95fffee3e494_air_quality
+                name: Air Quality
+
+              - type: 'custom:button-card'
+                template: live_tile_with_unit
+                entity: sensor.0xdc8e95fffee3e494_pm25
+                name: PM2.5
+
+              - type: 'custom:button-card'
+                template: live_tile
+                entity: binary_sensor.0xdc8e95fffee3e494_replace_filter
+                name: Replace Filter
+                icon: mdi:air-filter
 
   - title: Laundry Room
     path: laundry-room
