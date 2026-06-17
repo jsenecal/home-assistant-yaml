@@ -261,6 +261,18 @@ cards:
 
           - type: 'custom:button-card'
             template: live_tile
+            entity: alarm_control_panel.home
+            name: Alarm
+            icon: mdi:shield-home
+
+          - type: 'custom:button-card'
+            template: live_tile_with_unit
+            entity: sensor.ioniq_5_ev_battery_level
+            name: EV Battery
+            icon: mdi:battery-charging
+
+          - type: 'custom:button-card'
+            template: live_tile
             entity: binary_sensor.hydronics_controller_boiler_enable
             name: Boiler
             icon: mdi:fire
