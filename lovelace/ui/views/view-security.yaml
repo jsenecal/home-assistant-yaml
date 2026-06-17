@@ -56,6 +56,18 @@ cards:
             name: Alarm Silenced
             icon: mdi:bell-off
 
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.keypad_ac_mains_disconnected
+            name: Keypad AC
+            icon: mdi:power-plug
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.keypad_system_software_failure_with_failure_code
+            name: Keypad SW Fault
+            icon: mdi:alert-circle
+
           # [Who's Home]
 
           - type: 'custom:button-card'

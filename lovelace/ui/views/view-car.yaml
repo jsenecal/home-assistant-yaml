@@ -1,0 +1,180 @@
+title: Car
+path: car
+icon: 'mdi:car-electric'
+type: 'custom:grid-layout'
+layout: !include ../shared/snippets/layout-page-margin.yaml
+cards:
+  - type: 'custom:layout-card'
+    layout_type: 'custom:grid-layout'
+    layout: !include ../shared/snippets/layout-page-columns.yaml
+    view_layout:
+      grid-area: cc
+    cards:
+
+      - type: 'custom:layout-card'
+        layout_type: 'custom:grid-layout'
+        layout: !include ../shared/snippets/layout-page-title.yaml
+        view_layout:
+          grid-column: 1/-1
+        cards:
+          - type: markdown
+            style: !include ../shared/snippets/style-markdown-page-title.yaml
+            content: >
+              # IONIQ 5
+
+      - type: 'custom:layout-card'
+        layout_type: 'custom:grid-layout'
+        layout: !include ../shared/snippets/layout-live-tile.yaml
+        view_layout:
+          grid-column: 1/-1
+        cards:
+
+          # [Battery]
+
+          - type: 'custom:button-card'
+            template: header_card_no_link
+            variables:
+              name: BATTERY
+            view_layout:
+              grid-column: 1/-1
+
+          - type: 'custom:button-card'
+            template: live_tile_with_unit
+            entity: sensor.ioniq_5_ev_battery_level
+            name: EV Battery
+            icon: mdi:battery-charging
+
+          - type: 'custom:button-card'
+            template: live_tile_with_unit
+            entity: sensor.ioniq_5_ev_range
+            name: Range
+            icon: mdi:map-marker-distance
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.ioniq_5_ev_battery_charge
+            name: Charging
+            icon: mdi:ev-station
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.ioniq_5_ev_battery_plug
+            name: Plugged In
+            icon: mdi:power-plug
+
+          - type: 'custom:button-card'
+            template: live_tile_with_unit
+            entity: sensor.ioniq_5_estimated_charge_duration
+            name: Charge ETA
+            icon: mdi:timer
+
+          # [Status]
+
+          - type: 'custom:button-card'
+            template: header_card_no_link
+            variables:
+              name: STATUS
+            view_layout:
+              grid-column: 1/-1
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.ioniq_5_locked
+            name: Locked
+            icon: mdi:car-door-lock
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.ioniq_5_engine
+            name: Engine
+            icon: mdi:engine
+
+          - type: 'custom:button-card'
+            template: live_tile_with_unit
+            entity: sensor.ioniq_5_odometer
+            name: Odometer
+            icon: mdi:counter
+
+          - type: 'custom:button-card'
+            template: live_tile_with_unit
+            entity: sensor.ioniq_5_car_battery_level
+            name: 12V Battery
+            icon: mdi:car-battery
+
+          # [Doors]
+
+          - type: 'custom:button-card'
+            template: header_card_no_link
+            variables:
+              name: DOORS
+            view_layout:
+              grid-column: 1/-1
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.ioniq_5_front_left_door
+            name: FL Door
+            icon: mdi:car-door
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.ioniq_5_front_right_door
+            name: FR Door
+            icon: mdi:car-door
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.ioniq_5_back_left_door
+            name: RL Door
+            icon: mdi:car-door
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.ioniq_5_back_right_door
+            name: RR Door
+            icon: mdi:car-door
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.ioniq_5_trunk
+            name: Trunk
+            icon: mdi:car-back
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.ioniq_5_hood
+            name: Hood
+            icon: mdi:car
+
+          # [Alerts]
+
+          - type: 'custom:button-card'
+            template: header_card_no_link
+            variables:
+              name: ALERTS
+            view_layout:
+              grid-column: 1/-1
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.ioniq_5_tire_pressure_all
+            name: Tire Pressure
+            icon: mdi:tire
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.ioniq_5_brake_fluid_warning
+            name: Brake Fluid
+            icon: mdi:alert
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.ioniq_5_washer_fluid_warning
+            name: Washer Fluid
+            icon: mdi:wiper
+
+          - type: 'custom:button-card'
+            template: live_tile_with_unit
+            entity: sensor.ioniq_5_dtc_count
+            name: DTC Count
+            icon: mdi:engine-off

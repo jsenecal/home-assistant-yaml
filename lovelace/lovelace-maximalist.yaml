@@ -2288,3 +2288,5 @@ views:
   - !include ui/views/view-climate.yaml
 
   - !include ui/views/view-security.yaml
+
+  - !include ui/views/view-car.yaml
