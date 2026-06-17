@@ -1514,6 +1514,50 @@ views:
               - type: 'custom:button-card'
                 template: header_card_no_link
                 variables:
+                  name: ENVIRONMENT
+                view_layout:
+                  grid-column: 1/-1
+
+              - type: 'custom:button-card'
+                template:
+                  - live_tile_with_graph
+                  - live_tile_with_state_unit
+                entity: sensor.aude_s_bedroom_ths_temperature
+                name: Temperature
+                variables:
+                  aspect_ratio: 2
+                  line_width: 2
+                  graph_height: 80
+                view_layout:
+                  grid-column: span 2
+
+              - type: 'custom:button-card'
+                template:
+                  - live_tile_with_graph
+                  - live_tile_with_state_unit
+                entity: sensor.aude_s_bedroom_ths_humidity
+                name: Humidity
+                variables:
+                  lower_bound: ~0
+                  upper_bound: ~100
+                  aspect_ratio: 2
+                  line_width: 2
+                  graph_height: 80
+                view_layout:
+                  grid-column: span 2
+
+              - type: 'custom:button-card'
+                template:
+                  - live_tile_card
+                  - live_tile_with_long_state
+                entity: sensor.thermal_comfort_bedroom_humidex_perception
+                name: Comfort
+                icon: mdi:home-thermometer
+                state_display: '[[[ return entity.state.replace(/_/g, " ") ]]]'
+
+              - type: 'custom:button-card'
+                template: header_card_no_link
+                variables:
                   name: SENSORS
                 view_layout:
                   grid-column: 1/-1
