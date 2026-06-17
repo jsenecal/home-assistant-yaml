@@ -147,6 +147,12 @@ cards:
 
           - type: 'custom:button-card'
             template: live_tile
+            entity: binary_sensor.driveway_motion
+            name: Driveway
+            icon: mdi:motion-sensor
+
+          - type: 'custom:button-card'
+            template: live_tile
             entity: binary_sensor.driveway_is_dark
             name: Driveway Dark
             icon: mdi:weather-night
