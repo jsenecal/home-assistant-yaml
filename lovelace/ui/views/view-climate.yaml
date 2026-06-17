@@ -92,6 +92,75 @@ cards:
             entity: climate.hydronics_aude_s_bedroom_climate_controller
             name: Aude's Rm
 
+          # [Actuators]
+
+          - type: 'custom:button-card'
+            template: header_card_no_link
+            variables:
+              name: ACTUATORS
+            view_layout:
+              grid-column: 1/-1
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: switch.hydronics_main_actuator_1_living_room
+            name: Living Room
+            icon: mdi:pipe-valve
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: switch.hydronics_main_actuator_2_kitchen_and_dining_room
+            name: Kitchen/Dining
+            icon: mdi:pipe-valve
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: switch.hydronics_main_actuator_3_office
+            name: Office
+            icon: mdi:pipe-valve
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: switch.hydronics_main_actuator_4_lobby
+            name: Lobby
+            icon: mdi:pipe-valve
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: switch.hydronics_main_actuator_5_bathroom
+            name: Bathroom
+            icon: mdi:pipe-valve
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: switch.hydronics_basement_actuator_1_family_room
+            name: Family Room
+            icon: mdi:pipe-valve
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: switch.hydronics_basement_actuator_2_laundry_room
+            name: Laundry
+            icon: mdi:pipe-valve
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: switch.hydronics_basement_actuator_3_bedroom_2
+            name: Aude's Rm
+            icon: mdi:pipe-valve
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: switch.hydronics_basement_actuator_4_bathroom
+            name: Bsmt Bath
+            icon: mdi:pipe-valve
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: switch.hydronics_basement_actuator_5_bedroom_1
+            name: Albert's Rm
+            icon: mdi:pipe-valve
+
           # [Floor Temperatures]
 
           - type: 'custom:button-card'
@@ -177,6 +246,12 @@ cards:
             entity: binary_sensor.hydronics_controller_boiler_enable
             name: Boiler
             icon: mdi:fire
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: switch.hydronics_controller_call_for_heat
+            name: Call for Heat
+            icon: mdi:radiator
 
           - type: 'custom:button-card'
             template:

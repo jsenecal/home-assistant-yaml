@@ -207,6 +207,18 @@ cards:
 
           - type: 'custom:button-card'
             template: live_tile
+            entity: switch.zigbee2mqtt_bridge_permit_join
+            name: Permit Join
+            icon: mdi:zigbee
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: switch.zigbee2mqtt_attic_bridge_permit_join
+            name: Attic Join
+            icon: mdi:zigbee
+
+          - type: 'custom:button-card'
+            template: live_tile
             entity: binary_sensor.slzb_06_a_ethernet
             name: SLZB-A Eth
             icon: mdi:ethernet
