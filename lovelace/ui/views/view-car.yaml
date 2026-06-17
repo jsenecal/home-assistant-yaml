@@ -85,6 +85,12 @@ cards:
 
           - type: 'custom:button-card'
             template: live_tile
+            entity: lock.ioniq_5_door_lock
+            name: Door Lock
+            icon: mdi:car-door-lock
+
+          - type: 'custom:button-card'
+            template: live_tile
             entity: binary_sensor.ioniq_5_locked
             name: Locked
             icon: mdi:car-door-lock

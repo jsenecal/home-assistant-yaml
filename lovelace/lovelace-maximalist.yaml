@@ -1432,6 +1432,12 @@ views:
 
               - type: 'custom:button-card'
                 template: live_tile
+                entity: lock.front_door_lock
+                name: Front Lock
+                icon: mdi:door-closed-lock
+
+              - type: 'custom:button-card'
+                template: live_tile
                 entity: binary_sensor.front_door_lock_lock_jammed
                 name: Lock Jammed
 
