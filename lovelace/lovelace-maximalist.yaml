@@ -12,6 +12,8 @@ apexcharts_card_templates: !include ui/templates/apexcharts-card.yaml
 views:
   - !include ui/views/view-summary.yaml
 
+  - !include ui/views/view-lights.yaml
+
   - title: Kitchen
     path: kitchen
     type: 'custom:grid-layout'

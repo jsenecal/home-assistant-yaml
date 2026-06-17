@@ -1,0 +1,294 @@
+title: Light
+path: lights
+icon: 'mdi:lightbulb-group'
+type: 'custom:grid-layout'
+layout: !include ../shared/snippets/layout-page-margin.yaml
+cards:
+  - type: 'custom:layout-card'
+    layout_type: 'custom:grid-layout'
+    layout: !include ../shared/snippets/layout-page-columns.yaml
+    view_layout:
+      grid-area: cc
+    cards:
+
+      - type: 'custom:layout-card'
+        layout_type: 'custom:grid-layout'
+        layout: !include ../shared/snippets/layout-page-title.yaml
+        view_layout:
+          grid-column: 1/-1
+        cards:
+          - type: markdown
+            style: !include ../shared/snippets/style-markdown-page-title.yaml
+            content: >
+              # Light
+
+              {{ states.light | length }} lights total,
+              {{ states.light | selectattr('state', 'equalto', 'on') | list | length }} on.
+
+      - type: 'custom:layout-card'
+        layout_type: 'custom:grid-layout'
+        layout: !include ../shared/snippets/layout-live-tile.yaml
+        view_layout:
+          grid-column: 1/-1
+        cards:
+
+          # [Kitchen]
+
+          - type: 'custom:button-card'
+            template: header_card_no_link
+            variables:
+              name: KITCHEN
+            view_layout:
+              grid-column: 1/-1
+
+          - type: 'custom:button-card'
+            template: light_button_card_group
+            entity: light.kitchen
+            name: Kitchen
+
+          - type: 'custom:button-card'
+            template: light_button_card
+            entity: light.kitchen_island
+            name: Island
+
+          - type: 'custom:button-card'
+            template: light_button_card
+            entity: light.wled_kitchen_counters
+            name: Countertop
+
+          # [Living Room]
+
+          - type: 'custom:button-card'
+            template: header_card_no_link
+            variables:
+              name: LIVING ROOM
+            view_layout:
+              grid-column: 1/-1
+
+          - type: 'custom:button-card'
+            template: light_button_card_group
+            entity: light.living_room
+            name: Living Room
+
+          - type: 'custom:button-card'
+            template: light_button_card
+            entity: light.living_room_1
+            name: Zone 1
+
+          - type: 'custom:button-card'
+            template: light_button_card
+            entity: light.living_room_2
+            name: Zone 2
+
+          # [Great Room]
+
+          - type: 'custom:button-card'
+            template: header_card_no_link
+            variables:
+              name: GREAT ROOM
+            view_layout:
+              grid-column: 1/-1
+
+          - type: 'custom:button-card'
+            template: light_button_card
+            entity: light.great_room
+            name: Great Room
+
+          # [Dining Area]
+
+          - type: 'custom:button-card'
+            template: header_card_no_link
+            variables:
+              name: DINING AREA
+            view_layout:
+              grid-column: 1/-1
+
+          - type: 'custom:button-card'
+            template: light_button_card
+            entity: light.dining
+            name: Dining
+
+          # [Office]
+
+          - type: 'custom:button-card'
+            template: header_card_no_link
+            variables:
+              name: OFFICE
+            view_layout:
+              grid-column: 1/-1
+
+          - type: 'custom:button-card'
+            template: light_button_card
+            entity: light.office
+            name: Office
+
+          - type: 'custom:button-card'
+            template: light_button_card
+            entity: light.office_desk_lamp
+            name: Desk Lamp
+
+          # [Main Bathroom]
+
+          - type: 'custom:button-card'
+            template: header_card_no_link
+            variables:
+              name: BATHROOM
+            view_layout:
+              grid-column: 1/-1
+
+          - type: 'custom:button-card'
+            template: light_button_card_group
+            entity: light.bathroom_dl_grp
+            name: Downlights
+
+          - type: 'custom:button-card'
+            template: light_button_card
+            entity: light.bathroom_night_light
+            name: Night Light
+
+          # [Lobby]
+
+          - type: 'custom:button-card'
+            template: header_card_no_link
+            variables:
+              name: LOBBY
+            view_layout:
+              grid-column: 1/-1
+
+          - type: 'custom:button-card'
+            template: light_button_card
+            entity: light.lobby_door_dl
+            name: Door DL
+
+          - type: 'custom:button-card'
+            template: light_button_card
+            entity: light.front_door_sconce_dimmer
+            name: Sconce
+
+          # [Stairs]
+
+          - type: 'custom:button-card'
+            template: header_card_no_link
+            variables:
+              name: STAIRS
+            view_layout:
+              grid-column: 1/-1
+
+          - type: 'custom:button-card'
+            template: light_button_card
+            entity: light.staircase
+            name: Staircase
+
+          - type: 'custom:button-card'
+            template: light_button_card
+            entity: light.hue_color_lamp_1
+            name: Colour Lamp
+
+          - type: 'custom:button-card'
+            template: light_button_card_group
+            entity: light.corridor_dl_grp
+            name: Corridor
+
+          # [Basement Bedroom 1 — Albert's]
+
+          - type: 'custom:button-card'
+            template: header_card_no_link
+            variables:
+              name: ALBERT'S BEDROOM
+            view_layout:
+              grid-column: 1/-1
+
+          - type: 'custom:button-card'
+            template: light_button_card_group
+            entity: light.3
+            name: Downlights
+
+          - type: 'custom:button-card'
+            template: light_button_card
+            entity: light.albert_s_bedroom_door_dl
+            name: Door DL
+
+          # [Basement Bedroom 2 — Aude's]
+
+          - type: 'custom:button-card'
+            template: header_card_no_link
+            variables:
+              name: AUDE'S BEDROOM
+            view_layout:
+              grid-column: 1/-1
+
+          - type: 'custom:button-card'
+            template: light_button_card_group
+            entity: light.2
+            name: Downlights
+
+          - type: 'custom:button-card'
+            template: light_button_card
+            entity: light.aude_s_bedroom_door_dl
+            name: Door DL
+
+          # [Family Room]
+
+          - type: 'custom:button-card'
+            template: header_card_no_link
+            variables:
+              name: FAMILY ROOM
+            view_layout:
+              grid-column: 1/-1
+
+          - type: 'custom:button-card'
+            template: light_button_card
+            entity: light.4
+            name: Zone 1
+
+          - type: 'custom:button-card'
+            template: light_button_card
+            entity: light.5
+            name: Zone 2
+
+          # [Laundry Room]
+
+          - type: 'custom:button-card'
+            template: header_card_no_link
+            variables:
+              name: LAUNDRY ROOM
+            view_layout:
+              grid-column: 1/-1
+
+          - type: 'custom:button-card'
+            template: light_button_card
+            entity: light.1
+            name: Laundry
+
+          # [Basement Bathroom]
+
+          - type: 'custom:button-card'
+            template: header_card_no_link
+            variables:
+              name: BASEMENT BATHROOM
+            view_layout:
+              grid-column: 1/-1
+
+          - type: 'custom:button-card'
+            template: light_button_card
+            entity: light.basement_bathroom_downlights
+            name: Downlights
+
+          # [Server Room]
+
+          - type: 'custom:button-card'
+            template: header_card_no_link
+            variables:
+              name: SERVER ROOM
+            view_layout:
+              grid-column: 1/-1
+
+          - type: 'custom:button-card'
+            template: light_button_card
+            entity: light.0xa4c138d17963fec8
+            name: Ceiling
+
+          - type: 'custom:button-card'
+            template: light_button_card
+            entity: light.top_of_rack_switch_led
+            name: Rack LED
