@@ -1629,3 +1629,5 @@ views:
                   color: 'rgb(64, 64, 64)'
 
   - !include ui/views/view-weather.yaml
+
+  - !include ui/views/view-environment.yaml
