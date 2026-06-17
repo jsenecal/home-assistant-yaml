@@ -270,6 +270,39 @@ views:
                 view_layout:
                   grid-column: span 2
 
+              - type: 'custom:button-card'
+                template: header_card_no_link
+                variables:
+                  name: ENVIRONMENT
+                view_layout:
+                  grid-column: 1/-1
+
+              - type: 'custom:button-card'
+                template:
+                  - live_tile
+                  - live_tile_with_state_unit
+                entity: sensor.living_room_ths_temperature
+                name: Temperature
+                view_layout:
+                  grid-column: span 2
+
+              - type: 'custom:button-card'
+                template:
+                  - live_tile
+                  - live_tile_with_state_unit
+                entity: sensor.living_room_ths_humidity
+                name: Humidity
+
+              - type: 'custom:button-card'
+                template:
+                  - live_tile_card
+                  - live_tile_with_long_state
+                entity: sensor.thermal_comfort_living_room_humidex_perception
+                name: Comfort
+                state_display: '[[[ return entity.state.replace(/_/g, " ") ]]]'
+                view_layout:
+                  grid-column: span 2
+
   - title: Great Room
     path: great-room
     type: 'custom:grid-layout'
@@ -656,6 +689,29 @@ views:
                   name: Unwind
                   color: 'rgb(128, 96, 160)'
 
+              - type: 'custom:button-card'
+                template: header_card_no_link
+                variables:
+                  name: ENVIRONMENT
+                view_layout:
+                  grid-column: 1/-1
+
+              - type: 'custom:button-card'
+                template:
+                  - live_tile
+                  - live_tile_with_state_unit
+                entity: sensor.dining_room_ths_temperature
+                name: Temperature
+                view_layout:
+                  grid-column: span 2
+
+              - type: 'custom:button-card'
+                template:
+                  - live_tile
+                  - live_tile_with_state_unit
+                entity: sensor.dining_room_ths_humidity
+                name: Humidity
+
   - title: Kitchen Island
     path: kitchen-island
     type: 'custom:grid-layout'
@@ -945,6 +1001,55 @@ views:
                 entity: binary_sensor.office_window_contact
                 name: Window
 
+              - type: 'custom:button-card'
+                template: header_card_no_link
+                variables:
+                  name: ENVIRONMENT
+                view_layout:
+                  grid-column: 1/-1
+
+              - type: 'custom:button-card'
+                template:
+                  - live_tile
+                  - live_tile_with_state_unit
+                entity: sensor.office_ths_temperature
+                name: Temperature
+                view_layout:
+                  grid-column: span 2
+
+              - type: 'custom:button-card'
+                template:
+                  - live_tile
+                  - live_tile_with_state_unit
+                entity: sensor.office_ths_humidity
+                name: Humidity
+
+              - type: 'custom:button-card'
+                template:
+                  - live_tile
+                  - live_tile_with_state_unit
+                entity: sensor.office_desk_ths_temperature
+                name: Desk Temp
+                view_layout:
+                  grid-column: span 2
+
+              - type: 'custom:button-card'
+                template:
+                  - live_tile
+                  - live_tile_with_state_unit
+                entity: sensor.office_desk_ths_humidity
+                name: Desk Humidity
+
+              - type: 'custom:button-card'
+                template:
+                  - live_tile_card
+                  - live_tile_with_long_state
+                entity: sensor.thermal_comfort_office_humidex_perception
+                name: Comfort
+                state_display: '[[[ return entity.state.replace(/_/g, " ") ]]]'
+                view_layout:
+                  grid-column: span 2
+
   - title: Main Bathroom
     path: main-bathroom
     type: 'custom:grid-layout'
@@ -1020,6 +1125,39 @@ views:
                 entity: binary_sensor.bathroom_downlights_dimmer_occupancy
                 name: Occupancy
 
+              - type: 'custom:button-card'
+                template: header_card_no_link
+                variables:
+                  name: ENVIRONMENT
+                view_layout:
+                  grid-column: 1/-1
+
+              - type: 'custom:button-card'
+                template:
+                  - live_tile
+                  - live_tile_with_state_unit
+                entity: sensor.bathroom_ths_temperature
+                name: Temperature
+                view_layout:
+                  grid-column: span 2
+
+              - type: 'custom:button-card'
+                template:
+                  - live_tile
+                  - live_tile_with_state_unit
+                entity: sensor.bathroom_ths_humidity
+                name: Humidity
+
+              - type: 'custom:button-card'
+                template:
+                  - live_tile_card
+                  - live_tile_with_long_state
+                entity: sensor.thermal_comfort_bathroom_humidex_perception
+                name: Comfort
+                state_display: '[[[ return entity.state.replace(/_/g, " ") ]]]'
+                view_layout:
+                  grid-column: span 2
+
   - title: Lobby
     path: lobby
     type: 'custom:grid-layout'
@@ -1094,6 +1232,29 @@ views:
                 template: live_tile
                 entity: binary_sensor.front_door_lock_lock_jammed
                 name: Door Lock Jammed
+
+              - type: 'custom:button-card'
+                template: header_card_no_link
+                variables:
+                  name: ENVIRONMENT
+                view_layout:
+                  grid-column: 1/-1
+
+              - type: 'custom:button-card'
+                template:
+                  - live_tile
+                  - live_tile_with_state_unit
+                entity: sensor.lobby_ths_temperature
+                name: Temperature
+                view_layout:
+                  grid-column: span 2
+
+              - type: 'custom:button-card'
+                template:
+                  - live_tile
+                  - live_tile_with_state_unit
+                entity: sensor.lobby_ths_humidity
+                name: Humidity
 
   - title: Stairs
     path: stairs
@@ -1560,6 +1721,29 @@ views:
                 template: live_tile
                 entity: binary_sensor.zigbee2mqtt_bridge_connection_state
                 name: Zigbee Bridge
+
+              - type: 'custom:button-card'
+                template: header_card_no_link
+                variables:
+                  name: ENVIRONMENT
+                view_layout:
+                  grid-column: 1/-1
+
+              - type: 'custom:button-card'
+                template:
+                  - live_tile
+                  - live_tile_with_state_unit
+                entity: sensor.server_rack_ths_temperature
+                name: Rack Temp
+                view_layout:
+                  grid-column: span 2
+
+              - type: 'custom:button-card'
+                template:
+                  - live_tile
+                  - live_tile_with_state_unit
+                entity: sensor.server_rack_ths_humidity
+                name: Rack Humidity
 
   - title: Basement Bathroom
     path: basement-bathroom
