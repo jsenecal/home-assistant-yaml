@@ -153,6 +153,24 @@ cards:
 
           - type: 'custom:button-card'
             template: live_tile
+            entity: binary_sensor.front_yard_person_detected
+            name: Front Yard Person
+            icon: mdi:account
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.back_yard_person_detected
+            name: Back Yard Person
+            icon: mdi:account
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.driveway_person_detected
+            name: Driveway Person
+            icon: mdi:account
+
+          - type: 'custom:button-card'
+            template: live_tile
             entity: binary_sensor.driveway_is_dark
             name: Driveway Dark
             icon: mdi:weather-night
@@ -192,6 +210,12 @@ cards:
             entity: binary_sensor.front_door_motion
             name: Front Door Motion
             icon: mdi:motion-sensor
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.front_door_person_detected
+            name: Front Door Person
+            icon: mdi:account
 
           # [Doors & Windows]
 

@@ -576,6 +576,12 @@ views:
 
               - type: 'custom:button-card'
                 template: live_tile
+                entity: binary_sensor.great_room_person_detected
+                name: Person
+                icon: mdi:account
+
+              - type: 'custom:button-card'
+                template: live_tile
                 entity: binary_sensor.patio_door_contact_battery_low
                 name: Patio Door Battery
 
@@ -1521,6 +1527,18 @@ views:
                 name: Is dark
 
               - type: 'custom:button-card'
+                template: live_tile
+                entity: binary_sensor.lobby_person_detected
+                name: Person
+                icon: mdi:account
+
+              - type: 'custom:button-card'
+                template: live_tile
+                entity: binary_sensor.front_door_person_detected
+                name: Front Door Person
+                icon: mdi:account
+
+              - type: 'custom:button-card'
                 template: header_card_no_link
                 variables:
                   name: MEDIA
@@ -1768,6 +1786,12 @@ views:
                 entity: binary_sensor.albert_s_bedroom_is_dark
                 name: Is dark
 
+              - type: 'custom:button-card'
+                template: live_tile
+                entity: binary_sensor.albert_s_bedroom_person_detected
+                name: Person
+                icon: mdi:account
+
   - title: Basement Bedroom 2
     path: basement-bedroom-2
     type: 'custom:grid-layout'
@@ -1925,6 +1949,12 @@ views:
                 entity: binary_sensor.aude_s_bedroom_is_dark
                 name: Is dark
 
+              - type: 'custom:button-card'
+                template: live_tile
+                entity: binary_sensor.aude_s_bedroom_person_detected
+                name: Person
+                icon: mdi:account
+
   - title: Family Room
     path: family-room
     type: 'custom:grid-layout'
@@ -2046,6 +2076,12 @@ views:
                 template: live_tile
                 entity: binary_sensor.family_room_is_dark
                 name: Is dark
+
+              - type: 'custom:button-card'
+                template: live_tile
+                entity: binary_sensor.family_room_person_detected
+                name: Person
+                icon: mdi:account
 
               # [Air Purifier]
 
