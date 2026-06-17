@@ -703,6 +703,20 @@ views:
               - type: 'custom:button-card'
                 template: header_card_no_link
                 variables:
+                  name: MEDIA
+                view_layout:
+                  grid-column: 1/-1
+
+              - type: 'custom:button-card'
+                template: live_tile_media_player
+                entity: media_player.dining_room_speaker
+                name: Speaker
+                view_layout:
+                  grid-column: span 2
+
+              - type: 'custom:button-card'
+                template: header_card_no_link
+                variables:
                   name: ENVIRONMENT
                 view_layout:
                   grid-column: 1/-1
@@ -984,6 +998,27 @@ views:
                 variables:
                   name: Tokyo
                   color: 'rgb(255, 64, 0)'
+
+              - type: 'custom:button-card'
+                template: header_card_no_link
+                variables:
+                  name: MEDIA
+                view_layout:
+                  grid-column: 1/-1
+
+              - type: 'custom:button-card'
+                template: live_tile_media_player
+                entity: media_player.office_speakers
+                name: Speakers
+                view_layout:
+                  grid-column: span 2
+
+              - type: 'custom:button-card'
+                template: live_tile_media_player
+                entity: media_player.shield_office_tv
+                name: SHIELD TV
+                view_layout:
+                  grid-column: span 2
 
               - type: 'custom:button-card'
                 template: header_card_no_link
@@ -1436,6 +1471,27 @@ views:
               - type: 'custom:button-card'
                 template: header_card_no_link
                 variables:
+                  name: MEDIA
+                view_layout:
+                  grid-column: 1/-1
+
+              - type: 'custom:button-card'
+                template: live_tile_media_player
+                entity: media_player.albert_s_bedroom_speaker
+                name: Speaker
+                view_layout:
+                  grid-column: span 2
+
+              - type: 'custom:button-card'
+                template: live_tile_media_player
+                entity: media_player.albert_s_display
+                name: Display
+                view_layout:
+                  grid-column: span 2
+
+              - type: 'custom:button-card'
+                template: header_card_no_link
+                variables:
                   name: SENSORS
                 view_layout:
                   grid-column: 1/-1
@@ -1512,6 +1568,20 @@ views:
                 template: live_tile
                 entity: climate.hydronics_aude_s_bedroom_climate_controller
                 name: Climate
+
+              - type: 'custom:button-card'
+                template: header_card_no_link
+                variables:
+                  name: MEDIA
+                view_layout:
+                  grid-column: 1/-1
+
+              - type: 'custom:button-card'
+                template: live_tile_media_player
+                entity: media_player.aude_s_bedroom_speaker
+                name: Speaker
+                view_layout:
+                  grid-column: span 2
 
               - type: 'custom:button-card'
                 template: header_card_no_link
@@ -1636,6 +1706,27 @@ views:
                 template: live_tile
                 entity: climate.hydronics_family_room_climate_controller
                 name: Climate
+
+              - type: 'custom:button-card'
+                template: header_card_no_link
+                variables:
+                  name: MEDIA
+                view_layout:
+                  grid-column: 1/-1
+
+              - type: 'custom:button-card'
+                template: live_tile_media_player
+                entity: media_player.shield_2
+                name: SHIELD TV
+                view_layout:
+                  grid-column: span 2
+
+              - type: 'custom:button-card'
+                template: live_tile_media_player
+                entity: media_player.nesthub3ce3
+                name: Display
+                view_layout:
+                  grid-column: span 2
 
               - type: 'custom:button-card'
                 template: header_card_no_link
