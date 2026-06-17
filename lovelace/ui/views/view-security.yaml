@@ -1,0 +1,246 @@
+title: Security
+path: security
+icon: 'mdi:shield-home'
+type: 'custom:grid-layout'
+layout: !include ../shared/snippets/layout-page-margin.yaml
+cards:
+  - type: 'custom:layout-card'
+    layout_type: 'custom:grid-layout'
+    layout: !include ../shared/snippets/layout-page-columns.yaml
+    view_layout:
+      grid-area: cc
+    cards:
+
+      - type: 'custom:layout-card'
+        layout_type: 'custom:grid-layout'
+        layout: !include ../shared/snippets/layout-page-title.yaml
+        view_layout:
+          grid-column: 1/-1
+        cards:
+          - type: markdown
+            style: !include ../shared/snippets/style-markdown-page-title.yaml
+            content: >
+              # Security
+
+      - type: 'custom:layout-card'
+        layout_type: 'custom:grid-layout'
+        layout: !include ../shared/snippets/layout-live-tile.yaml
+        view_layout:
+          grid-column: 1/-1
+        cards:
+
+          # [Who's Home]
+
+          - type: 'custom:button-card'
+            template: header_card_no_link
+            variables:
+              name: WHO'S HOME
+            view_layout:
+              grid-column: 1/-1
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: person.jonathan_senecal
+            name: Jonathan
+            icon: mdi:account
+
+          # [Outdoor]
+
+          - type: 'custom:button-card'
+            template: header_card_no_link
+            variables:
+              name: OUTDOOR
+            view_layout:
+              grid-column: 1/-1
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.front_yard_motion
+            name: Front Yard
+            icon: mdi:motion-sensor
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.back_yard_motion
+            name: Back Yard
+            icon: mdi:motion-sensor
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.driveway_is_dark
+            name: Driveway Dark
+            icon: mdi:weather-night
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.front_yard_is_dark
+            name: Front Yard Dark
+            icon: mdi:weather-night
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.back_yard_is_dark
+            name: Back Yard Dark
+            icon: mdi:weather-night
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.side_yard_is_dark
+            name: Side Yard Dark
+            icon: mdi:weather-night
+
+          # [Doors & Windows]
+
+          - type: 'custom:button-card'
+            template: header_card_no_link
+            variables:
+              name: DOORS & WINDOWS
+            view_layout:
+              grid-column: 1/-1
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.front_door_lock_lock_jammed
+            name: Front Lock
+            icon: mdi:door-closed-lock
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.patio_door_contact
+            name: Patio Door
+            icon: mdi:door-sliding
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.patio_screen_door_contact
+            name: Screen Door
+            icon: mdi:door-sliding
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.office_door_sensor_contact
+            name: Office Door
+            icon: mdi:door
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.office_window_contact
+            name: Office Window
+            icon: mdi:window-open
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.laundry_room_door_contact
+            name: Laundry Door
+            icon: mdi:door
+
+          # [Water]
+
+          - type: 'custom:button-card'
+            template: header_card_no_link
+            variables:
+              name: WATER
+            view_layout:
+              grid-column: 1/-1
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.kitchen_sink_water_leak_sensor_water_leak
+            name: Kitchen Sink
+            icon: mdi:water-alert
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.filter_leak_sensor_water_leak
+            name: Filter
+            icon: mdi:water-alert
+
+          # [Occupancy]
+
+          - type: 'custom:button-card'
+            template: header_card_no_link
+            variables:
+              name: OCCUPANCY
+            view_layout:
+              grid-column: 1/-1
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.kitchen_dimmer_2_occupancy
+            name: Kitchen
+            icon: mdi:motion-sensor
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.great_room_motion
+            name: Great Room
+            icon: mdi:motion-sensor
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.great_room_presence_sensor_occupancy
+            name: Great Room Pres
+            icon: mdi:radar
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.office_motion_occupancy
+            name: Office Motion
+            icon: mdi:motion-sensor
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.office_presence_sensor_occupancy
+            name: Office Pres
+            icon: mdi:radar
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.albert_s_bedroom_motion
+            name: Albert's Rm
+            icon: mdi:motion-sensor
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.aude_s_bedroom_motion
+            name: Aude's Rm
+            icon: mdi:motion-sensor
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.family_room_motion
+            name: Family Room
+            icon: mdi:motion-sensor
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.0x282c02bfffe8009c_occupancy
+            name: Server Room
+            icon: mdi:motion-sensor
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.0x8c6fb9fffe3c75a9_occupancy
+            name: Laundry Room
+            icon: mdi:motion-sensor
+
+          # [Appliances]
+
+          - type: 'custom:button-card'
+            template: header_card_no_link
+            variables:
+              name: APPLIANCES
+            view_layout:
+              grid-column: 1/-1
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.refrigerator_running
+            name: Refrigerator
+            icon: mdi:fridge
+
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.washing_machine_s31_washing_machine_running
+            name: Washing Machine
+            icon: mdi:washing-machine

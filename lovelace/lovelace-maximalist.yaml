@@ -1861,6 +1861,28 @@ views:
                 name: Washer Power
                 icon: mdi:washing-machine
                 variables:
+                  lower_bound: ~0
+                  aspect_ratio: 2
+                  line_width: 2
+                  graph_height: 80
+                view_layout:
+                  grid-column: span 2
+
+              - type: 'custom:button-card'
+                template: header_card_no_link
+                variables:
+                  name: MEDIA
+                view_layout:
+                  grid-column: 1/-1
+
+              - type: 'custom:button-card'
+                template: live_tile_media_player
+                entity: media_player.aude_s_bedroom_speaker_2
+                name: Speaker
+                view_layout:
+                  grid-column: span 2
+                icon: mdi:washing-machine
+                variables:
                   aspect_ratio: 2
                   line_width: 2
                   graph_height: 80
@@ -2050,3 +2072,5 @@ views:
   - !include ui/views/view-network.yaml
 
   - !include ui/views/view-climate.yaml
+
+  - !include ui/views/view-security.yaml
