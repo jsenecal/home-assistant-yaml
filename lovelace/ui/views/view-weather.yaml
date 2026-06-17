@@ -35,11 +35,11 @@ cards:
           **Wind** {{ state_attr('weather.weather', 'wind_speed') | round(0) }} km/h
           *(gusts {{ state_attr('weather.weather', 'wind_gust_speed') | round(0) }} km/h)*
 
-          **UV Index** {{ state_attr('weather.weather', 'uv_index') }}
+          **Cloud Cover** {{ state_attr('weather.weather', 'cloud_coverage') | round(0) }} %
 
           **Dew point** {{ states('sensor.thermal_comfort_outdoor_dew_point') | float | round(1) }} °C
 
-          **Ozone** {{ state_attr('weather.weather', 'ozone') }}
+          **Visibility** {{ state_attr('weather.weather', 'visibility') | round(0) }} km
 
       - type: markdown
         content: |
@@ -48,6 +48,91 @@ cards:
           Feels like **{{ states('sensor.thermal_comfort_outdoor_heat_index') | float | round(1) }} °C**
 
       # [Section] Charts
+
+      - type: 'custom:apexcharts-card'
+        config_templates: weather_chart
+        view_layout:
+          grid-column: 1/-1
+        header:
+          title: Hourly Forecast
+          show: true
+          show_states: false
+        yaxis:
+          - id: temp
+            show: true
+            decimals: 0
+            apex_config:
+              labels:
+                offsetX: 24
+          - id: precip
+            opposite: true
+            min: 0
+            max: 100
+            show: true
+            decimals: 0
+        series:
+          - entity: weather.weather
+            name: Temperature
+            yaxis_id: temp
+            forecast:
+              type: hourly
+              attribute: temperature
+            unit: '°C'
+          - entity: weather.weather
+            name: Rain %
+            yaxis_id: precip
+            type: column
+            opacity: 0.3
+            stroke_width: 0
+            forecast:
+              type: hourly
+              attribute: precipitation_probability
+            unit: '%'
+
+      - type: 'custom:apexcharts-card'
+        config_templates: weather_daily_chart
+        view_layout:
+          grid-column: 1/-1
+        header:
+          title: 5-Day Forecast
+          show: true
+          show_states: false
+        yaxis:
+          - id: temp
+            show: true
+            decimals: 0
+          - id: precip
+            opposite: true
+            min: 0
+            max: 100
+            show: false
+        series:
+          - entity: weather.weather
+            name: High
+            type: column
+            yaxis_id: temp
+            forecast:
+              type: daily
+              attribute: temperature
+            unit: '°C'
+          - entity: weather.weather
+            name: Low
+            type: column
+            yaxis_id: temp
+            forecast:
+              type: daily
+              attribute: templow
+            unit: '°C'
+          - entity: weather.weather
+            name: Rain %
+            type: column
+            yaxis_id: precip
+            opacity: 0.3
+            stroke_width: 0
+            forecast:
+              type: daily
+              attribute: precipitation_probability
+            unit: '%'
 
       - type: 'custom:apexcharts-card'
         config_templates: sun_elevation

@@ -1,7 +1,8 @@
 
 sun_elevation:
   series:
-    - entity: sensor.sun_elevation
+    - entity: sun.sun
+      attribute: elevation
       color: rgb(255,255,255)
       opacity: .2
       stroke_width: .5
@@ -9,7 +10,8 @@ sun_elevation:
       unit: °
       show:
         legend_value: false
-    - entity: sensor.sun_elevation
+    - entity: sun.sun
+      attribute: elevation
       color: rgb(255,255,255)
       opacity: .2
       stroke_width: .5
