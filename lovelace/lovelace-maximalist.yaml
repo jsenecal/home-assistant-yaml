@@ -2694,3 +2694,9 @@ views:
   - !include ui/views/view-security.yaml
 
   - !include ui/views/view-car.yaml
+
+  - !include ui/views/view-media.yaml
+
+  - !include ui/views/view-energy.yaml
+
+  - !include ui/views/view-maintenance.yaml

@@ -1,0 +1,262 @@
+title: Media
+path: media
+icon: 'mdi:music-note'
+type: 'custom:grid-layout'
+layout: !include ../shared/snippets/layout-page-margin.yaml
+cards:
+  - type: 'custom:layout-card'
+    layout_type: 'custom:grid-layout'
+    layout: !include ../shared/snippets/layout-page-columns.yaml
+    view_layout:
+      grid-area: cc
+    cards:
+
+      - type: 'custom:layout-card'
+        layout_type: 'custom:grid-layout'
+        layout: !include ../shared/snippets/layout-page-title.yaml
+        view_layout:
+          grid-column: 1/-1
+        cards:
+          - type: markdown
+            style: !include ../shared/snippets/style-markdown-page-title.yaml
+            content: >
+              # Media
+
+              {{ states.media_player | selectattr('state', 'equalto', 'playing') | list | length }}
+              playing, {{ states.media_player | selectattr('state', 'equalto', 'paused') | list | length }} paused.
+
+      # [Column] Living Room
+
+      - type: 'custom:layout-card'
+        layout_type: 'custom:grid-layout'
+        layout:
+          margin: -1
+        cards:
+          - type: 'custom:button-card'
+            template: header_card_no_link
+            variables:
+              name: LIVING ROOM
+          - type: 'custom:layout-card'
+            layout_type: 'custom:grid-layout'
+            layout: !include ../shared/snippets/layout-live-tile.yaml
+            cards:
+              - type: 'custom:button-card'
+                template: live_tile_media_player
+                entity: media_player.living_room_tv
+                name: TV
+                view_layout:
+                  grid-column: span 2
+              - type: 'custom:button-card'
+                template: live_tile_media_player
+                entity: media_player.great_room_speakers
+                name: Speakers
+                view_layout:
+                  grid-column: span 2
+              - type: 'custom:button-card'
+                template: live_tile_media_player
+                entity: media_player.kitchen_speaker
+                name: LR Speaker
+                view_layout:
+                  grid-column: span 2
+
+      # [Column] Kitchen & Dining
+
+      - type: 'custom:layout-card'
+        layout_type: 'custom:grid-layout'
+        layout:
+          margin: -1
+        cards:
+          - type: 'custom:button-card'
+            template: header_card_no_link
+            variables:
+              name: KITCHEN & DINING
+          - type: 'custom:layout-card'
+            layout_type: 'custom:grid-layout'
+            layout: !include ../shared/snippets/layout-live-tile.yaml
+            cards:
+              - type: 'custom:button-card'
+                template: live_tile_media_player
+                entity: media_player.living_room_display
+                name: Display
+                view_layout:
+                  grid-column: span 2
+              - type: 'custom:button-card'
+                template: live_tile_media_player
+                entity: media_player.dining_room_speaker
+                name: Dining Speaker
+                view_layout:
+                  grid-column: span 2
+
+      # [Column] Office
+
+      - type: 'custom:layout-card'
+        layout_type: 'custom:grid-layout'
+        layout:
+          margin: -1
+        cards:
+          - type: 'custom:button-card'
+            template: header_card_no_link
+            variables:
+              name: OFFICE
+          - type: 'custom:layout-card'
+            layout_type: 'custom:grid-layout'
+            layout: !include ../shared/snippets/layout-live-tile.yaml
+            cards:
+              - type: 'custom:button-card'
+                template: live_tile_media_player
+                entity: media_player.office_speakers
+                name: Speakers
+                view_layout:
+                  grid-column: span 2
+              - type: 'custom:button-card'
+                template: live_tile_media_player
+                entity: media_player.shield_office_tv
+                name: SHIELD TV
+                view_layout:
+                  grid-column: span 2
+              - type: 'custom:button-card'
+                template: live_tile_media_player
+                entity: media_player.office_display
+                name: Display
+                view_layout:
+                  grid-column: span 2
+
+      # [Column] Albert's Bedroom
+
+      - type: 'custom:layout-card'
+        layout_type: 'custom:grid-layout'
+        layout:
+          margin: -1
+        cards:
+          - type: 'custom:button-card'
+            template: header_card_no_link
+            variables:
+              name: ALBERT'S BEDROOM
+          - type: 'custom:layout-card'
+            layout_type: 'custom:grid-layout'
+            layout: !include ../shared/snippets/layout-live-tile.yaml
+            cards:
+              - type: 'custom:button-card'
+                template: live_tile_media_player
+                entity: media_player.albert_s_bedroom_speaker
+                name: Speaker
+                view_layout:
+                  grid-column: span 2
+              - type: 'custom:button-card'
+                template: live_tile_media_player
+                entity: media_player.albert_s_display
+                name: Display
+                view_layout:
+                  grid-column: span 2
+
+      # [Column] Aude's Bedroom
+
+      - type: 'custom:layout-card'
+        layout_type: 'custom:grid-layout'
+        layout:
+          margin: -1
+        cards:
+          - type: 'custom:button-card'
+            template: header_card_no_link
+            variables:
+              name: AUDE'S BEDROOM
+          - type: 'custom:layout-card'
+            layout_type: 'custom:grid-layout'
+            layout: !include ../shared/snippets/layout-live-tile.yaml
+            cards:
+              - type: 'custom:button-card'
+                template: live_tile_media_player
+                entity: media_player.aude_s_bedroom_speaker
+                name: Speaker
+                view_layout:
+                  grid-column: span 2
+
+      # [Column] Family Room
+
+      - type: 'custom:layout-card'
+        layout_type: 'custom:grid-layout'
+        layout:
+          margin: -1
+        cards:
+          - type: 'custom:button-card'
+            template: header_card_no_link
+            variables:
+              name: FAMILY ROOM
+          - type: 'custom:layout-card'
+            layout_type: 'custom:grid-layout'
+            layout: !include ../shared/snippets/layout-live-tile.yaml
+            cards:
+              - type: 'custom:button-card'
+                template: live_tile_media_player
+                entity: media_player.shield_2
+                name: Shield
+                view_layout:
+                  grid-column: span 2
+              - type: 'custom:button-card'
+                template: live_tile_media_player
+                entity: media_player.nesthub3ce3
+                name: Display
+                view_layout:
+                  grid-column: span 2
+
+      # [Column] Common Areas
+
+      - type: 'custom:layout-card'
+        layout_type: 'custom:grid-layout'
+        layout:
+          margin: -1
+        cards:
+          - type: 'custom:button-card'
+            template: header_card_no_link
+            variables:
+              name: COMMON AREAS
+          - type: 'custom:layout-card'
+            layout_type: 'custom:grid-layout'
+            layout: !include ../shared/snippets/layout-live-tile.yaml
+            cards:
+              - type: 'custom:button-card'
+                template: live_tile_media_player
+                entity: media_player.bathroom_speaker
+                name: Bathroom
+                view_layout:
+                  grid-column: span 2
+              - type: 'custom:button-card'
+                template: live_tile_media_player
+                entity: media_player.upstairs_speakers
+                name: Upstairs
+                view_layout:
+                  grid-column: span 2
+              - type: 'custom:button-card'
+                template: live_tile_media_player
+                entity: media_player.front_door_speaker
+                name: Front Door
+                view_layout:
+                  grid-column: span 2
+              - type: 'custom:button-card'
+                template: live_tile_media_player
+                entity: media_player.aude_s_bedroom_speaker_2
+                name: Laundry
+                view_layout:
+                  grid-column: span 2
+
+      # [Column] Groups
+
+      - type: 'custom:layout-card'
+        layout_type: 'custom:grid-layout'
+        layout:
+          margin: -1
+        cards:
+          - type: 'custom:button-card'
+            template: header_card_no_link
+            variables:
+              name: GROUPS
+          - type: 'custom:layout-card'
+            layout_type: 'custom:grid-layout'
+            layout: !include ../shared/snippets/layout-live-tile.yaml
+            cards:
+              - type: 'custom:button-card'
+                template: live_tile_media_player
+                entity: media_player.everything_2
+                name: Everything
+                view_layout:
+                  grid-column: span 2
