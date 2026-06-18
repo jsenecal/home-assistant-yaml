@@ -151,6 +151,27 @@ views:
                 entity: binary_sensor.kitchen_sink_water_leak_sensor_water_leak
                 name: Water Leak
 
+              - type: 'custom:button-card'
+                template:
+                  - live_tile_with_graph
+                  - live_tile_with_state_unit
+                entity: sensor.refrigerator_power
+                name: Fridge Power
+                icon: mdi:fridge
+                variables:
+                  lower_bound: ~0
+                  aspect_ratio: 2
+                  line_width: 2
+                  graph_height: 80
+                view_layout:
+                  grid-column: span 2
+
+              - type: 'custom:button-card'
+                template: live_tile_with_unit
+                entity: sensor.refrigerator_daily_energy
+                name: Fridge Today
+                icon: mdi:counter
+
   - title: Living Room
     path: living-room
     type: 'custom:grid-layout'
@@ -2549,6 +2570,34 @@ views:
                 name: Ent SW Temp
                 icon: mdi:thermometer
 
+              - type: 'custom:button-card'
+                template: header_card_no_link
+                variables:
+                  name: POWER
+                view_layout:
+                  grid-column: 1/-1
+
+              - type: 'custom:button-card'
+                template:
+                  - live_tile_with_graph
+                  - live_tile_with_state_unit
+                entity: sensor.server_room_s31_power
+                name: S31 Power
+                icon: mdi:lightning-bolt
+                variables:
+                  lower_bound: ~0
+                  aspect_ratio: 2
+                  line_width: 2
+                  graph_height: 80
+                view_layout:
+                  grid-column: span 2
+
+              - type: 'custom:button-card'
+                template: live_tile_with_unit
+                entity: sensor.server_room_s31_daily_energy
+                name: S31 Today
+                icon: mdi:counter
+
   - title: Basement Bathroom
     path: basement-bathroom
     type: 'custom:grid-layout'
@@ -2620,6 +2669,19 @@ views:
                 variables:
                   name: Off
                   color: 'rgb(64, 64, 64)'
+
+              - type: 'custom:button-card'
+                template: header_card_no_link
+                variables:
+                  name: CLIMATE
+                view_layout:
+                  grid-column: 1/-1
+
+              - type: 'custom:button-card'
+                template: live_tile
+                entity: switch.hydronics_basement_actuator_4_bathroom
+                name: Actuator
+                icon: mdi:pipe-valve
 
   - !include ui/views/view-weather.yaml
 
