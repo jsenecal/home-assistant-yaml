@@ -78,20 +78,50 @@ cards:
             view_layout:
               grid-column: 1/-1
           - type: 'custom:button-card'
-            template: live_tile_with_unit
+            template:
+              - live_tile_with_graph
+              - live_tile_with_state_unit
             entity: sensor.front_door_lock_battery_level
             name: Front Lock
             icon: mdi:door-closed-lock
+            variables:
+              aspect_ratio: 2
+              line_width: 2
+              graph_height: 80
+              lower_bound: ~0
+              upper_bound: ~100
+            view_layout:
+              grid-column: span 2
           - type: 'custom:button-card'
-            template: live_tile_with_unit
+            template:
+              - live_tile_with_graph
+              - live_tile_with_state_unit
             entity: sensor.keypad_battery_level
             name: Keypad
             icon: mdi:lock-smart
+            variables:
+              aspect_ratio: 2
+              line_width: 2
+              graph_height: 80
+              lower_bound: ~0
+              upper_bound: ~100
+            view_layout:
+              grid-column: span 2
           - type: 'custom:button-card'
-            template: live_tile_with_unit
+            template:
+              - live_tile_with_graph
+              - live_tile_with_state_unit
             entity: sensor.smoke_co_detector_battery_level
             name: Smoke/CO
             icon: mdi:smoke-detector
+            variables:
+              aspect_ratio: 2
+              line_width: 2
+              graph_height: 80
+              lower_bound: ~0
+              upper_bound: ~100
+            view_layout:
+              grid-column: span 2
 
       # [Column] Sensors
 
@@ -106,45 +136,125 @@ cards:
             view_layout:
               grid-column: 1/-1
           - type: 'custom:button-card'
-            template: live_tile_with_unit
+            template:
+              - live_tile_with_graph
+              - live_tile_with_state_unit
             entity: sensor.office_motion_battery
             name: Office Motion
             icon: mdi:motion-sensor
+            variables:
+              aspect_ratio: 2
+              line_width: 2
+              graph_height: 80
+              lower_bound: ~0
+              upper_bound: ~100
+            view_layout:
+              grid-column: span 2
           - type: 'custom:button-card'
-            template: live_tile_with_unit
+            template:
+              - live_tile_with_graph
+              - live_tile_with_state_unit
             entity: sensor.office_door_sensor_battery
             name: Office Door
             icon: mdi:door
+            variables:
+              aspect_ratio: 2
+              line_width: 2
+              graph_height: 80
+              lower_bound: ~0
+              upper_bound: ~100
+            view_layout:
+              grid-column: span 2
           - type: 'custom:button-card'
-            template: live_tile_with_unit
+            template:
+              - live_tile_with_graph
+              - live_tile_with_state_unit
             entity: sensor.office_window_battery
             name: Office Window
             icon: mdi:window-open
+            variables:
+              aspect_ratio: 2
+              line_width: 2
+              graph_height: 80
+              lower_bound: ~0
+              upper_bound: ~100
+            view_layout:
+              grid-column: span 2
           - type: 'custom:button-card'
-            template: live_tile_with_unit
+            template:
+              - live_tile_with_graph
+              - live_tile_with_state_unit
             entity: sensor.patio_door_battery
             name: Patio Door
             icon: mdi:door-sliding
+            variables:
+              aspect_ratio: 2
+              line_width: 2
+              graph_height: 80
+              lower_bound: ~0
+              upper_bound: ~100
+            view_layout:
+              grid-column: span 2
           - type: 'custom:button-card'
-            template: live_tile_with_unit
+            template:
+              - live_tile_with_graph
+              - live_tile_with_state_unit
             entity: sensor.patio_screen_door_battery
             name: Screen Door
             icon: mdi:door-sliding
+            variables:
+              aspect_ratio: 2
+              line_width: 2
+              graph_height: 80
+              lower_bound: ~0
+              upper_bound: ~100
+            view_layout:
+              grid-column: span 2
           - type: 'custom:button-card'
-            template: live_tile_with_unit
+            template:
+              - live_tile_with_graph
+              - live_tile_with_state_unit
             entity: sensor.laundry_room_door_battery
             name: Laundry Door
             icon: mdi:door
+            variables:
+              aspect_ratio: 2
+              line_width: 2
+              graph_height: 80
+              lower_bound: ~0
+              upper_bound: ~100
+            view_layout:
+              grid-column: span 2
           - type: 'custom:button-card'
-            template: live_tile_with_unit
+            template:
+              - live_tile_with_graph
+              - live_tile_with_state_unit
             entity: sensor.kitchen_sink_water_leak_sensor_battery
             name: Kitchen Leak
             icon: mdi:water-alert
+            variables:
+              aspect_ratio: 2
+              line_width: 2
+              graph_height: 80
+              lower_bound: ~0
+              upper_bound: ~100
+            view_layout:
+              grid-column: span 2
           - type: 'custom:button-card'
-            template: live_tile_with_unit
+            template:
+              - live_tile_with_graph
+              - live_tile_with_state_unit
             entity: sensor.filter_leak_sensor_battery
             name: Filter Leak
             icon: mdi:water-alert
+            variables:
+              aspect_ratio: 2
+              line_width: 2
+              graph_height: 80
+              lower_bound: ~0
+              upper_bound: ~100
+            view_layout:
+              grid-column: span 2
 
       # [Column] Shades & Remotes
 
@@ -159,45 +269,125 @@ cards:
             view_layout:
               grid-column: 1/-1
           - type: 'custom:button-card'
-            template: live_tile_with_unit
+            template:
+              - live_tile_with_graph
+              - live_tile_with_state_unit
             entity: sensor.living_room_shade_battery_level
             name: Living Room
             icon: mdi:blinds
+            variables:
+              aspect_ratio: 2
+              line_width: 2
+              graph_height: 80
+              lower_bound: ~0
+              upper_bound: ~100
+            view_layout:
+              grid-column: span 2
           - type: 'custom:button-card'
-            template: live_tile_with_unit
+            template:
+              - live_tile_with_graph
+              - live_tile_with_state_unit
             entity: sensor.lobby_blinds_battery_level
             name: Lobby
             icon: mdi:blinds
+            variables:
+              aspect_ratio: 2
+              line_width: 2
+              graph_height: 80
+              lower_bound: ~0
+              upper_bound: ~100
+            view_layout:
+              grid-column: span 2
           - type: 'custom:button-card'
-            template: live_tile_with_unit
+            template:
+              - live_tile_with_graph
+              - live_tile_with_state_unit
             entity: sensor.dining_room_shade_battery_level
             name: Dining Room
             icon: mdi:blinds
+            variables:
+              aspect_ratio: 2
+              line_width: 2
+              graph_height: 80
+              lower_bound: ~0
+              upper_bound: ~100
+            view_layout:
+              grid-column: span 2
           - type: 'custom:button-card'
-            template: live_tile_with_unit
+            template:
+              - live_tile_with_graph
+              - live_tile_with_state_unit
             entity: sensor.office_blinds_battery_level
             name: Office Blinds
             icon: mdi:blinds
+            variables:
+              aspect_ratio: 2
+              line_width: 2
+              graph_height: 80
+              lower_bound: ~0
+              upper_bound: ~100
+            view_layout:
+              grid-column: span 2
           - type: 'custom:button-card'
-            template: live_tile_with_unit
+            template:
+              - live_tile_with_graph
+              - live_tile_with_state_unit
             entity: sensor.blinds_remote_battery_level
             name: Blinds Remote
             icon: mdi:remote
+            variables:
+              aspect_ratio: 2
+              line_width: 2
+              graph_height: 80
+              lower_bound: ~0
+              upper_bound: ~100
+            view_layout:
+              grid-column: span 2
           - type: 'custom:button-card'
-            template: live_tile_with_unit
+            template:
+              - live_tile_with_graph
+              - live_tile_with_state_unit
             entity: sensor.office_downlights_knob_battery
             name: Office Knob 1
             icon: mdi:knob
+            variables:
+              aspect_ratio: 2
+              line_width: 2
+              graph_height: 80
+              lower_bound: ~0
+              upper_bound: ~100
+            view_layout:
+              grid-column: span 2
           - type: 'custom:button-card'
-            template: live_tile_with_unit
+            template:
+              - live_tile_with_graph
+              - live_tile_with_state_unit
             entity: sensor.office_lamp_knob_battery
             name: Office Knob 2
             icon: mdi:knob
+            variables:
+              aspect_ratio: 2
+              line_width: 2
+              graph_height: 80
+              lower_bound: ~0
+              upper_bound: ~100
+            view_layout:
+              grid-column: span 2
           - type: 'custom:button-card'
-            template: live_tile_with_unit
+            template:
+              - live_tile_with_graph
+              - live_tile_with_state_unit
             entity: sensor.m7_office_battery_level
             name: M7 Office
             icon: mdi:remote
+            variables:
+              aspect_ratio: 2
+              line_width: 2
+              graph_height: 80
+              lower_bound: ~0
+              upper_bound: ~100
+            view_layout:
+              grid-column: span 2
 
       # [Column] Climate Sensors
 
@@ -212,12 +402,32 @@ cards:
             view_layout:
               grid-column: 1/-1
           - type: 'custom:button-card'
-            template: live_tile_with_unit
+            template:
+              - live_tile_with_graph
+              - live_tile_with_state_unit
             entity: sensor.server_rack_ths_battery
             name: Server Rack
             icon: mdi:thermometer
+            variables:
+              aspect_ratio: 2
+              line_width: 2
+              graph_height: 80
+              lower_bound: ~0
+              upper_bound: ~100
+            view_layout:
+              grid-column: span 2
           - type: 'custom:button-card'
-            template: live_tile_with_unit
+            template:
+              - live_tile_with_graph
+              - live_tile_with_state_unit
             entity: sensor.server_room_remote_battery
             name: Server Room
             icon: mdi:thermometer
+            variables:
+              aspect_ratio: 2
+              line_width: 2
+              graph_height: 80
+              lower_bound: ~0
+              upper_bound: ~100
+            view_layout:
+              grid-column: span 2

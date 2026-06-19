@@ -193,10 +193,18 @@ cards:
             view_layout:
               grid-column: span 2
           - type: 'custom:button-card'
-            template: live_tile_with_unit
+            template:
+              - live_tile_with_graph
+              - live_tile_with_state_unit
             entity: sensor.refrigerator_daily_energy
             name: Fridge Daily
             icon: mdi:lightning-bolt
+            variables:
+              aspect_ratio: 2
+              line_width: 2
+              graph_height: 80
+            view_layout:
+              grid-column: span 2
           - type: 'custom:button-card'
             template:
               - live_tile_with_graph
@@ -224,10 +232,18 @@ cards:
             view_layout:
               grid-column: span 2
           - type: 'custom:button-card'
-            template: live_tile_with_unit
+            template:
+              - live_tile_with_graph
+              - live_tile_with_state_unit
             entity: sensor.server_room_s31_daily_energy
             name: Server Daily
             icon: mdi:lightning-bolt
+            variables:
+              aspect_ratio: 2
+              line_width: 2
+              graph_height: 80
+            view_layout:
+              grid-column: span 2
 
       # [Column] UPS
 
@@ -277,12 +293,28 @@ cards:
             view_layout:
               grid-column: span 2
           - type: 'custom:button-card'
-            template: live_tile_with_unit
+            template:
+              - live_tile_with_graph
+              - live_tile_with_state_unit
             entity: sensor.ups_battery_runtime_2
             name: Runtime
             icon: mdi:timer
+            variables:
+              aspect_ratio: 2
+              line_width: 2
+              graph_height: 80
+            view_layout:
+              grid-column: span 2
           - type: 'custom:button-card'
-            template: live_tile_with_unit
+            template:
+              - live_tile_with_graph
+              - live_tile_with_state_unit
             entity: sensor.ups_ups_temperature_2
             name: Temperature
             icon: mdi:thermometer
+            variables:
+              aspect_ratio: 2
+              line_width: 2
+              graph_height: 80
+            view_layout:
+              grid-column: span 2
