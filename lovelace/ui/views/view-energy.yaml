@@ -26,285 +26,263 @@ cards:
 
       - type: 'custom:layout-card'
         layout_type: 'custom:grid-layout'
-        layout:
-          margin: -1
+        layout: !include ../shared/snippets/layout-live-tile.yaml
         cards:
           - type: 'custom:button-card'
             template: header_card_no_link
             variables:
               name: MAIN CIRCUIT
-          - type: 'custom:layout-card'
-            layout_type: 'custom:grid-layout'
-            layout: !include ../shared/snippets/layout-live-tile.yaml
-            cards:
-              - type: 'custom:button-card'
-                template: live_tile
-                entity: binary_sensor.hydronics_main_circulator
-                name: Circulator
-                icon: mdi:pump
-              - type: 'custom:button-card'
-                template: live_tile
-                entity: binary_sensor.hydronics_controller_boiler_enable
-                name: Boiler
-                icon: mdi:fire
-              - type: 'custom:button-card'
-                template:
-                  - live_tile_with_graph
-                  - live_tile_with_state_unit
-                entity: sensor.hydronics_main_circulator_power
-                name: Power
-                icon: mdi:lightning-bolt
-                variables:
-                  aspect_ratio: 2
-                  line_width: 2
-                  graph_height: 80
-                view_layout:
-                  grid-column: span 2
-              - type: 'custom:button-card'
-                template:
-                  - live_tile_with_graph
-                  - live_tile_with_state_unit
-                entity: sensor.hydronics_main_circulator_flow
-                name: Flow
-                icon: mdi:waves-arrow-right
-                variables:
-                  aspect_ratio: 2
-                  line_width: 2
-                  graph_height: 80
-                view_layout:
-                  grid-column: span 2
-              - type: 'custom:button-card'
-                template:
-                  - live_tile_with_graph
-                  - live_tile_with_state_unit
-                entity: sensor.hydronics_main_circulator_liquid_temperature
-                name: Supply Temp
-                icon: mdi:thermometer-chevron-up
-                variables:
-                  aspect_ratio: 2
-                  line_width: 2
-                  graph_height: 80
-                view_layout:
-                  grid-column: span 2
-              - type: 'custom:button-card'
-                template:
-                  - live_tile_with_graph
-                  - live_tile_with_state_unit
-                entity: sensor.hydronics_controller_main_circulator_return_temperature
-                name: Return Temp
-                icon: mdi:thermometer-chevron-down
-                variables:
-                  aspect_ratio: 2
-                  line_width: 2
-                  graph_height: 80
-                view_layout:
-                  grid-column: span 2
+            view_layout:
+              grid-column: 1/-1
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.hydronics_main_circulator
+            name: Circulator
+            icon: mdi:pump
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.hydronics_controller_boiler_enable
+            name: Boiler
+            icon: mdi:fire
+          - type: 'custom:button-card'
+            template:
+              - live_tile_with_graph
+              - live_tile_with_state_unit
+            entity: sensor.hydronics_main_circulator_power
+            name: Power
+            icon: mdi:lightning-bolt
+            variables:
+              aspect_ratio: 2
+              line_width: 2
+              graph_height: 80
+            view_layout:
+              grid-column: span 2
+          - type: 'custom:button-card'
+            template:
+              - live_tile_with_graph
+              - live_tile_with_state_unit
+            entity: sensor.hydronics_main_circulator_flow
+            name: Flow
+            icon: mdi:waves-arrow-right
+            variables:
+              aspect_ratio: 2
+              line_width: 2
+              graph_height: 80
+            view_layout:
+              grid-column: span 2
+          - type: 'custom:button-card'
+            template:
+              - live_tile_with_graph
+              - live_tile_with_state_unit
+            entity: sensor.hydronics_main_circulator_liquid_temperature
+            name: Supply Temp
+            icon: mdi:thermometer-chevron-up
+            variables:
+              aspect_ratio: 2
+              line_width: 2
+              graph_height: 80
+            view_layout:
+              grid-column: span 2
+          - type: 'custom:button-card'
+            template:
+              - live_tile_with_graph
+              - live_tile_with_state_unit
+            entity: sensor.hydronics_controller_main_circulator_return_temperature
+            name: Return Temp
+            icon: mdi:thermometer-chevron-down
+            variables:
+              aspect_ratio: 2
+              line_width: 2
+              graph_height: 80
+            view_layout:
+              grid-column: span 2
 
       # [Column] Basement Circuit
 
       - type: 'custom:layout-card'
         layout_type: 'custom:grid-layout'
-        layout:
-          margin: -1
+        layout: !include ../shared/snippets/layout-live-tile.yaml
         cards:
           - type: 'custom:button-card'
             template: header_card_no_link
             variables:
               name: BASEMENT CIRCUIT
-          - type: 'custom:layout-card'
-            layout_type: 'custom:grid-layout'
-            layout: !include ../shared/snippets/layout-live-tile.yaml
-            cards:
-              - type: 'custom:button-card'
-                template: live_tile
-                entity: binary_sensor.hydronics_basement_circulator
-                name: Circulator
-                icon: mdi:pump
-              - type: 'custom:button-card'
-                template:
-                  - live_tile_with_graph
-                  - live_tile_with_state_unit
-                entity: sensor.hydronics_basement_circulator_power
-                name: Power
-                icon: mdi:lightning-bolt
-                variables:
-                  aspect_ratio: 2
-                  line_width: 2
-                  graph_height: 80
-                view_layout:
-                  grid-column: span 2
-              - type: 'custom:button-card'
-                template:
-                  - live_tile_with_graph
-                  - live_tile_with_state_unit
-                entity: sensor.hydronics_basement_circulator_flow
-                name: Flow
-                icon: mdi:waves-arrow-right
-                variables:
-                  aspect_ratio: 2
-                  line_width: 2
-                  graph_height: 80
-                view_layout:
-                  grid-column: span 2
-              - type: 'custom:button-card'
-                template:
-                  - live_tile_with_graph
-                  - live_tile_with_state_unit
-                entity: sensor.hydronics_basement_circulator_liquid_temperature
-                name: Supply Temp
-                icon: mdi:thermometer-chevron-up
-                variables:
-                  aspect_ratio: 2
-                  line_width: 2
-                  graph_height: 80
-                view_layout:
-                  grid-column: span 2
-              - type: 'custom:button-card'
-                template:
-                  - live_tile_with_graph
-                  - live_tile_with_state_unit
-                entity: sensor.hydronics_controller_basement_circulator_return_temperature
-                name: Return Temp
-                icon: mdi:thermometer-chevron-down
-                variables:
-                  aspect_ratio: 2
-                  line_width: 2
-                  graph_height: 80
-                view_layout:
-                  grid-column: span 2
+            view_layout:
+              grid-column: 1/-1
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: binary_sensor.hydronics_basement_circulator
+            name: Circulator
+            icon: mdi:pump
+          - type: 'custom:button-card'
+            template:
+              - live_tile_with_graph
+              - live_tile_with_state_unit
+            entity: sensor.hydronics_basement_circulator_power
+            name: Power
+            icon: mdi:lightning-bolt
+            variables:
+              aspect_ratio: 2
+              line_width: 2
+              graph_height: 80
+            view_layout:
+              grid-column: span 2
+          - type: 'custom:button-card'
+            template:
+              - live_tile_with_graph
+              - live_tile_with_state_unit
+            entity: sensor.hydronics_basement_circulator_flow
+            name: Flow
+            icon: mdi:waves-arrow-right
+            variables:
+              aspect_ratio: 2
+              line_width: 2
+              graph_height: 80
+            view_layout:
+              grid-column: span 2
+          - type: 'custom:button-card'
+            template:
+              - live_tile_with_graph
+              - live_tile_with_state_unit
+            entity: sensor.hydronics_basement_circulator_liquid_temperature
+            name: Supply Temp
+            icon: mdi:thermometer-chevron-up
+            variables:
+              aspect_ratio: 2
+              line_width: 2
+              graph_height: 80
+            view_layout:
+              grid-column: span 2
+          - type: 'custom:button-card'
+            template:
+              - live_tile_with_graph
+              - live_tile_with_state_unit
+            entity: sensor.hydronics_controller_basement_circulator_return_temperature
+            name: Return Temp
+            icon: mdi:thermometer-chevron-down
+            variables:
+              aspect_ratio: 2
+              line_width: 2
+              graph_height: 80
+            view_layout:
+              grid-column: span 2
 
       # [Column] Appliances
 
       - type: 'custom:layout-card'
         layout_type: 'custom:grid-layout'
-        layout:
-          margin: -1
+        layout: !include ../shared/snippets/layout-live-tile.yaml
         cards:
           - type: 'custom:button-card'
             template: header_card_no_link
             variables:
               name: APPLIANCES
-          - type: 'custom:layout-card'
-            layout_type: 'custom:grid-layout'
-            layout: !include ../shared/snippets/layout-live-tile.yaml
-            cards:
-              - type: 'custom:button-card'
-                template:
-                  - live_tile_with_graph
-                  - live_tile_with_state_unit
-                entity: sensor.refrigerator_power
-                name: Fridge Power
-                icon: mdi:fridge
-                variables:
-                  aspect_ratio: 2
-                  line_width: 2
-                  graph_height: 80
-                view_layout:
-                  grid-column: span 2
-              - type: 'custom:button-card'
-                template: live_tile_with_unit
-                entity: sensor.refrigerator_daily_energy
-                name: Fridge Daily
-                icon: mdi:lightning-bolt
-                view_layout:
-                  grid-column: span 2
-              - type: 'custom:button-card'
-                template:
-                  - live_tile_with_graph
-                  - live_tile_with_state_unit
-                entity: sensor.washing_machine_s31_washing_machine_power
-                name: Washer Power
-                icon: mdi:washing-machine
-                variables:
-                  aspect_ratio: 2
-                  line_width: 2
-                  graph_height: 80
-                view_layout:
-                  grid-column: span 2
-              - type: 'custom:button-card'
-                template:
-                  - live_tile_with_graph
-                  - live_tile_with_state_unit
-                entity: sensor.server_room_s31_power
-                name: Server Power
-                icon: mdi:server
-                variables:
-                  aspect_ratio: 2
-                  line_width: 2
-                  graph_height: 80
-                view_layout:
-                  grid-column: span 2
-              - type: 'custom:button-card'
-                template: live_tile_with_unit
-                entity: sensor.server_room_s31_daily_energy
-                name: Server Daily
-                icon: mdi:lightning-bolt
-                view_layout:
-                  grid-column: span 2
+            view_layout:
+              grid-column: 1/-1
+          - type: 'custom:button-card'
+            template:
+              - live_tile_with_graph
+              - live_tile_with_state_unit
+            entity: sensor.refrigerator_power
+            name: Fridge Power
+            icon: mdi:fridge
+            variables:
+              aspect_ratio: 2
+              line_width: 2
+              graph_height: 80
+            view_layout:
+              grid-column: span 2
+          - type: 'custom:button-card'
+            template: live_tile_with_unit
+            entity: sensor.refrigerator_daily_energy
+            name: Fridge Daily
+            icon: mdi:lightning-bolt
+          - type: 'custom:button-card'
+            template:
+              - live_tile_with_graph
+              - live_tile_with_state_unit
+            entity: sensor.washing_machine_s31_washing_machine_power
+            name: Washer Power
+            icon: mdi:washing-machine
+            variables:
+              aspect_ratio: 2
+              line_width: 2
+              graph_height: 80
+            view_layout:
+              grid-column: span 2
+          - type: 'custom:button-card'
+            template:
+              - live_tile_with_graph
+              - live_tile_with_state_unit
+            entity: sensor.server_room_s31_power
+            name: Server Power
+            icon: mdi:server
+            variables:
+              aspect_ratio: 2
+              line_width: 2
+              graph_height: 80
+            view_layout:
+              grid-column: span 2
+          - type: 'custom:button-card'
+            template: live_tile_with_unit
+            entity: sensor.server_room_s31_daily_energy
+            name: Server Daily
+            icon: mdi:lightning-bolt
 
       # [Column] UPS
 
       - type: 'custom:layout-card'
         layout_type: 'custom:grid-layout'
-        layout:
-          margin: -1
+        layout: !include ../shared/snippets/layout-live-tile.yaml
         cards:
           - type: 'custom:button-card'
             template: header_card_no_link
             variables:
               name: UPS
-          - type: 'custom:layout-card'
-            layout_type: 'custom:grid-layout'
-            layout: !include ../shared/snippets/layout-live-tile.yaml
-            cards:
-              - type: 'custom:button-card'
-                template: live_tile
-                entity: sensor.ups_status
-                name: Status
-                icon: mdi:battery-charging
-                view_layout:
-                  grid-column: span 2
-              - type: 'custom:button-card'
-                template:
-                  - live_tile_with_graph
-                  - live_tile_with_state_unit
-                entity: sensor.ups_battery_charge
-                name: Battery
-                icon: mdi:battery
-                variables:
-                  aspect_ratio: 2
-                  line_width: 2
-                  graph_height: 80
-                  lower_bound: ~0
-                  upper_bound: ~100
-                view_layout:
-                  grid-column: span 2
-              - type: 'custom:button-card'
-                template:
-                  - live_tile_with_graph
-                  - live_tile_with_state_unit
-                entity: sensor.ups_load
-                name: Load
-                icon: mdi:lightning-bolt-circle
-                variables:
-                  aspect_ratio: 2
-                  line_width: 2
-                  graph_height: 80
-                  lower_bound: ~0
-                  upper_bound: ~100
-                view_layout:
-                  grid-column: span 2
-              - type: 'custom:button-card'
-                template: live_tile_with_unit
-                entity: sensor.ups_battery_runtime_2
-                name: Runtime
-                icon: mdi:timer
-                view_layout:
-                  grid-column: span 2
-              - type: 'custom:button-card'
-                template: live_tile_with_unit
-                entity: sensor.ups_ups_temperature_2
-                name: Temperature
-                icon: mdi:thermometer
-                view_layout:
-                  grid-column: span 2
+            view_layout:
+              grid-column: 1/-1
+          - type: 'custom:button-card'
+            template: live_tile
+            entity: sensor.ups_status
+            name: Status
+            icon: mdi:battery-charging
+          - type: 'custom:button-card'
+            template:
+              - live_tile_with_graph
+              - live_tile_with_state_unit
+            entity: sensor.ups_battery_charge
+            name: Battery
+            icon: mdi:battery
+            variables:
+              aspect_ratio: 2
+              line_width: 2
+              graph_height: 80
+              lower_bound: ~0
+              upper_bound: ~100
+            view_layout:
+              grid-column: span 2
+          - type: 'custom:button-card'
+            template:
+              - live_tile_with_graph
+              - live_tile_with_state_unit
+            entity: sensor.ups_load
+            name: Load
+            icon: mdi:lightning-bolt-circle
+            variables:
+              aspect_ratio: 2
+              line_width: 2
+              graph_height: 80
+              lower_bound: ~0
+              upper_bound: ~100
+            view_layout:
+              grid-column: span 2
+          - type: 'custom:button-card'
+            template: live_tile_with_unit
+            entity: sensor.ups_battery_runtime_2
+            name: Runtime
+            icon: mdi:timer
+          - type: 'custom:button-card'
+            template: live_tile_with_unit
+            entity: sensor.ups_ups_temperature_2
+            name: Temperature
+            icon: mdi:thermometer
