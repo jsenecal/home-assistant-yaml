@@ -46,8 +46,8 @@ cards:
                 icon: mdi:battery-alert
               - type: 'custom:button-card'
                 template: live_tile
-                entity: binary_sensor.siren_replace_battery_soon
-                name: Siren Battery
+                entity: binary_sensor.siren_doorbell_1_button_battery_low
+                name: Doorbell 1 Batt
                 icon: mdi:battery-low
               - type: 'custom:button-card'
                 template: live_tile
