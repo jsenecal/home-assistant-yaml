@@ -46,11 +46,6 @@ cards:
                 icon: mdi:battery-alert
               - type: 'custom:button-card'
                 template: live_tile
-                entity: binary_sensor.siren_doorbell_1_button_battery_low
-                name: Doorbell 1 Batt
-                icon: mdi:battery-low
-              - type: 'custom:button-card'
-                template: live_tile
                 entity: binary_sensor.smoke_co_detector_low_battery_level
                 name: Smoke Batt
                 icon: mdi:battery-low
