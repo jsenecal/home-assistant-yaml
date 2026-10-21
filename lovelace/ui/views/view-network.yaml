@@ -219,18 +219,6 @@ cards:
 
           - type: 'custom:button-card'
             template: live_tile
-            entity: binary_sensor.slzb_06_a_ethernet
-            name: SLZB-A Eth
-            icon: mdi:ethernet
-
-          - type: 'custom:button-card'
-            template: live_tile
-            entity: binary_sensor.slzb_06_a_internet
-            name: SLZB-A Net
-            icon: mdi:cloud-check
-
-          - type: 'custom:button-card'
-            template: live_tile
             entity: binary_sensor.slzb_06_b_ethernet
             name: SLZB-B Eth
             icon: mdi:ethernet
