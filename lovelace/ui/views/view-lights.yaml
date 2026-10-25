@@ -53,7 +53,7 @@ cards:
 
           - type: 'custom:button-card'
             template: light_button_card
-            entity: light.wled_kitchen_counters
+            entity: light.kitchen_countertop
             name: Countertop
 
           # [Living Room]
