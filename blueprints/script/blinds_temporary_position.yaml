@@ -1,6 +1,6 @@
 blueprint:
   name: Blinds Temporary Position
-  description: Temporarily move blinds to a specified position if below a threshold, wait, then restore to original position
+  description: Temporarily move blinds to a specified position if below a threshold, wait, then restore to original position unless they were moved in the meantime
   domain: script
   input:
     blinds_entity:
@@ -47,24 +47,30 @@ sequence:
   - variables:
       current_position: "{{ state_attr(entity, 'current_position') | int }}"
       saved_position: "{{ current_position if current_position < threshold else 0 }}"
-  
+
   # Only proceed if current position is below threshold
   - condition: template
     value_template: "{{ current_position < threshold }}"
-  
+
   # Move blinds to target position
-  - service: cover.set_cover_position
+  - action: cover.set_cover_position
     target:
       entity_id: "{{ entity }}"
     data:
       position: "{{ target }}"
-  
+
   # Wait specified time
   - delay:
       minutes: "{{ wait }}"
-  
+
+  # Skip the restore if the blinds were moved meanwhile (scene, schedule,
+  # remote): only restore while they still sit at the target position.
+  - condition: template
+    value_template: >
+      {{ (state_attr(entity, 'current_position') | int(-100) - target | int) | abs <= 2 }}
+
   # Move blinds back to the saved position
-  - service: cover.set_cover_position
+  - action: cover.set_cover_position
     target:
       entity_id: "{{ entity }}"
     data:
